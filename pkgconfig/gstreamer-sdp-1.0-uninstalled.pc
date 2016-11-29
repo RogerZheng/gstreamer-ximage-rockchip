@@ -1,0 +1,17 @@
+# the standard variables don't make sense for an uninstalled copy
+prefix=
+exec_prefix=
+libdir=/root/gst/gst-plugins-base1.0-1.10.1/gst-libs/gst/sdp/.libs
+# includedir is builddir because it is used to find gstconfig.h in places
+includedir=/root/gst/gst-plugins-base1.0-1.10.1/gst-libs
+girdir=/root/gst/gst-plugins-base1.0-1.10.1/gst-libs/gst/sdp
+typelibdir=/root/gst/gst-plugins-base1.0-1.10.1/gst-libs/gst/sdp
+
+Name: GStreamer SDP Library, Uninstalled
+Description: SDP helper functions, uninstalled
+Version: 1.10.1
+Requires: glib-2.0
+Requires.private: gio-2.0
+Libs: -L${libdir} -lgstsdp-1.0
+Cflags: -I/root/gst/gst-plugins-base1.0-1.10.1/gst-libs -I/root/gst/gst-plugins-base1.0-1.10.1/gst-libs
+

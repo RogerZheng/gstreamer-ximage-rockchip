@@ -1,0 +1,16 @@
+# the standard variables don't make sense for an uninstalled copy
+prefix=
+exec_prefix=
+libdir=/root/gst/gst-plugins-base1.0-1.10.1/gst-libs/gst/video/.libs
+# includedir is builddir because it is used to find gstconfig.h in places
+includedir=/root/gst/gst-plugins-base1.0-1.10.1/gst-libs
+girdir=/root/gst/gst-plugins-base1.0-1.10.1/gst-libs/gst/video
+typelibdir=/root/gst/gst-plugins-base1.0-1.10.1/gst-libs/gst/video
+
+Name: GStreamer Video Library, Uninstalled
+Description: Video base classes and helper functions, uninstalled
+Version: 1.10.1
+Requires: gstreamer-1.0 gstreamer-base-1.0
+Libs: -L${libdir} -lgstvideo-1.0
+Cflags: -I/root/gst/gst-plugins-base1.0-1.10.1/gst-libs -I/root/gst/gst-plugins-base1.0-1.10.1/gst-libs
+
