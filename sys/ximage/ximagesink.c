@@ -118,6 +118,15 @@
 /* for XkbKeycodeToKeysym */
 #include <X11/XKBlib.h>
 
+
+#include "gstvpumeta.h"
+#include <drm.h>
+#include <xf86drm.h>
+#include <xf86drmMode.h>
+#include <drm_fourcc.h>
+#include <fcntl.h>
+#include <string.h>
+
 GST_DEBUG_CATEGORY_EXTERN (gst_debug_x_image_sink);
 GST_DEBUG_CATEGORY_EXTERN (CAT_PERFORMANCE);
 #define GST_CAT_DEFAULT gst_debug_x_image_sink
@@ -187,6 +196,273 @@ G_DEFINE_TYPE_WITH_CODE (GstXImageSink, gst_x_image_sink, GST_TYPE_VIDEO_SINK,
 /*                       Private Methods                         */
 /*                                                               */
 /* ============================================================= */
+/*drm*/
+
+static int
+kms_open (gchar ** driver)
+{
+  static const char *drivers[] = { "i915", "radeon", "nouveau", "vmwgfx",
+    "exynos", "amdgpu", "imx-drm", "rockchip", "atmel-hlcdc"
+  };
+  int i, fd = -1;
+
+  for (i = 0; i < G_N_ELEMENTS (drivers); i++) {
+    fd = drmOpen (drivers[i], NULL);
+    if (fd >= 0) {
+      if (driver)
+        *driver = g_strdup (drivers[i]);
+      break;
+    }
+  }
+
+  return fd;
+}
+
+static drmModePlane *
+find_plane_for_crtc (int fd, drmModeRes * res, drmModePlaneRes * pres,
+    int crtc_id)
+{
+  drmModePlane *plane;
+  int i, pipe;
+
+  plane = NULL;
+  pipe = -1;
+  for (i = 0; i < res->count_crtcs; i++) {
+    if (crtc_id == res->crtcs[i]) {
+      pipe = i;
+      break;
+    }
+  }
+
+  if (pipe == -1)
+    return NULL;
+
+  for (i = 0; i < pres->count_planes; i++) {
+    plane = drmModeGetPlane (fd, pres->planes[i]);
+    if (plane->possible_crtcs & (1 << pipe))
+      return plane;
+    drmModeFreePlane (plane);
+  }
+
+  return NULL;
+}
+
+static drmModeCrtc *
+find_crtc_for_connector (int fd, drmModeRes * res, drmModeConnector * conn,
+    guint * pipe)
+{
+  int i;
+  int crtc_id;
+  drmModeEncoder *enc;
+  drmModeCrtc *crtc;
+
+  crtc_id = -1;
+  for (i = 0; i < res->count_encoders; i++) {
+    enc = drmModeGetEncoder (fd, res->encoders[i]);
+    if (enc) {
+      if (enc->encoder_id == conn->encoder_id) {
+        crtc_id = enc->crtc_id;
+        drmModeFreeEncoder (enc);
+        break;
+      }
+      drmModeFreeEncoder (enc);
+    }
+  }
+
+  if (crtc_id == -1)
+    return NULL;
+
+  for (i = 0; i < res->count_crtcs; i++) {
+    crtc = drmModeGetCrtc (fd, res->crtcs[i]);
+    if (crtc) {
+      if (crtc_id == crtc->crtc_id) {
+        if (pipe)
+          *pipe = i;
+        return crtc;
+      }
+      drmModeFreeCrtc (crtc);
+    }
+  }
+
+  return NULL;
+}
+
+static gboolean
+connector_is_used (int fd, drmModeRes * res, drmModeConnector * conn)
+{
+  gboolean result;
+  drmModeCrtc *crtc;
+
+  result = FALSE;
+  crtc = find_crtc_for_connector (fd, res, conn, NULL);
+  if (crtc) {
+    result = crtc->buffer_id != 0;
+    drmModeFreeCrtc (crtc);
+  }
+
+  return result;
+}
+
+static drmModeConnector *
+find_used_connector_by_type (int fd, drmModeRes * res, int type)
+{
+  int i;
+  drmModeConnector *conn;
+
+  conn = NULL;
+  for (i = 0; i < res->count_connectors; i++) {
+    conn = drmModeGetConnector (fd, res->connectors[i]);
+    if (conn) {
+      if ((conn->connector_type == type) && connector_is_used (fd, res, conn))
+        return conn;
+      drmModeFreeConnector (conn);
+    }
+  }
+
+  return NULL;
+}
+
+static drmModeConnector *
+find_first_used_connector (int fd, drmModeRes * res)
+{
+  int i;
+  drmModeConnector *conn;
+
+  conn = NULL;
+  for (i = 0; i < res->count_connectors; i++) {
+    conn = drmModeGetConnector (fd, res->connectors[i]);
+    if (conn) {
+      if (connector_is_used (fd, res, conn))
+        return conn;
+      drmModeFreeConnector (conn);
+    }
+  }
+
+  return NULL;
+}
+
+static drmModeConnector *
+find_main_monitor (int fd, drmModeRes * res)
+{
+  /* Find the LVDS and eDP connectors: those are the main screens. */
+  static const int priority[] = { DRM_MODE_CONNECTOR_LVDS,
+    DRM_MODE_CONNECTOR_eDP
+  };
+  int i;
+  drmModeConnector *conn;
+
+  conn = NULL;
+  for (i = 0; !conn && i < G_N_ELEMENTS (priority); i++)
+    conn = find_used_connector_by_type (fd, res, priority[i]);
+
+  /* if we didn't find a connector, grab the first one in use */
+  if (!conn)
+    conn = find_first_used_connector (fd, res);
+
+  return conn;
+}
+
+static void
+log_drm_version (GstXImageSink * self)
+{
+#ifndef GST_DISABLE_GST_DEBUG
+  drmVersion *v;
+
+  v = drmGetVersion (self->fd);
+  if (v) {
+    GST_INFO_OBJECT (self, "DRM v%d.%d.%d [%s — %s — %s]", v->version_major,
+        v->version_minor, v->version_patchlevel, GST_STR_NULL (v->name),
+        GST_STR_NULL (v->desc), GST_STR_NULL (v->date));
+    drmFreeVersion (v);
+  } else {
+    GST_WARNING_OBJECT (self, "could not get driver information: %s",
+        GST_STR_NULL (self->devname));
+  }
+#endif
+  return;
+}
+
+static gboolean
+get_drm_caps (GstXImageSink * self)
+{
+  gint ret;
+  guint64 has_dumb_buffer;
+  guint64 has_prime;
+  guint64 has_async_page_flip;
+
+  has_dumb_buffer = 0;
+  ret = drmGetCap (self->fd, DRM_CAP_DUMB_BUFFER, &has_dumb_buffer);
+  if (ret)
+    GST_WARNING_OBJECT (self, "could not get dumb buffer capability");
+  if (has_dumb_buffer == 0) {
+    GST_ERROR_OBJECT (self, "driver cannot handle dumb buffers");
+    return FALSE;
+  }
+
+  has_prime = 0;
+  ret = drmGetCap (self->fd, DRM_CAP_PRIME, &has_prime);
+  if (ret)
+    GST_WARNING_OBJECT (self, "could not get prime capability");
+  else
+    self->has_prime_import = (gboolean) (has_prime & DRM_PRIME_CAP_IMPORT);
+
+  has_async_page_flip = 0;
+  ret = drmGetCap (self->fd, DRM_CAP_ASYNC_PAGE_FLIP, &has_async_page_flip);
+  if (ret)
+    GST_WARNING_OBJECT (self, "could not get async page flip capability");
+  else
+    self->has_async_page_flip = (gboolean) has_async_page_flip;
+
+  GST_INFO_OBJECT (self, "prime import (%s) / async page flip (%s)",
+      self->has_prime_import ? "✓" : "✗",
+      self->has_async_page_flip ? "✓" : "✗");
+
+  return TRUE;
+}
+
+static gboolean
+ensure_allowed_caps (GstXImageSink * self, drmModePlane * plane, drmModeRes * res)
+{
+  GstCaps *out_caps, *caps;
+  int i;
+  GstVideoFormat fmt;
+  const gchar *format;
+
+  if (self->allowed_caps)
+    return TRUE;
+
+  out_caps = gst_caps_new_empty ();
+  if (!out_caps)
+    return FALSE;
+
+  for (i = 0; i < plane->count_formats; i++) {
+    fmt = gst_video_format_from_drm (plane->formats[i]);
+    if (fmt == GST_VIDEO_FORMAT_UNKNOWN) {
+      GST_INFO_OBJECT (self, "ignoring format %" GST_FOURCC_FORMAT,
+          GST_FOURCC_ARGS (plane->formats[i]));
+      continue;
+    }
+
+    format = gst_video_format_to_string (fmt);
+    caps = gst_caps_new_simple ("video/x-raw", "format", G_TYPE_STRING, format,
+        "width", GST_TYPE_INT_RANGE, res->min_width, res->max_width,
+        "height", GST_TYPE_INT_RANGE, res->min_height, res->max_height,
+        "framerate", GST_TYPE_FRACTION_RANGE, 0, 1, G_MAXINT, 1, NULL);
+    if (!caps)
+      continue;
+
+    out_caps = gst_caps_merge (out_caps, caps);
+  }
+
+  self->allowed_caps = gst_caps_simplify (out_caps);
+
+  GST_DEBUG_OBJECT (self, "allowed caps = %" GST_PTR_FORMAT,
+      self->allowed_caps);
+
+  return TRUE;
+}
+
+
 
 /* X11 stuff */
 
@@ -236,6 +512,14 @@ gst_x_image_sink_ximage_put (GstXImageSink * ximagesink, GstBuffer * ximage)
   GstVideoRectangle dst = { 0, };
   GstVideoRectangle result;
   gboolean draw_border = FALSE;
+  GstVpuDecMeta *meta = NULL;
+  guint32 gem_handle, w, h, fmt, bo_handles[4] = { 0, };
+  guint32 offsets[4] = { 0, };
+  guint32 pitches[4] = { 0, };
+  gint ret;
+  static guint32 last_fb_id = 0;
+  guint32 fb_id;
+
 
   /* We take the flow_lock. If expose is in there we don't want to run
      concurrently from the data flow thread */
@@ -275,7 +559,6 @@ gst_x_image_sink_ximage_put (GstXImageSink * ximagesink, GstBuffer * ximage)
 
   mem = (GstXImageMemory *) gst_buffer_peek_memory (ximage, 0);
   crop = gst_buffer_get_video_crop_meta (ximage);
-
   if (crop) {
     src.x = crop->x + mem->x;
     src.y = crop->y + mem->y;
@@ -317,12 +600,72 @@ gst_x_image_sink_ximage_put (GstXImageSink * ximagesink, GstBuffer * ximage)
         "XPutImage on %p, src: %d, %d - dest: %d, %d, dim: %dx%d, win %dx%d",
         ximage, 0, 0, result.x, result.y, result.w, result.h,
         ximagesink->xwindow->width, ximagesink->xwindow->height);
-    XPutImage (ximagesink->xcontext->disp, ximagesink->xwindow->win,
-        ximagesink->xwindow->gc, mem->ximage, src.x, src.y, result.x, result.y,
-        result.w, result.h);
+
+    meta = gst_buffer_get_vpudec_meta (ximage);//FIXME
+    if (meta) {
+	   ;// buffer = buf;
+    } else {
+	    GST_ERROR_OBJECT(ximagesink,"buffer is not valid");
+	    return GST_FLOW_ERROR;
+    }
+    gst_buffer_ref (ximage);
+
+    ret = drmPrimeFDToHandle
+	    (ximagesink->fd, gst_vpudec_meta_get_fd (meta), &gem_handle);
+    if (ret < 0) {
+	    GST_ERROR_OBJECT (ximagesink, "drmPrimeFDToHandle failed: %s (%d)",
+			    strerror (-ret), ret);
+	    return GST_FLOW_ERROR;
+    }
+
+    w = GST_VIDEO_INFO_WIDTH (&ximagesink->info);
+    h = GST_VIDEO_INFO_HEIGHT (&ximagesink->info);
+    fmt = gst_drm_format_from_video (GST_VIDEO_INFO_FORMAT (&ximagesink->info));
+
+    pitches[0] = w;
+    offsets[0] = 0;
+    bo_handles[0] = gem_handle;
+    pitches[1] = w;
+    offsets[1] = w * h;
+    bo_handles[1] = gem_handle;
+
+    ret = drmModeAddFB2 (ximagesink->fd, w, h, fmt, bo_handles, pitches,
+		    offsets, &fb_id, 0);
+    if (ret < 0) {
+	    GST_ERROR_OBJECT (ximagesink, "drmModeAddFB2 failed: %s (%d)",
+			    strerror (-ret), ret);
+	    return GST_FLOW_ERROR;
+    }
+
+    GST_TRACE_OBJECT (ximagesink, "displaying fb %d", fb_id);
+
+    GST_TRACE_OBJECT (ximagesink,
+		    "drmModeSetPlane at (%i,%i) %ix%i sourcing at (%i,%i) %ix%i",
+		    result.x, result.y, result.w, result.h, src.x, src.y, src.w, src.h);
+
+    ret = drmModeSetPlane (ximagesink->ctrl_fd, ximagesink->plane_id, ximagesink->crtc_id, fb_id, 0,
+		    result.x, result.y, result.w, result.h,
+		    /* source/cropping coordinates are given in Q16 */
+		    src.x << 16, src.y << 16, src.w << 16, src.h << 16);
+    if (ret) {
+	    GST_ERROR_OBJECT (ximagesink, "drmModesetplane failed: %d (%d)",
+			    1, 1);
+	    return GST_FLOW_ERROR;
+	    //goto set_plane_failed;
+    }
+
+    //XPutImage (ximagesink->xcontext->disp, ximagesink->xwindow->win,
+    //    ximagesink->xwindow->gc, mem->ximage, src.x, src.y, result.x, result.y,
+    //    result.w, result.h);
   }
 
   XSync (ximagesink->xcontext->disp, FALSE);
+
+  if (last_fb_id) {
+    drmModeRmFB (ximagesink->fd, last_fb_id);
+  }
+
+  last_fb_id = fb_id;
 
   g_mutex_unlock (&ximagesink->x_lock);
 
@@ -1905,6 +2248,200 @@ gst_x_image_sink_init (GstXImageSink * ximagesink)
   ximagesink->handle_events = TRUE;
   ximagesink->handle_expose = TRUE;
 }
+static gboolean
+gst_x_image_sink_start (GstBaseSink * bsink)
+{
+  GstXImageSink *self;
+  drmModeRes *res;
+  drmModeConnector *conn;
+  drmModeCrtc *crtc;
+  drmModePlaneRes *pres;
+  drmModePlane *plane;
+  gboolean universal_planes;
+  gboolean ret;
+
+  self = GST_X_IMAGE_SINK (bsink);
+  universal_planes = FALSE;
+  ret = FALSE;
+  res = NULL;
+  conn = NULL;
+  crtc = NULL;
+  pres = NULL;
+  plane = NULL;
+
+    //GST_DEBUG_OBJECT (self, "in!!!!!!!!!!!!!!! \n");
+
+
+  if (0) {
+    if (self->devname) {
+      self->fd = drmOpen (self->devname, NULL);
+    }
+    else
+      self->fd = kms_open (&self->devname);
+  } else {
+    self->fd = open("/dev/dri/card0", O_RDWR);
+
+    self->ctrl_fd = open("/dev/dri/controlD64", O_RDWR);
+  }
+  
+  if (self->fd < 0 || self->ctrl_fd < 0)
+    goto open_failed;
+
+  log_drm_version (self);
+  if (!get_drm_caps (self))
+    goto bail;
+
+  res = drmModeGetResources (self->fd);
+  if (!res)
+    goto resources_failed;
+
+  if (self->conn_id == -1)
+    conn = find_main_monitor (self->fd, res);
+  else
+    conn = drmModeGetConnector (self->fd, self->conn_id);
+  if (!conn)
+    goto connector_failed;
+
+  crtc = find_crtc_for_connector (self->fd, res, conn, &self->pipe);
+  if (!crtc)
+    goto crtc_failed;
+
+retry_find_plane:
+  if (universal_planes &&
+      drmSetClientCap (self->fd, DRM_CLIENT_CAP_UNIVERSAL_PLANES, 1))
+    goto set_cap_failed;
+
+  pres = drmModeGetPlaneResources (self->fd);
+  if (!pres)
+    goto plane_resources_failed;
+
+  if (self->plane_id == -1)
+    plane = find_plane_for_crtc (self->fd, res, pres, crtc->crtc_id);
+  else
+    plane = drmModeGetPlane (self->fd, self->plane_id);
+  if (!plane)
+    goto plane_failed;
+
+  /* let's get the available color formats in plane */
+  if (!ensure_allowed_caps (self, plane, res))
+    goto bail;
+
+  self->conn_id = conn->connector_id;
+  self->crtc_id = crtc->crtc_id;
+  self->plane_id = plane->plane_id;
+
+  GST_INFO_OBJECT (self, "connector id = %d / crtc id = %d / plane id = %d",
+      self->conn_id, self->crtc_id, self->plane_id);
+
+  self->hdisplay = crtc->mode.hdisplay;
+  self->vdisplay = crtc->mode.vdisplay;
+  self->buffer_id = crtc->buffer_id;
+
+  self->mm_width = conn->mmWidth;
+  self->mm_height = conn->mmHeight;
+
+  GST_INFO_OBJECT (self, "display size: pixels = %dx%d / millimeters = %dx%d",
+      self->hdisplay, self->vdisplay, self->mm_width, self->mm_height);
+
+  self->pollfd.fd = self->fd;
+  gst_poll_add_fd (self->poll, &self->pollfd);
+  gst_poll_fd_ctl_read (self->poll, &self->pollfd, TRUE);
+
+  ret = TRUE;
+
+bail:
+  if (plane)
+    drmModeFreePlane (plane);
+  if (pres)
+    drmModeFreePlaneResources (pres);
+  if (crtc)
+    drmModeFreeCrtc (crtc);
+  if (conn)
+    drmModeFreeConnector (conn);
+  if (res)
+    drmModeFreeResources (res);
+
+  if (!ret && self->fd >= 0) {
+    drmClose (self->fd);
+    self->fd = -1;
+  }
+
+  return ret;
+
+  /* ERRORS */
+open_failed:
+  {
+    GST_ERROR_OBJECT (self, "Could not open DRM module %s: %s",
+        GST_STR_NULL (self->devname), strerror (errno));
+    return FALSE;
+  }
+resources_failed:
+  {
+    GST_ERROR_OBJECT (self, "drmModeGetResources failed: %s (%d)",
+        strerror (errno), errno);
+    goto bail;
+  }
+
+connector_failed:
+  {
+    GST_ERROR_OBJECT (self, "Could not find a valid monitor connector");
+    goto bail;
+  }
+
+crtc_failed:
+  {
+    GST_ERROR_OBJECT (self, "Could not find a crtc for connector");
+    goto bail;
+  }
+
+set_cap_failed:
+  {
+    GST_ERROR_OBJECT (self, "Could not set universal planes capability bit");
+    goto bail;
+  }
+
+plane_resources_failed:
+  {
+    GST_ERROR_OBJECT (self, "drmModeGetPlaneResources failed: %s (%d)",
+        strerror (errno), errno);
+    goto bail;
+  }
+
+plane_failed:
+  {
+    if (universal_planes) {
+      GST_ERROR_OBJECT (self, "Could not find a plane for crtc");
+      goto bail;
+    } else {
+      universal_planes = TRUE;
+      goto retry_find_plane;
+    }
+  }
+}
+static gboolean
+gst_x_image_sink_stop (GstBaseSink * bsink)
+{
+  GstXImageSink *self;
+
+  self = GST_X_IMAGE_SINK (bsink);
+
+  gst_buffer_replace (&self->last_buffer, NULL);
+  gst_caps_replace (&self->allowed_caps, NULL);
+  gst_object_replace ((GstObject **) & self->pool, NULL);
+  gst_object_replace ((GstObject **) & self->allocator, NULL);
+
+  gst_poll_remove_fd (self->poll, &self->pollfd);
+  gst_poll_restart (self->poll);
+  gst_poll_fd_init (&self->pollfd);
+
+  if (self->fd >= 0) {
+    drmClose (self->fd);
+    self->fd = -1;
+  }
+
+  return TRUE;
+}
+
 
 static void
 gst_x_image_sink_class_init (GstXImageSinkClass * klass)
@@ -1979,6 +2516,8 @@ gst_x_image_sink_class_init (GstXImageSinkClass * klass)
 
   gstelement_class->change_state = gst_x_image_sink_change_state;
 
+  gstbasesink_class->start = GST_DEBUG_FUNCPTR (gst_x_image_sink_start);
+  gstbasesink_class->stop = GST_DEBUG_FUNCPTR (gst_x_image_sink_stop);
   gstbasesink_class->get_caps = GST_DEBUG_FUNCPTR (gst_x_image_sink_getcaps);
   gstbasesink_class->set_caps = GST_DEBUG_FUNCPTR (gst_x_image_sink_setcaps);
   gstbasesink_class->get_times = GST_DEBUG_FUNCPTR (gst_x_image_sink_get_times);

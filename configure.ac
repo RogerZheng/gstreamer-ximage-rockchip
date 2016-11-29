@@ -608,6 +608,13 @@ AG_GST_CHECK_FEATURE(XSHM, [X Shared Memory extension], [ ], [
   AC_SUBST(XSHM_LIBS)
 ])
 
+
+PKG_CHECK_MODULES([ROCKCHIP_MPP], [rockchip_mpp])
+PKG_CHECK_MODULES([ROCKCHIP_VPU], [rockchip_vpu])
+PKG_CHECK_MODULES([DRM], [libdrm], HAVE_KMS=yes, HAVE_KMS=no)
+
+
+
 dnl *** ext plug-ins ***
 dnl keep this list sorted alphabetically !
 

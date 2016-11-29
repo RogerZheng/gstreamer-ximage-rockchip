@@ -9647,7 +9647,25 @@ m4trace:configure.ac:593: -1- m4_pattern_allow([^USE_XSHM_TRUE$])
 m4trace:configure.ac:593: -1- m4_pattern_allow([^USE_XSHM_FALSE$])
 m4trace:configure.ac:593: -1- _AM_SUBST_NOTMAKE([USE_XSHM_TRUE])
 m4trace:configure.ac:593: -1- _AM_SUBST_NOTMAKE([USE_XSHM_FALSE])
-m4trace:configure.ac:622: -1- AG_GST_CHECK_FEATURE([ALSA], [ALSA], [alsa], [
+m4trace:configure.ac:612: -1- PKG_CHECK_MODULES([ROCKCHIP_MPP], [rockchip_mpp])
+m4trace:configure.ac:612: -1- m4_pattern_allow([^ROCKCHIP_MPP_CFLAGS$])
+m4trace:configure.ac:612: -1- m4_pattern_allow([^ROCKCHIP_MPP_LIBS$])
+m4trace:configure.ac:612: -1- PKG_CHECK_EXISTS([rockchip_mpp], [pkg_cv_[]ROCKCHIP_MPP_CFLAGS=`$PKG_CONFIG --[]cflags "rockchip_mpp" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:612: -1- PKG_CHECK_EXISTS([rockchip_mpp], [pkg_cv_[]ROCKCHIP_MPP_LIBS=`$PKG_CONFIG --[]libs "rockchip_mpp" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:612: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:613: -1- PKG_CHECK_MODULES([ROCKCHIP_VPU], [rockchip_vpu])
+m4trace:configure.ac:613: -1- m4_pattern_allow([^ROCKCHIP_VPU_CFLAGS$])
+m4trace:configure.ac:613: -1- m4_pattern_allow([^ROCKCHIP_VPU_LIBS$])
+m4trace:configure.ac:613: -1- PKG_CHECK_EXISTS([rockchip_vpu], [pkg_cv_[]ROCKCHIP_VPU_CFLAGS=`$PKG_CONFIG --[]cflags "rockchip_vpu" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:613: -1- PKG_CHECK_EXISTS([rockchip_vpu], [pkg_cv_[]ROCKCHIP_VPU_LIBS=`$PKG_CONFIG --[]libs "rockchip_vpu" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:613: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:614: -1- PKG_CHECK_MODULES([DRM], [libdrm], [HAVE_KMS=yes], [HAVE_KMS=no])
+m4trace:configure.ac:614: -1- m4_pattern_allow([^DRM_CFLAGS$])
+m4trace:configure.ac:614: -1- m4_pattern_allow([^DRM_LIBS$])
+m4trace:configure.ac:614: -1- PKG_CHECK_EXISTS([libdrm], [pkg_cv_[]DRM_CFLAGS=`$PKG_CONFIG --[]cflags "libdrm" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:614: -1- PKG_CHECK_EXISTS([libdrm], [pkg_cv_[]DRM_LIBS=`$PKG_CONFIG --[]libs "libdrm" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:614: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:629: -1- AG_GST_CHECK_FEATURE([ALSA], [ALSA], [alsa], [
   PKG_CHECK_MODULES(ALSA, alsa >= 0.9.1, [
     HAVE_ALSA="yes"
     AC_SUBST(ALSA_CFLAGS)
@@ -9656,107 +9674,107 @@ m4trace:configure.ac:622: -1- AG_GST_CHECK_FEATURE([ALSA], [ALSA], [alsa], [
     AM_PATH_ALSA(0.9.1, HAVE_ALSA="yes", HAVE_ALSA="no")
   ])
 ])
-m4trace:configure.ac:622: -1- PKG_CHECK_MODULES([ALSA], [alsa >= 0.9.1], [
+m4trace:configure.ac:629: -1- PKG_CHECK_MODULES([ALSA], [alsa >= 0.9.1], [
     HAVE_ALSA="yes"
     AC_SUBST(ALSA_CFLAGS)
     AC_SUBST(ALSA_LIBS)
   ], [
     AM_PATH_ALSA(0.9.1, HAVE_ALSA="yes", HAVE_ALSA="no")
   ])
-m4trace:configure.ac:622: -1- m4_pattern_allow([^ALSA_CFLAGS$])
-m4trace:configure.ac:622: -1- m4_pattern_allow([^ALSA_LIBS$])
-m4trace:configure.ac:622: -1- PKG_CHECK_EXISTS([alsa >= 0.9.1], [pkg_cv_[]ALSA_CFLAGS=`$PKG_CONFIG --[]cflags "alsa >= 0.9.1" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:622: -1- PKG_CHECK_EXISTS([alsa >= 0.9.1], [pkg_cv_[]ALSA_LIBS=`$PKG_CONFIG --[]libs "alsa >= 0.9.1" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:622: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:622: -1- AM_PATH_ALSA([0.9.1], [HAVE_ALSA="yes"], [HAVE_ALSA="no"])
-m4trace:configure.ac:622: -2- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
+m4trace:configure.ac:629: -1- m4_pattern_allow([^ALSA_CFLAGS$])
+m4trace:configure.ac:629: -1- m4_pattern_allow([^ALSA_LIBS$])
+m4trace:configure.ac:629: -1- PKG_CHECK_EXISTS([alsa >= 0.9.1], [pkg_cv_[]ALSA_CFLAGS=`$PKG_CONFIG --[]cflags "alsa >= 0.9.1" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:629: -1- PKG_CHECK_EXISTS([alsa >= 0.9.1], [pkg_cv_[]ALSA_LIBS=`$PKG_CONFIG --[]libs "alsa >= 0.9.1" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:629: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:629: -1- AM_PATH_ALSA([0.9.1], [HAVE_ALSA="yes"], [HAVE_ALSA="no"])
+m4trace:configure.ac:629: -2- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../../lib/autoconf/general.m4:207: AC_HELP_STRING is expanded from...
 m4/gst-alsa.m4:15: AM_PATH_ALSA is expanded from...
 common/m4/pkg.m4:104: PKG_CHECK_MODULES is expanded from...
 common/m4/gst-feature.m4:49: AG_GST_CHECK_FEATURE is expanded from...
-configure.ac:622: the top level])
-m4trace:configure.ac:622: -2- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
+configure.ac:629: the top level])
+m4trace:configure.ac:629: -2- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../../lib/autoconf/general.m4:207: AC_HELP_STRING is expanded from...
 m4/gst-alsa.m4:15: AM_PATH_ALSA is expanded from...
 common/m4/pkg.m4:104: PKG_CHECK_MODULES is expanded from...
 common/m4/gst-feature.m4:49: AG_GST_CHECK_FEATURE is expanded from...
-configure.ac:622: the top level])
-m4trace:configure.ac:622: -1- _m4_warn([obsolete], [The macro `AC_LANG_SAVE' is obsolete.
+configure.ac:629: the top level])
+m4trace:configure.ac:629: -1- _m4_warn([obsolete], [The macro `AC_LANG_SAVE' is obsolete.
 You should run autoupdate.], [../../lib/autoconf/lang.m4:125: AC_LANG_SAVE is expanded from...
 m4/gst-alsa.m4:15: AM_PATH_ALSA is expanded from...
 common/m4/pkg.m4:104: PKG_CHECK_MODULES is expanded from...
 common/m4/gst-feature.m4:49: AG_GST_CHECK_FEATURE is expanded from...
-configure.ac:622: the top level])
-m4trace:configure.ac:622: -1- _m4_warn([obsolete], [The macro `AC_LANG_C' is obsolete.
+configure.ac:629: the top level])
+m4trace:configure.ac:629: -1- _m4_warn([obsolete], [The macro `AC_LANG_C' is obsolete.
 You should run autoupdate.], [../../lib/autoconf/c.m4:72: AC_LANG_C is expanded from...
 m4/gst-alsa.m4:15: AM_PATH_ALSA is expanded from...
 common/m4/pkg.m4:104: PKG_CHECK_MODULES is expanded from...
 common/m4/gst-feature.m4:49: AG_GST_CHECK_FEATURE is expanded from...
-configure.ac:622: the top level])
-m4trace:configure.ac:622: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
+configure.ac:629: the top level])
+m4trace:configure.ac:629: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
 You should run autoupdate.], [../../lib/autoconf/general.m4:2625: AC_TRY_COMPILE is expanded from...
 m4/gst-alsa.m4:15: AM_PATH_ALSA is expanded from...
 common/m4/pkg.m4:104: PKG_CHECK_MODULES is expanded from...
 common/m4/gst-feature.m4:49: AG_GST_CHECK_FEATURE is expanded from...
-configure.ac:622: the top level])
-m4trace:configure.ac:622: -1- _m4_warn([obsolete], [The macro `AC_LANG_RESTORE' is obsolete.
+configure.ac:629: the top level])
+m4trace:configure.ac:629: -1- _m4_warn([obsolete], [The macro `AC_LANG_RESTORE' is obsolete.
 You should run autoupdate.], [../../lib/autoconf/lang.m4:134: AC_LANG_RESTORE is expanded from...
 m4/gst-alsa.m4:15: AM_PATH_ALSA is expanded from...
 common/m4/pkg.m4:104: PKG_CHECK_MODULES is expanded from...
 common/m4/gst-feature.m4:49: AG_GST_CHECK_FEATURE is expanded from...
-configure.ac:622: the top level])
-m4trace:configure.ac:622: -1- m4_pattern_allow([^HAVE_LIBASOUND$])
-m4trace:configure.ac:622: -1- m4_pattern_allow([^ALSA_CFLAGS$])
-m4trace:configure.ac:622: -1- m4_pattern_allow([^ALSA_LIBS$])
-m4trace:configure.ac:622: -1- AM_PATH_ALSA([0.9.1], [HAVE_ALSA="yes"], [HAVE_ALSA="no"])
-m4trace:configure.ac:622: -2- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
+configure.ac:629: the top level])
+m4trace:configure.ac:629: -1- m4_pattern_allow([^HAVE_LIBASOUND$])
+m4trace:configure.ac:629: -1- m4_pattern_allow([^ALSA_CFLAGS$])
+m4trace:configure.ac:629: -1- m4_pattern_allow([^ALSA_LIBS$])
+m4trace:configure.ac:629: -1- AM_PATH_ALSA([0.9.1], [HAVE_ALSA="yes"], [HAVE_ALSA="no"])
+m4trace:configure.ac:629: -2- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../../lib/autoconf/general.m4:207: AC_HELP_STRING is expanded from...
 m4/gst-alsa.m4:15: AM_PATH_ALSA is expanded from...
 common/m4/pkg.m4:104: PKG_CHECK_MODULES is expanded from...
 common/m4/gst-feature.m4:49: AG_GST_CHECK_FEATURE is expanded from...
-configure.ac:622: the top level])
-m4trace:configure.ac:622: -2- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
+configure.ac:629: the top level])
+m4trace:configure.ac:629: -2- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../../lib/autoconf/general.m4:207: AC_HELP_STRING is expanded from...
 m4/gst-alsa.m4:15: AM_PATH_ALSA is expanded from...
 common/m4/pkg.m4:104: PKG_CHECK_MODULES is expanded from...
 common/m4/gst-feature.m4:49: AG_GST_CHECK_FEATURE is expanded from...
-configure.ac:622: the top level])
-m4trace:configure.ac:622: -1- _m4_warn([obsolete], [The macro `AC_LANG_SAVE' is obsolete.
+configure.ac:629: the top level])
+m4trace:configure.ac:629: -1- _m4_warn([obsolete], [The macro `AC_LANG_SAVE' is obsolete.
 You should run autoupdate.], [../../lib/autoconf/lang.m4:125: AC_LANG_SAVE is expanded from...
 m4/gst-alsa.m4:15: AM_PATH_ALSA is expanded from...
 common/m4/pkg.m4:104: PKG_CHECK_MODULES is expanded from...
 common/m4/gst-feature.m4:49: AG_GST_CHECK_FEATURE is expanded from...
-configure.ac:622: the top level])
-m4trace:configure.ac:622: -1- _m4_warn([obsolete], [The macro `AC_LANG_C' is obsolete.
+configure.ac:629: the top level])
+m4trace:configure.ac:629: -1- _m4_warn([obsolete], [The macro `AC_LANG_C' is obsolete.
 You should run autoupdate.], [../../lib/autoconf/c.m4:72: AC_LANG_C is expanded from...
 m4/gst-alsa.m4:15: AM_PATH_ALSA is expanded from...
 common/m4/pkg.m4:104: PKG_CHECK_MODULES is expanded from...
 common/m4/gst-feature.m4:49: AG_GST_CHECK_FEATURE is expanded from...
-configure.ac:622: the top level])
-m4trace:configure.ac:622: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
+configure.ac:629: the top level])
+m4trace:configure.ac:629: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
 You should run autoupdate.], [../../lib/autoconf/general.m4:2625: AC_TRY_COMPILE is expanded from...
 m4/gst-alsa.m4:15: AM_PATH_ALSA is expanded from...
 common/m4/pkg.m4:104: PKG_CHECK_MODULES is expanded from...
 common/m4/gst-feature.m4:49: AG_GST_CHECK_FEATURE is expanded from...
-configure.ac:622: the top level])
-m4trace:configure.ac:622: -1- _m4_warn([obsolete], [The macro `AC_LANG_RESTORE' is obsolete.
+configure.ac:629: the top level])
+m4trace:configure.ac:629: -1- _m4_warn([obsolete], [The macro `AC_LANG_RESTORE' is obsolete.
 You should run autoupdate.], [../../lib/autoconf/lang.m4:134: AC_LANG_RESTORE is expanded from...
 m4/gst-alsa.m4:15: AM_PATH_ALSA is expanded from...
 common/m4/pkg.m4:104: PKG_CHECK_MODULES is expanded from...
 common/m4/gst-feature.m4:49: AG_GST_CHECK_FEATURE is expanded from...
-configure.ac:622: the top level])
-m4trace:configure.ac:622: -1- m4_pattern_allow([^HAVE_LIBASOUND$])
-m4trace:configure.ac:622: -1- m4_pattern_allow([^ALSA_CFLAGS$])
-m4trace:configure.ac:622: -1- m4_pattern_allow([^ALSA_LIBS$])
-m4trace:configure.ac:622: -1- m4_pattern_allow([^ALSA_CFLAGS$])
-m4trace:configure.ac:622: -1- m4_pattern_allow([^ALSA_LIBS$])
-m4trace:configure.ac:622: -1- m4_pattern_allow([^HAVE_ALSA$])
-m4trace:configure.ac:622: -1- AM_CONDITIONAL([USE_ALSA], [test x$USE_ALSA = xyes])
-m4trace:configure.ac:622: -1- m4_pattern_allow([^USE_ALSA_TRUE$])
-m4trace:configure.ac:622: -1- m4_pattern_allow([^USE_ALSA_FALSE$])
-m4trace:configure.ac:622: -1- _AM_SUBST_NOTMAKE([USE_ALSA_TRUE])
-m4trace:configure.ac:622: -1- _AM_SUBST_NOTMAKE([USE_ALSA_FALSE])
-m4trace:configure.ac:635: -1- AG_GST_CHECK_FEATURE([CDPARANOIA], [CDParanoia], [cdparanoia], [
+configure.ac:629: the top level])
+m4trace:configure.ac:629: -1- m4_pattern_allow([^HAVE_LIBASOUND$])
+m4trace:configure.ac:629: -1- m4_pattern_allow([^ALSA_CFLAGS$])
+m4trace:configure.ac:629: -1- m4_pattern_allow([^ALSA_LIBS$])
+m4trace:configure.ac:629: -1- m4_pattern_allow([^ALSA_CFLAGS$])
+m4trace:configure.ac:629: -1- m4_pattern_allow([^ALSA_LIBS$])
+m4trace:configure.ac:629: -1- m4_pattern_allow([^HAVE_ALSA$])
+m4trace:configure.ac:629: -1- AM_CONDITIONAL([USE_ALSA], [test x$USE_ALSA = xyes])
+m4trace:configure.ac:629: -1- m4_pattern_allow([^USE_ALSA_TRUE$])
+m4trace:configure.ac:629: -1- m4_pattern_allow([^USE_ALSA_FALSE$])
+m4trace:configure.ac:629: -1- _AM_SUBST_NOTMAKE([USE_ALSA_TRUE])
+m4trace:configure.ac:629: -1- _AM_SUBST_NOTMAKE([USE_ALSA_FALSE])
+m4trace:configure.ac:642: -1- AG_GST_CHECK_FEATURE([CDPARANOIA], [CDParanoia], [cdparanoia], [
   PKG_CHECK_MODULES(CDPARANOIA, cdparanoia-3 >= 10.2, [
     HAVE_CDPARANOIA="yes"
   ], [
@@ -9792,7 +9810,7 @@ m4trace:configure.ac:635: -1- AG_GST_CHECK_FEATURE([CDPARANOIA], [CDParanoia], [
     AC_SUBST(CDPARANOIA_LIBS)
   ])
 ])
-m4trace:configure.ac:635: -1- PKG_CHECK_MODULES([CDPARANOIA], [cdparanoia-3 >= 10.2], [
+m4trace:configure.ac:642: -1- PKG_CHECK_MODULES([CDPARANOIA], [cdparanoia-3 >= 10.2], [
     HAVE_CDPARANOIA="yes"
   ], [
     AG_GST_CHECK_LIBHEADER(CDPARANOIA, cdda_interface,
@@ -9826,38 +9844,38 @@ m4trace:configure.ac:635: -1- PKG_CHECK_MODULES([CDPARANOIA], [cdparanoia-3 >= 1
 
     AC_SUBST(CDPARANOIA_LIBS)
   ])
-m4trace:configure.ac:635: -1- m4_pattern_allow([^CDPARANOIA_CFLAGS$])
-m4trace:configure.ac:635: -1- m4_pattern_allow([^CDPARANOIA_LIBS$])
-m4trace:configure.ac:635: -1- PKG_CHECK_EXISTS([cdparanoia-3 >= 10.2], [pkg_cv_[]CDPARANOIA_CFLAGS=`$PKG_CONFIG --[]cflags "cdparanoia-3 >= 10.2" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:635: -1- PKG_CHECK_EXISTS([cdparanoia-3 >= 10.2], [pkg_cv_[]CDPARANOIA_LIBS=`$PKG_CONFIG --[]libs "cdparanoia-3 >= 10.2" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:635: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:635: -1- AG_GST_CHECK_LIBHEADER([CDPARANOIA], [cdda_interface], [cdda_open], [-lm], [cdda_interface.h], [CDPARANOIA_LIBS="-lcdda_interface -lcdda_paranoia"
+m4trace:configure.ac:642: -1- m4_pattern_allow([^CDPARANOIA_CFLAGS$])
+m4trace:configure.ac:642: -1- m4_pattern_allow([^CDPARANOIA_LIBS$])
+m4trace:configure.ac:642: -1- PKG_CHECK_EXISTS([cdparanoia-3 >= 10.2], [pkg_cv_[]CDPARANOIA_CFLAGS=`$PKG_CONFIG --[]cflags "cdparanoia-3 >= 10.2" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:642: -1- PKG_CHECK_EXISTS([cdparanoia-3 >= 10.2], [pkg_cv_[]CDPARANOIA_LIBS=`$PKG_CONFIG --[]libs "cdparanoia-3 >= 10.2" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:642: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:642: -1- AG_GST_CHECK_LIBHEADER([CDPARANOIA], [cdda_interface], [cdda_open], [-lm], [cdda_interface.h], [CDPARANOIA_LIBS="-lcdda_interface -lcdda_paranoia"
                         HEADER_DIR="no"
                         FOUND_CDPARANOIA="yes"])
-m4trace:configure.ac:635: -1- m4_pattern_allow([^HAVE_CDPARANOIA$])
-m4trace:configure.ac:635: -1- AG_GST_CHECK_LIBHEADER([CDPARANOIA], [cdda_interface], [cdda_open], [-lm], [cdda/cdda_interface.h], [CDPARANOIA_LIBS="-lcdda_interface -lcdda_paranoia"
+m4trace:configure.ac:642: -1- m4_pattern_allow([^HAVE_CDPARANOIA$])
+m4trace:configure.ac:642: -1- AG_GST_CHECK_LIBHEADER([CDPARANOIA], [cdda_interface], [cdda_open], [-lm], [cdda/cdda_interface.h], [CDPARANOIA_LIBS="-lcdda_interface -lcdda_paranoia"
                           HEADER_DIR="yes"
                           FOUND_CDPARANOIA="yes"])
-m4trace:configure.ac:635: -1- m4_pattern_allow([^HAVE_CDPARANOIA$])
-m4trace:configure.ac:635: -1- m4_pattern_allow([^CDPARANOIA_HEADERS_IN_DIR$])
-m4trace:configure.ac:635: -1- m4_pattern_allow([^CDPARANOIA_LIBS$])
-m4trace:configure.ac:635: -1- AG_GST_CHECK_LIBHEADER([CDPARANOIA], [cdda_interface], [cdda_open], [-lm], [cdda_interface.h], [CDPARANOIA_LIBS="-lcdda_interface -lcdda_paranoia"
+m4trace:configure.ac:642: -1- m4_pattern_allow([^HAVE_CDPARANOIA$])
+m4trace:configure.ac:642: -1- m4_pattern_allow([^CDPARANOIA_HEADERS_IN_DIR$])
+m4trace:configure.ac:642: -1- m4_pattern_allow([^CDPARANOIA_LIBS$])
+m4trace:configure.ac:642: -1- AG_GST_CHECK_LIBHEADER([CDPARANOIA], [cdda_interface], [cdda_open], [-lm], [cdda_interface.h], [CDPARANOIA_LIBS="-lcdda_interface -lcdda_paranoia"
                         HEADER_DIR="no"
                         FOUND_CDPARANOIA="yes"])
-m4trace:configure.ac:635: -1- m4_pattern_allow([^HAVE_CDPARANOIA$])
-m4trace:configure.ac:635: -1- AG_GST_CHECK_LIBHEADER([CDPARANOIA], [cdda_interface], [cdda_open], [-lm], [cdda/cdda_interface.h], [CDPARANOIA_LIBS="-lcdda_interface -lcdda_paranoia"
+m4trace:configure.ac:642: -1- m4_pattern_allow([^HAVE_CDPARANOIA$])
+m4trace:configure.ac:642: -1- AG_GST_CHECK_LIBHEADER([CDPARANOIA], [cdda_interface], [cdda_open], [-lm], [cdda/cdda_interface.h], [CDPARANOIA_LIBS="-lcdda_interface -lcdda_paranoia"
                           HEADER_DIR="yes"
                           FOUND_CDPARANOIA="yes"])
-m4trace:configure.ac:635: -1- m4_pattern_allow([^HAVE_CDPARANOIA$])
-m4trace:configure.ac:635: -1- m4_pattern_allow([^CDPARANOIA_HEADERS_IN_DIR$])
-m4trace:configure.ac:635: -1- m4_pattern_allow([^CDPARANOIA_LIBS$])
-m4trace:configure.ac:635: -1- m4_pattern_allow([^HAVE_CDPARANOIA$])
-m4trace:configure.ac:635: -1- AM_CONDITIONAL([USE_CDPARANOIA], [test x$USE_CDPARANOIA = xyes])
-m4trace:configure.ac:635: -1- m4_pattern_allow([^USE_CDPARANOIA_TRUE$])
-m4trace:configure.ac:635: -1- m4_pattern_allow([^USE_CDPARANOIA_FALSE$])
-m4trace:configure.ac:635: -1- _AM_SUBST_NOTMAKE([USE_CDPARANOIA_TRUE])
-m4trace:configure.ac:635: -1- _AM_SUBST_NOTMAKE([USE_CDPARANOIA_FALSE])
-m4trace:configure.ac:678: -1- AG_GST_CHECK_FEATURE([IVORBIS], [integer vorbis plug-in], [ivorbisdec], [
+m4trace:configure.ac:642: -1- m4_pattern_allow([^HAVE_CDPARANOIA$])
+m4trace:configure.ac:642: -1- m4_pattern_allow([^CDPARANOIA_HEADERS_IN_DIR$])
+m4trace:configure.ac:642: -1- m4_pattern_allow([^CDPARANOIA_LIBS$])
+m4trace:configure.ac:642: -1- m4_pattern_allow([^HAVE_CDPARANOIA$])
+m4trace:configure.ac:642: -1- AM_CONDITIONAL([USE_CDPARANOIA], [test x$USE_CDPARANOIA = xyes])
+m4trace:configure.ac:642: -1- m4_pattern_allow([^USE_CDPARANOIA_TRUE$])
+m4trace:configure.ac:642: -1- m4_pattern_allow([^USE_CDPARANOIA_FALSE$])
+m4trace:configure.ac:642: -1- _AM_SUBST_NOTMAKE([USE_CDPARANOIA_TRUE])
+m4trace:configure.ac:642: -1- _AM_SUBST_NOTMAKE([USE_CDPARANOIA_FALSE])
+m4trace:configure.ac:685: -1- AG_GST_CHECK_FEATURE([IVORBIS], [integer vorbis plug-in], [ivorbisdec], [
   AG_GST_PKG_CHECK_MODULES(IVORBIS, vorbisidec)
   if test $HAVE_IVORBIS = no
   then
@@ -9880,8 +9898,8 @@ m4trace:configure.ac:678: -1- AG_GST_CHECK_FEATURE([IVORBIS], [integer vorbis pl
       USE_TREMOLO=no)
   fi
 ])
-m4trace:configure.ac:678: -1- AG_GST_PKG_CHECK_MODULES([IVORBIS], [vorbisidec])
-m4trace:configure.ac:678: -1- PKG_CHECK_MODULES([IVORBIS], [$which], [
+m4trace:configure.ac:685: -1- AG_GST_PKG_CHECK_MODULES([IVORBIS], [vorbisidec])
+m4trace:configure.ac:685: -1- PKG_CHECK_MODULES([IVORBIS], [$which], [
       HAVE_[IVORBIS]="yes"
     ], [
       HAVE_[IVORBIS]="no"
@@ -9891,21 +9909,21 @@ m4trace:configure.ac:678: -1- PKG_CHECK_MODULES([IVORBIS], [$which], [
         AC_MSG_NOTICE($[IVORBIS]_PKG_ERRORS)
       fi
     ])
-m4trace:configure.ac:678: -1- m4_pattern_allow([^IVORBIS_CFLAGS$])
-m4trace:configure.ac:678: -1- m4_pattern_allow([^IVORBIS_LIBS$])
-m4trace:configure.ac:678: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]IVORBIS_CFLAGS=`$PKG_CONFIG --[]cflags "$which" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:678: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]IVORBIS_LIBS=`$PKG_CONFIG --[]libs "$which" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:678: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:678: -1- m4_pattern_allow([^IVORBIS_LIBS$])
-m4trace:configure.ac:678: -1- m4_pattern_allow([^IVORBIS_CFLAGS$])
-m4trace:configure.ac:678: -2- m4_pattern_allow([^USE_TREMOLO$])
-m4trace:configure.ac:678: -1- m4_pattern_allow([^HAVE_IVORBIS$])
-m4trace:configure.ac:678: -1- AM_CONDITIONAL([USE_IVORBIS], [test x$USE_IVORBIS = xyes])
-m4trace:configure.ac:678: -1- m4_pattern_allow([^USE_IVORBIS_TRUE$])
-m4trace:configure.ac:678: -1- m4_pattern_allow([^USE_IVORBIS_FALSE$])
-m4trace:configure.ac:678: -1- _AM_SUBST_NOTMAKE([USE_IVORBIS_TRUE])
-m4trace:configure.ac:678: -1- _AM_SUBST_NOTMAKE([USE_IVORBIS_FALSE])
-m4trace:configure.ac:704: -1- AG_GST_CHECK_FEATURE([LIBVISUAL], [libvisual visualization library], [libvisual], [
+m4trace:configure.ac:685: -1- m4_pattern_allow([^IVORBIS_CFLAGS$])
+m4trace:configure.ac:685: -1- m4_pattern_allow([^IVORBIS_LIBS$])
+m4trace:configure.ac:685: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]IVORBIS_CFLAGS=`$PKG_CONFIG --[]cflags "$which" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:685: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]IVORBIS_LIBS=`$PKG_CONFIG --[]libs "$which" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:685: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:685: -1- m4_pattern_allow([^IVORBIS_LIBS$])
+m4trace:configure.ac:685: -1- m4_pattern_allow([^IVORBIS_CFLAGS$])
+m4trace:configure.ac:685: -2- m4_pattern_allow([^USE_TREMOLO$])
+m4trace:configure.ac:685: -1- m4_pattern_allow([^HAVE_IVORBIS$])
+m4trace:configure.ac:685: -1- AM_CONDITIONAL([USE_IVORBIS], [test x$USE_IVORBIS = xyes])
+m4trace:configure.ac:685: -1- m4_pattern_allow([^USE_IVORBIS_TRUE$])
+m4trace:configure.ac:685: -1- m4_pattern_allow([^USE_IVORBIS_FALSE$])
+m4trace:configure.ac:685: -1- _AM_SUBST_NOTMAKE([USE_IVORBIS_TRUE])
+m4trace:configure.ac:685: -1- _AM_SUBST_NOTMAKE([USE_IVORBIS_FALSE])
+m4trace:configure.ac:711: -1- AG_GST_CHECK_FEATURE([LIBVISUAL], [libvisual visualization library], [libvisual], [
   AG_GST_PKG_CHECK_MODULES(LIBVISUAL, libvisual-0.4 >= 0.4.0)
   if test x$HAVE_LIBVISUAL = xyes; then
     LIBVIS_PLUGINSDIR="`$PKG_CONFIG --variable=pluginsbasedir libvisual-0.4`"
@@ -9917,8 +9935,8 @@ m4trace:configure.ac:704: -1- AG_GST_CHECK_FEATURE([LIBVISUAL], [libvisual visua
         [directory in which the detected libvisual's plugins are located])
   fi
 ])
-m4trace:configure.ac:704: -1- AG_GST_PKG_CHECK_MODULES([LIBVISUAL], [libvisual-0.4 >= 0.4.0])
-m4trace:configure.ac:704: -1- PKG_CHECK_MODULES([LIBVISUAL], [$which], [
+m4trace:configure.ac:711: -1- AG_GST_PKG_CHECK_MODULES([LIBVISUAL], [libvisual-0.4 >= 0.4.0])
+m4trace:configure.ac:711: -1- PKG_CHECK_MODULES([LIBVISUAL], [$which], [
       HAVE_[LIBVISUAL]="yes"
     ], [
       HAVE_[LIBVISUAL]="no"
@@ -9928,23 +9946,23 @@ m4trace:configure.ac:704: -1- PKG_CHECK_MODULES([LIBVISUAL], [$which], [
         AC_MSG_NOTICE($[LIBVISUAL]_PKG_ERRORS)
       fi
     ])
-m4trace:configure.ac:704: -1- m4_pattern_allow([^LIBVISUAL_CFLAGS$])
-m4trace:configure.ac:704: -1- m4_pattern_allow([^LIBVISUAL_LIBS$])
-m4trace:configure.ac:704: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]LIBVISUAL_CFLAGS=`$PKG_CONFIG --[]cflags "$which" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:704: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]LIBVISUAL_LIBS=`$PKG_CONFIG --[]libs "$which" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:704: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:704: -1- m4_pattern_allow([^LIBVISUAL_PLUGINSBASEDIR$])
-m4trace:configure.ac:704: -1- m4_pattern_allow([^HAVE_LIBVISUAL$])
-m4trace:configure.ac:704: -1- AM_CONDITIONAL([USE_LIBVISUAL], [test x$USE_LIBVISUAL = xyes])
-m4trace:configure.ac:704: -1- m4_pattern_allow([^USE_LIBVISUAL_TRUE$])
-m4trace:configure.ac:704: -1- m4_pattern_allow([^USE_LIBVISUAL_FALSE$])
-m4trace:configure.ac:704: -1- _AM_SUBST_NOTMAKE([USE_LIBVISUAL_TRUE])
-m4trace:configure.ac:704: -1- _AM_SUBST_NOTMAKE([USE_LIBVISUAL_FALSE])
-m4trace:configure.ac:719: -1- AG_GST_CHECK_FEATURE([OGG], [Xiph Ogg library], [ogg], [
+m4trace:configure.ac:711: -1- m4_pattern_allow([^LIBVISUAL_CFLAGS$])
+m4trace:configure.ac:711: -1- m4_pattern_allow([^LIBVISUAL_LIBS$])
+m4trace:configure.ac:711: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]LIBVISUAL_CFLAGS=`$PKG_CONFIG --[]cflags "$which" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:711: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]LIBVISUAL_LIBS=`$PKG_CONFIG --[]libs "$which" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:711: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:711: -1- m4_pattern_allow([^LIBVISUAL_PLUGINSBASEDIR$])
+m4trace:configure.ac:711: -1- m4_pattern_allow([^HAVE_LIBVISUAL$])
+m4trace:configure.ac:711: -1- AM_CONDITIONAL([USE_LIBVISUAL], [test x$USE_LIBVISUAL = xyes])
+m4trace:configure.ac:711: -1- m4_pattern_allow([^USE_LIBVISUAL_TRUE$])
+m4trace:configure.ac:711: -1- m4_pattern_allow([^USE_LIBVISUAL_FALSE$])
+m4trace:configure.ac:711: -1- _AM_SUBST_NOTMAKE([USE_LIBVISUAL_TRUE])
+m4trace:configure.ac:711: -1- _AM_SUBST_NOTMAKE([USE_LIBVISUAL_FALSE])
+m4trace:configure.ac:726: -1- AG_GST_CHECK_FEATURE([OGG], [Xiph Ogg library], [ogg], [
   AG_GST_PKG_CHECK_MODULES(OGG, ogg >= 1.0)
 ])
-m4trace:configure.ac:719: -1- AG_GST_PKG_CHECK_MODULES([OGG], [ogg >= 1.0])
-m4trace:configure.ac:719: -1- PKG_CHECK_MODULES([OGG], [$which], [
+m4trace:configure.ac:726: -1- AG_GST_PKG_CHECK_MODULES([OGG], [ogg >= 1.0])
+m4trace:configure.ac:726: -1- PKG_CHECK_MODULES([OGG], [$which], [
       HAVE_[OGG]="yes"
     ], [
       HAVE_[OGG]="no"
@@ -9954,18 +9972,18 @@ m4trace:configure.ac:719: -1- PKG_CHECK_MODULES([OGG], [$which], [
         AC_MSG_NOTICE($[OGG]_PKG_ERRORS)
       fi
     ])
-m4trace:configure.ac:719: -1- m4_pattern_allow([^OGG_CFLAGS$])
-m4trace:configure.ac:719: -1- m4_pattern_allow([^OGG_LIBS$])
-m4trace:configure.ac:719: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]OGG_CFLAGS=`$PKG_CONFIG --[]cflags "$which" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:719: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]OGG_LIBS=`$PKG_CONFIG --[]libs "$which" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:719: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:719: -1- m4_pattern_allow([^HAVE_OGG$])
-m4trace:configure.ac:719: -1- AM_CONDITIONAL([USE_OGG], [test x$USE_OGG = xyes])
-m4trace:configure.ac:719: -1- m4_pattern_allow([^USE_OGG_TRUE$])
-m4trace:configure.ac:719: -1- m4_pattern_allow([^USE_OGG_FALSE$])
-m4trace:configure.ac:719: -1- _AM_SUBST_NOTMAKE([USE_OGG_TRUE])
-m4trace:configure.ac:719: -1- _AM_SUBST_NOTMAKE([USE_OGG_FALSE])
-m4trace:configure.ac:725: -1- AG_GST_CHECK_FEATURE([OPUS], [opus], [opus], [
+m4trace:configure.ac:726: -1- m4_pattern_allow([^OGG_CFLAGS$])
+m4trace:configure.ac:726: -1- m4_pattern_allow([^OGG_LIBS$])
+m4trace:configure.ac:726: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]OGG_CFLAGS=`$PKG_CONFIG --[]cflags "$which" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:726: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]OGG_LIBS=`$PKG_CONFIG --[]libs "$which" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:726: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:726: -1- m4_pattern_allow([^HAVE_OGG$])
+m4trace:configure.ac:726: -1- AM_CONDITIONAL([USE_OGG], [test x$USE_OGG = xyes])
+m4trace:configure.ac:726: -1- m4_pattern_allow([^USE_OGG_TRUE$])
+m4trace:configure.ac:726: -1- m4_pattern_allow([^USE_OGG_FALSE$])
+m4trace:configure.ac:726: -1- _AM_SUBST_NOTMAKE([USE_OGG_TRUE])
+m4trace:configure.ac:726: -1- _AM_SUBST_NOTMAKE([USE_OGG_FALSE])
+m4trace:configure.ac:732: -1- AG_GST_CHECK_FEATURE([OPUS], [opus], [opus], [
   PKG_CHECK_MODULES(OPUS, opus >= 0.9.4, [
           AC_DEFINE([HAVE_OPUS], 1, [Define if Opus >= 0.9.4 is installed])
           HAVE_OPUS="yes"
@@ -9975,31 +9993,31 @@ m4trace:configure.ac:725: -1- AG_GST_CHECK_FEATURE([OPUS], [opus], [opus], [
   AC_SUBST(OPUS_CFLAGS)
   AC_SUBST(OPUS_LIBS)
 ])
-m4trace:configure.ac:725: -1- PKG_CHECK_MODULES([OPUS], [opus >= 0.9.4], [
+m4trace:configure.ac:732: -1- PKG_CHECK_MODULES([OPUS], [opus >= 0.9.4], [
           AC_DEFINE([HAVE_OPUS], 1, [Define if Opus >= 0.9.4 is installed])
           HAVE_OPUS="yes"
   ], [
           HAVE_OPUS="no"
   ])
-m4trace:configure.ac:725: -1- m4_pattern_allow([^OPUS_CFLAGS$])
-m4trace:configure.ac:725: -1- m4_pattern_allow([^OPUS_LIBS$])
-m4trace:configure.ac:725: -1- PKG_CHECK_EXISTS([opus >= 0.9.4], [pkg_cv_[]OPUS_CFLAGS=`$PKG_CONFIG --[]cflags "opus >= 0.9.4" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:725: -1- PKG_CHECK_EXISTS([opus >= 0.9.4], [pkg_cv_[]OPUS_LIBS=`$PKG_CONFIG --[]libs "opus >= 0.9.4" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:725: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:725: -1- m4_pattern_allow([^HAVE_OPUS$])
-m4trace:configure.ac:725: -1- m4_pattern_allow([^OPUS_CFLAGS$])
-m4trace:configure.ac:725: -1- m4_pattern_allow([^OPUS_LIBS$])
-m4trace:configure.ac:725: -1- m4_pattern_allow([^HAVE_OPUS$])
-m4trace:configure.ac:725: -1- AM_CONDITIONAL([USE_OPUS], [test x$USE_OPUS = xyes])
-m4trace:configure.ac:725: -1- m4_pattern_allow([^USE_OPUS_TRUE$])
-m4trace:configure.ac:725: -1- m4_pattern_allow([^USE_OPUS_FALSE$])
-m4trace:configure.ac:725: -1- _AM_SUBST_NOTMAKE([USE_OPUS_TRUE])
-m4trace:configure.ac:725: -1- _AM_SUBST_NOTMAKE([USE_OPUS_FALSE])
-m4trace:configure.ac:738: -1- AG_GST_CHECK_FEATURE([PANGO], [Pango font rendering], [pango], [
+m4trace:configure.ac:732: -1- m4_pattern_allow([^OPUS_CFLAGS$])
+m4trace:configure.ac:732: -1- m4_pattern_allow([^OPUS_LIBS$])
+m4trace:configure.ac:732: -1- PKG_CHECK_EXISTS([opus >= 0.9.4], [pkg_cv_[]OPUS_CFLAGS=`$PKG_CONFIG --[]cflags "opus >= 0.9.4" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:732: -1- PKG_CHECK_EXISTS([opus >= 0.9.4], [pkg_cv_[]OPUS_LIBS=`$PKG_CONFIG --[]libs "opus >= 0.9.4" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:732: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:732: -1- m4_pattern_allow([^HAVE_OPUS$])
+m4trace:configure.ac:732: -1- m4_pattern_allow([^OPUS_CFLAGS$])
+m4trace:configure.ac:732: -1- m4_pattern_allow([^OPUS_LIBS$])
+m4trace:configure.ac:732: -1- m4_pattern_allow([^HAVE_OPUS$])
+m4trace:configure.ac:732: -1- AM_CONDITIONAL([USE_OPUS], [test x$USE_OPUS = xyes])
+m4trace:configure.ac:732: -1- m4_pattern_allow([^USE_OPUS_TRUE$])
+m4trace:configure.ac:732: -1- m4_pattern_allow([^USE_OPUS_FALSE$])
+m4trace:configure.ac:732: -1- _AM_SUBST_NOTMAKE([USE_OPUS_TRUE])
+m4trace:configure.ac:732: -1- _AM_SUBST_NOTMAKE([USE_OPUS_FALSE])
+m4trace:configure.ac:745: -1- AG_GST_CHECK_FEATURE([PANGO], [Pango font rendering], [pango], [
   AG_GST_PKG_CHECK_MODULES(PANGO, pango >= 1.22.0  pangocairo >= 1.22.0)
 ])
-m4trace:configure.ac:738: -1- AG_GST_PKG_CHECK_MODULES([PANGO], [pango >= 1.22.0  pangocairo >= 1.22.0])
-m4trace:configure.ac:738: -1- PKG_CHECK_MODULES([PANGO], [$which], [
+m4trace:configure.ac:745: -1- AG_GST_PKG_CHECK_MODULES([PANGO], [pango >= 1.22.0  pangocairo >= 1.22.0])
+m4trace:configure.ac:745: -1- PKG_CHECK_MODULES([PANGO], [$which], [
       HAVE_[PANGO]="yes"
     ], [
       HAVE_[PANGO]="no"
@@ -10009,22 +10027,22 @@ m4trace:configure.ac:738: -1- PKG_CHECK_MODULES([PANGO], [$which], [
         AC_MSG_NOTICE($[PANGO]_PKG_ERRORS)
       fi
     ])
-m4trace:configure.ac:738: -1- m4_pattern_allow([^PANGO_CFLAGS$])
-m4trace:configure.ac:738: -1- m4_pattern_allow([^PANGO_LIBS$])
-m4trace:configure.ac:738: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]PANGO_CFLAGS=`$PKG_CONFIG --[]cflags "$which" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:738: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]PANGO_LIBS=`$PKG_CONFIG --[]libs "$which" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:738: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:738: -1- m4_pattern_allow([^HAVE_PANGO$])
-m4trace:configure.ac:738: -1- AM_CONDITIONAL([USE_PANGO], [test x$USE_PANGO = xyes])
-m4trace:configure.ac:738: -1- m4_pattern_allow([^USE_PANGO_TRUE$])
-m4trace:configure.ac:738: -1- m4_pattern_allow([^USE_PANGO_FALSE$])
-m4trace:configure.ac:738: -1- _AM_SUBST_NOTMAKE([USE_PANGO_TRUE])
-m4trace:configure.ac:738: -1- _AM_SUBST_NOTMAKE([USE_PANGO_FALSE])
-m4trace:configure.ac:744: -1- AG_GST_CHECK_FEATURE([THEORA], [Xiph Theora video codec], [theora], [
+m4trace:configure.ac:745: -1- m4_pattern_allow([^PANGO_CFLAGS$])
+m4trace:configure.ac:745: -1- m4_pattern_allow([^PANGO_LIBS$])
+m4trace:configure.ac:745: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]PANGO_CFLAGS=`$PKG_CONFIG --[]cflags "$which" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:745: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]PANGO_LIBS=`$PKG_CONFIG --[]libs "$which" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:745: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:745: -1- m4_pattern_allow([^HAVE_PANGO$])
+m4trace:configure.ac:745: -1- AM_CONDITIONAL([USE_PANGO], [test x$USE_PANGO = xyes])
+m4trace:configure.ac:745: -1- m4_pattern_allow([^USE_PANGO_TRUE$])
+m4trace:configure.ac:745: -1- m4_pattern_allow([^USE_PANGO_FALSE$])
+m4trace:configure.ac:745: -1- _AM_SUBST_NOTMAKE([USE_PANGO_TRUE])
+m4trace:configure.ac:745: -1- _AM_SUBST_NOTMAKE([USE_PANGO_FALSE])
+m4trace:configure.ac:751: -1- AG_GST_CHECK_FEATURE([THEORA], [Xiph Theora video codec], [theora], [
   AG_GST_PKG_CHECK_MODULES(THEORA, theoradec >= 1.1 theoraenc >= 1.1)
 ])
-m4trace:configure.ac:744: -1- AG_GST_PKG_CHECK_MODULES([THEORA], [theoradec >= 1.1 theoraenc >= 1.1])
-m4trace:configure.ac:744: -1- PKG_CHECK_MODULES([THEORA], [$which], [
+m4trace:configure.ac:751: -1- AG_GST_PKG_CHECK_MODULES([THEORA], [theoradec >= 1.1 theoraenc >= 1.1])
+m4trace:configure.ac:751: -1- PKG_CHECK_MODULES([THEORA], [$which], [
       HAVE_[THEORA]="yes"
     ], [
       HAVE_[THEORA]="no"
@@ -10034,22 +10052,22 @@ m4trace:configure.ac:744: -1- PKG_CHECK_MODULES([THEORA], [$which], [
         AC_MSG_NOTICE($[THEORA]_PKG_ERRORS)
       fi
     ])
-m4trace:configure.ac:744: -1- m4_pattern_allow([^THEORA_CFLAGS$])
-m4trace:configure.ac:744: -1- m4_pattern_allow([^THEORA_LIBS$])
-m4trace:configure.ac:744: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]THEORA_CFLAGS=`$PKG_CONFIG --[]cflags "$which" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:744: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]THEORA_LIBS=`$PKG_CONFIG --[]libs "$which" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:744: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:744: -1- m4_pattern_allow([^HAVE_THEORA$])
-m4trace:configure.ac:744: -1- AM_CONDITIONAL([USE_THEORA], [test x$USE_THEORA = xyes])
-m4trace:configure.ac:744: -1- m4_pattern_allow([^USE_THEORA_TRUE$])
-m4trace:configure.ac:744: -1- m4_pattern_allow([^USE_THEORA_FALSE$])
-m4trace:configure.ac:744: -1- _AM_SUBST_NOTMAKE([USE_THEORA_TRUE])
-m4trace:configure.ac:744: -1- _AM_SUBST_NOTMAKE([USE_THEORA_FALSE])
-m4trace:configure.ac:750: -1- AG_GST_CHECK_FEATURE([VORBIS], [Xiph Vorbis audio codec], [vorbis], [
+m4trace:configure.ac:751: -1- m4_pattern_allow([^THEORA_CFLAGS$])
+m4trace:configure.ac:751: -1- m4_pattern_allow([^THEORA_LIBS$])
+m4trace:configure.ac:751: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]THEORA_CFLAGS=`$PKG_CONFIG --[]cflags "$which" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:751: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]THEORA_LIBS=`$PKG_CONFIG --[]libs "$which" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:751: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:751: -1- m4_pattern_allow([^HAVE_THEORA$])
+m4trace:configure.ac:751: -1- AM_CONDITIONAL([USE_THEORA], [test x$USE_THEORA = xyes])
+m4trace:configure.ac:751: -1- m4_pattern_allow([^USE_THEORA_TRUE$])
+m4trace:configure.ac:751: -1- m4_pattern_allow([^USE_THEORA_FALSE$])
+m4trace:configure.ac:751: -1- _AM_SUBST_NOTMAKE([USE_THEORA_TRUE])
+m4trace:configure.ac:751: -1- _AM_SUBST_NOTMAKE([USE_THEORA_FALSE])
+m4trace:configure.ac:757: -1- AG_GST_CHECK_FEATURE([VORBIS], [Xiph Vorbis audio codec], [vorbis], [
   AG_GST_PKG_CHECK_MODULES(VORBIS, vorbis >= 1.0 vorbisenc >= 1.0)
 ])
-m4trace:configure.ac:750: -1- AG_GST_PKG_CHECK_MODULES([VORBIS], [vorbis >= 1.0 vorbisenc >= 1.0])
-m4trace:configure.ac:750: -1- PKG_CHECK_MODULES([VORBIS], [$which], [
+m4trace:configure.ac:757: -1- AG_GST_PKG_CHECK_MODULES([VORBIS], [vorbis >= 1.0 vorbisenc >= 1.0])
+m4trace:configure.ac:757: -1- PKG_CHECK_MODULES([VORBIS], [$which], [
       HAVE_[VORBIS]="yes"
     ], [
       HAVE_[VORBIS]="no"
@@ -10059,95 +10077,95 @@ m4trace:configure.ac:750: -1- PKG_CHECK_MODULES([VORBIS], [$which], [
         AC_MSG_NOTICE($[VORBIS]_PKG_ERRORS)
       fi
     ])
-m4trace:configure.ac:750: -1- m4_pattern_allow([^VORBIS_CFLAGS$])
-m4trace:configure.ac:750: -1- m4_pattern_allow([^VORBIS_LIBS$])
-m4trace:configure.ac:750: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]VORBIS_CFLAGS=`$PKG_CONFIG --[]cflags "$which" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:750: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]VORBIS_LIBS=`$PKG_CONFIG --[]libs "$which" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:750: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:750: -1- m4_pattern_allow([^HAVE_VORBIS$])
-m4trace:configure.ac:750: -1- AM_CONDITIONAL([USE_VORBIS], [test x$USE_VORBIS = xyes])
-m4trace:configure.ac:750: -1- m4_pattern_allow([^USE_VORBIS_TRUE$])
-m4trace:configure.ac:750: -1- m4_pattern_allow([^USE_VORBIS_FALSE$])
-m4trace:configure.ac:750: -1- _AM_SUBST_NOTMAKE([USE_VORBIS_TRUE])
-m4trace:configure.ac:750: -1- _AM_SUBST_NOTMAKE([USE_VORBIS_FALSE])
-m4trace:configure.ac:765: -1- m4_pattern_allow([^HAVE_VORBIS_SYNTHESIS_RESTART$])
-m4trace:configure.ac:775: -1- AM_CONDITIONAL([USE_ALSA], [false])
-m4trace:configure.ac:775: -1- m4_pattern_allow([^USE_ALSA_TRUE$])
-m4trace:configure.ac:775: -1- m4_pattern_allow([^USE_ALSA_FALSE$])
-m4trace:configure.ac:775: -1- _AM_SUBST_NOTMAKE([USE_ALSA_TRUE])
-m4trace:configure.ac:775: -1- _AM_SUBST_NOTMAKE([USE_ALSA_FALSE])
-m4trace:configure.ac:776: -1- AM_CONDITIONAL([USE_CDPARANOIA], [false])
-m4trace:configure.ac:776: -1- m4_pattern_allow([^USE_CDPARANOIA_TRUE$])
-m4trace:configure.ac:776: -1- m4_pattern_allow([^USE_CDPARANOIA_FALSE$])
-m4trace:configure.ac:776: -1- _AM_SUBST_NOTMAKE([USE_CDPARANOIA_TRUE])
-m4trace:configure.ac:776: -1- _AM_SUBST_NOTMAKE([USE_CDPARANOIA_FALSE])
-m4trace:configure.ac:777: -1- AM_CONDITIONAL([USE_IVORBIS], [false])
-m4trace:configure.ac:777: -1- m4_pattern_allow([^USE_IVORBIS_TRUE$])
-m4trace:configure.ac:777: -1- m4_pattern_allow([^USE_IVORBIS_FALSE$])
-m4trace:configure.ac:777: -1- _AM_SUBST_NOTMAKE([USE_IVORBIS_TRUE])
-m4trace:configure.ac:777: -1- _AM_SUBST_NOTMAKE([USE_IVORBIS_FALSE])
-m4trace:configure.ac:778: -1- AM_CONDITIONAL([USE_LIBVISUAL], [false])
-m4trace:configure.ac:778: -1- m4_pattern_allow([^USE_LIBVISUAL_TRUE$])
-m4trace:configure.ac:778: -1- m4_pattern_allow([^USE_LIBVISUAL_FALSE$])
-m4trace:configure.ac:778: -1- _AM_SUBST_NOTMAKE([USE_LIBVISUAL_TRUE])
-m4trace:configure.ac:778: -1- _AM_SUBST_NOTMAKE([USE_LIBVISUAL_FALSE])
-m4trace:configure.ac:779: -1- AM_CONDITIONAL([USE_OGG], [false])
-m4trace:configure.ac:779: -1- m4_pattern_allow([^USE_OGG_TRUE$])
-m4trace:configure.ac:779: -1- m4_pattern_allow([^USE_OGG_FALSE$])
-m4trace:configure.ac:779: -1- _AM_SUBST_NOTMAKE([USE_OGG_TRUE])
-m4trace:configure.ac:779: -1- _AM_SUBST_NOTMAKE([USE_OGG_FALSE])
-m4trace:configure.ac:780: -1- AM_CONDITIONAL([USE_OPUS], [false])
-m4trace:configure.ac:780: -1- m4_pattern_allow([^USE_OPUS_TRUE$])
-m4trace:configure.ac:780: -1- m4_pattern_allow([^USE_OPUS_FALSE$])
-m4trace:configure.ac:780: -1- _AM_SUBST_NOTMAKE([USE_OPUS_TRUE])
-m4trace:configure.ac:780: -1- _AM_SUBST_NOTMAKE([USE_OPUS_FALSE])
-m4trace:configure.ac:781: -1- AM_CONDITIONAL([USE_PANGO], [false])
-m4trace:configure.ac:781: -1- m4_pattern_allow([^USE_PANGO_TRUE$])
-m4trace:configure.ac:781: -1- m4_pattern_allow([^USE_PANGO_FALSE$])
-m4trace:configure.ac:781: -1- _AM_SUBST_NOTMAKE([USE_PANGO_TRUE])
-m4trace:configure.ac:781: -1- _AM_SUBST_NOTMAKE([USE_PANGO_FALSE])
-m4trace:configure.ac:782: -1- AM_CONDITIONAL([USE_THEORA], [false])
-m4trace:configure.ac:782: -1- m4_pattern_allow([^USE_THEORA_TRUE$])
-m4trace:configure.ac:782: -1- m4_pattern_allow([^USE_THEORA_FALSE$])
-m4trace:configure.ac:782: -1- _AM_SUBST_NOTMAKE([USE_THEORA_TRUE])
-m4trace:configure.ac:782: -1- _AM_SUBST_NOTMAKE([USE_THEORA_FALSE])
-m4trace:configure.ac:783: -1- AM_CONDITIONAL([USE_VORBIS], [false])
-m4trace:configure.ac:783: -1- m4_pattern_allow([^USE_VORBIS_TRUE$])
-m4trace:configure.ac:783: -1- m4_pattern_allow([^USE_VORBIS_FALSE$])
-m4trace:configure.ac:783: -1- _AM_SUBST_NOTMAKE([USE_VORBIS_TRUE])
-m4trace:configure.ac:783: -1- _AM_SUBST_NOTMAKE([USE_VORBIS_FALSE])
-m4trace:configure.ac:788: -1- PKG_CHECK_MODULES([GIO_UNIX_2_0], [gio-unix-2.0 >= 2.24], [HAVE_GIO_UNIX_2_0="yes"], [HAVE_GIO_UNIX_2_0="no"])
-m4trace:configure.ac:788: -1- m4_pattern_allow([^GIO_UNIX_2_0_CFLAGS$])
-m4trace:configure.ac:788: -1- m4_pattern_allow([^GIO_UNIX_2_0_LIBS$])
-m4trace:configure.ac:788: -1- PKG_CHECK_EXISTS([gio-unix-2.0 >= 2.24], [pkg_cv_[]GIO_UNIX_2_0_CFLAGS=`$PKG_CONFIG --[]cflags "gio-unix-2.0 >= 2.24" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:788: -1- PKG_CHECK_EXISTS([gio-unix-2.0 >= 2.24], [pkg_cv_[]GIO_UNIX_2_0_LIBS=`$PKG_CONFIG --[]libs "gio-unix-2.0 >= 2.24" 2>/dev/null`], [pkg_failed=yes])
-m4trace:configure.ac:788: -1- _PKG_SHORT_ERRORS_SUPPORTED
-m4trace:configure.ac:791: -1- AM_CONDITIONAL([USE_GIO_UNIX_2_0], [test "x$HAVE_GIO_UNIX_2_0" = "xyes"])
-m4trace:configure.ac:791: -1- m4_pattern_allow([^USE_GIO_UNIX_2_0_TRUE$])
-m4trace:configure.ac:791: -1- m4_pattern_allow([^USE_GIO_UNIX_2_0_FALSE$])
-m4trace:configure.ac:791: -1- _AM_SUBST_NOTMAKE([USE_GIO_UNIX_2_0_TRUE])
-m4trace:configure.ac:791: -1- _AM_SUBST_NOTMAKE([USE_GIO_UNIX_2_0_FALSE])
-m4trace:configure.ac:809: -1- m4_pattern_allow([^PROFILE_CFLAGS$])
-m4trace:configure.ac:817: -1- m4_pattern_allow([^DEPRECATED_CFLAGS$])
-m4trace:configure.ac:823: -1- m4_pattern_allow([^GST_OPTION_CFLAGS$])
-m4trace:configure.ac:824: -1- m4_pattern_allow([^GST_OPTION_CXXFLAGS$])
-m4trace:configure.ac:827: -1- m4_pattern_allow([^GST_LT_LDFLAGS$])
-m4trace:configure.ac:833: -1- m4_pattern_allow([^GST_PLUGINS_BASE_CFLAGS$])
-m4trace:configure.ac:840: -1- m4_pattern_allow([^GST_CFLAGS$])
-m4trace:configure.ac:841: -1- m4_pattern_allow([^GST_CXXFLAGS$])
-m4trace:configure.ac:844: -1- m4_pattern_allow([^GST_LIBS$])
-m4trace:configure.ac:852: -1- m4_pattern_allow([^GST_ALL_LDFLAGS$])
-m4trace:configure.ac:859: -1- m4_pattern_allow([^GST_LIB_LDFLAGS$])
-m4trace:configure.ac:864: -1- m4_pattern_allow([^GST_PLUGIN_LDFLAGS$])
-m4trace:configure.ac:1016: -1- m4_pattern_allow([^LIB@&t@OBJS$])
-m4trace:configure.ac:1016: -1- m4_pattern_allow([^LTLIBOBJS$])
-m4trace:configure.ac:1016: -1- AM_CONDITIONAL([am__EXEEXT], [test -n "$EXEEXT"])
-m4trace:configure.ac:1016: -1- m4_pattern_allow([^am__EXEEXT_TRUE$])
-m4trace:configure.ac:1016: -1- m4_pattern_allow([^am__EXEEXT_FALSE$])
-m4trace:configure.ac:1016: -1- _AM_SUBST_NOTMAKE([am__EXEEXT_TRUE])
-m4trace:configure.ac:1016: -1- _AM_SUBST_NOTMAKE([am__EXEEXT_FALSE])
-m4trace:configure.ac:1016: -1- _AC_AM_CONFIG_HEADER_HOOK(["$ac_file"])
-m4trace:configure.ac:1016: -1- _AM_OUTPUT_DEPENDENCY_COMMANDS
-m4trace:configure.ac:1016: -1- _LT_PROG_LTMAIN
-m4trace:configure.ac:1018: -1- AG_GST_OUTPUT_PLUGINS
-m4trace:configure.ac:1019: -1- ORC_OUTPUT
+m4trace:configure.ac:757: -1- m4_pattern_allow([^VORBIS_CFLAGS$])
+m4trace:configure.ac:757: -1- m4_pattern_allow([^VORBIS_LIBS$])
+m4trace:configure.ac:757: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]VORBIS_CFLAGS=`$PKG_CONFIG --[]cflags "$which" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:757: -1- PKG_CHECK_EXISTS([$which], [pkg_cv_[]VORBIS_LIBS=`$PKG_CONFIG --[]libs "$which" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:757: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:757: -1- m4_pattern_allow([^HAVE_VORBIS$])
+m4trace:configure.ac:757: -1- AM_CONDITIONAL([USE_VORBIS], [test x$USE_VORBIS = xyes])
+m4trace:configure.ac:757: -1- m4_pattern_allow([^USE_VORBIS_TRUE$])
+m4trace:configure.ac:757: -1- m4_pattern_allow([^USE_VORBIS_FALSE$])
+m4trace:configure.ac:757: -1- _AM_SUBST_NOTMAKE([USE_VORBIS_TRUE])
+m4trace:configure.ac:757: -1- _AM_SUBST_NOTMAKE([USE_VORBIS_FALSE])
+m4trace:configure.ac:772: -1- m4_pattern_allow([^HAVE_VORBIS_SYNTHESIS_RESTART$])
+m4trace:configure.ac:782: -1- AM_CONDITIONAL([USE_ALSA], [false])
+m4trace:configure.ac:782: -1- m4_pattern_allow([^USE_ALSA_TRUE$])
+m4trace:configure.ac:782: -1- m4_pattern_allow([^USE_ALSA_FALSE$])
+m4trace:configure.ac:782: -1- _AM_SUBST_NOTMAKE([USE_ALSA_TRUE])
+m4trace:configure.ac:782: -1- _AM_SUBST_NOTMAKE([USE_ALSA_FALSE])
+m4trace:configure.ac:783: -1- AM_CONDITIONAL([USE_CDPARANOIA], [false])
+m4trace:configure.ac:783: -1- m4_pattern_allow([^USE_CDPARANOIA_TRUE$])
+m4trace:configure.ac:783: -1- m4_pattern_allow([^USE_CDPARANOIA_FALSE$])
+m4trace:configure.ac:783: -1- _AM_SUBST_NOTMAKE([USE_CDPARANOIA_TRUE])
+m4trace:configure.ac:783: -1- _AM_SUBST_NOTMAKE([USE_CDPARANOIA_FALSE])
+m4trace:configure.ac:784: -1- AM_CONDITIONAL([USE_IVORBIS], [false])
+m4trace:configure.ac:784: -1- m4_pattern_allow([^USE_IVORBIS_TRUE$])
+m4trace:configure.ac:784: -1- m4_pattern_allow([^USE_IVORBIS_FALSE$])
+m4trace:configure.ac:784: -1- _AM_SUBST_NOTMAKE([USE_IVORBIS_TRUE])
+m4trace:configure.ac:784: -1- _AM_SUBST_NOTMAKE([USE_IVORBIS_FALSE])
+m4trace:configure.ac:785: -1- AM_CONDITIONAL([USE_LIBVISUAL], [false])
+m4trace:configure.ac:785: -1- m4_pattern_allow([^USE_LIBVISUAL_TRUE$])
+m4trace:configure.ac:785: -1- m4_pattern_allow([^USE_LIBVISUAL_FALSE$])
+m4trace:configure.ac:785: -1- _AM_SUBST_NOTMAKE([USE_LIBVISUAL_TRUE])
+m4trace:configure.ac:785: -1- _AM_SUBST_NOTMAKE([USE_LIBVISUAL_FALSE])
+m4trace:configure.ac:786: -1- AM_CONDITIONAL([USE_OGG], [false])
+m4trace:configure.ac:786: -1- m4_pattern_allow([^USE_OGG_TRUE$])
+m4trace:configure.ac:786: -1- m4_pattern_allow([^USE_OGG_FALSE$])
+m4trace:configure.ac:786: -1- _AM_SUBST_NOTMAKE([USE_OGG_TRUE])
+m4trace:configure.ac:786: -1- _AM_SUBST_NOTMAKE([USE_OGG_FALSE])
+m4trace:configure.ac:787: -1- AM_CONDITIONAL([USE_OPUS], [false])
+m4trace:configure.ac:787: -1- m4_pattern_allow([^USE_OPUS_TRUE$])
+m4trace:configure.ac:787: -1- m4_pattern_allow([^USE_OPUS_FALSE$])
+m4trace:configure.ac:787: -1- _AM_SUBST_NOTMAKE([USE_OPUS_TRUE])
+m4trace:configure.ac:787: -1- _AM_SUBST_NOTMAKE([USE_OPUS_FALSE])
+m4trace:configure.ac:788: -1- AM_CONDITIONAL([USE_PANGO], [false])
+m4trace:configure.ac:788: -1- m4_pattern_allow([^USE_PANGO_TRUE$])
+m4trace:configure.ac:788: -1- m4_pattern_allow([^USE_PANGO_FALSE$])
+m4trace:configure.ac:788: -1- _AM_SUBST_NOTMAKE([USE_PANGO_TRUE])
+m4trace:configure.ac:788: -1- _AM_SUBST_NOTMAKE([USE_PANGO_FALSE])
+m4trace:configure.ac:789: -1- AM_CONDITIONAL([USE_THEORA], [false])
+m4trace:configure.ac:789: -1- m4_pattern_allow([^USE_THEORA_TRUE$])
+m4trace:configure.ac:789: -1- m4_pattern_allow([^USE_THEORA_FALSE$])
+m4trace:configure.ac:789: -1- _AM_SUBST_NOTMAKE([USE_THEORA_TRUE])
+m4trace:configure.ac:789: -1- _AM_SUBST_NOTMAKE([USE_THEORA_FALSE])
+m4trace:configure.ac:790: -1- AM_CONDITIONAL([USE_VORBIS], [false])
+m4trace:configure.ac:790: -1- m4_pattern_allow([^USE_VORBIS_TRUE$])
+m4trace:configure.ac:790: -1- m4_pattern_allow([^USE_VORBIS_FALSE$])
+m4trace:configure.ac:790: -1- _AM_SUBST_NOTMAKE([USE_VORBIS_TRUE])
+m4trace:configure.ac:790: -1- _AM_SUBST_NOTMAKE([USE_VORBIS_FALSE])
+m4trace:configure.ac:795: -1- PKG_CHECK_MODULES([GIO_UNIX_2_0], [gio-unix-2.0 >= 2.24], [HAVE_GIO_UNIX_2_0="yes"], [HAVE_GIO_UNIX_2_0="no"])
+m4trace:configure.ac:795: -1- m4_pattern_allow([^GIO_UNIX_2_0_CFLAGS$])
+m4trace:configure.ac:795: -1- m4_pattern_allow([^GIO_UNIX_2_0_LIBS$])
+m4trace:configure.ac:795: -1- PKG_CHECK_EXISTS([gio-unix-2.0 >= 2.24], [pkg_cv_[]GIO_UNIX_2_0_CFLAGS=`$PKG_CONFIG --[]cflags "gio-unix-2.0 >= 2.24" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:795: -1- PKG_CHECK_EXISTS([gio-unix-2.0 >= 2.24], [pkg_cv_[]GIO_UNIX_2_0_LIBS=`$PKG_CONFIG --[]libs "gio-unix-2.0 >= 2.24" 2>/dev/null`], [pkg_failed=yes])
+m4trace:configure.ac:795: -1- _PKG_SHORT_ERRORS_SUPPORTED
+m4trace:configure.ac:798: -1- AM_CONDITIONAL([USE_GIO_UNIX_2_0], [test "x$HAVE_GIO_UNIX_2_0" = "xyes"])
+m4trace:configure.ac:798: -1- m4_pattern_allow([^USE_GIO_UNIX_2_0_TRUE$])
+m4trace:configure.ac:798: -1- m4_pattern_allow([^USE_GIO_UNIX_2_0_FALSE$])
+m4trace:configure.ac:798: -1- _AM_SUBST_NOTMAKE([USE_GIO_UNIX_2_0_TRUE])
+m4trace:configure.ac:798: -1- _AM_SUBST_NOTMAKE([USE_GIO_UNIX_2_0_FALSE])
+m4trace:configure.ac:816: -1- m4_pattern_allow([^PROFILE_CFLAGS$])
+m4trace:configure.ac:824: -1- m4_pattern_allow([^DEPRECATED_CFLAGS$])
+m4trace:configure.ac:830: -1- m4_pattern_allow([^GST_OPTION_CFLAGS$])
+m4trace:configure.ac:831: -1- m4_pattern_allow([^GST_OPTION_CXXFLAGS$])
+m4trace:configure.ac:834: -1- m4_pattern_allow([^GST_LT_LDFLAGS$])
+m4trace:configure.ac:840: -1- m4_pattern_allow([^GST_PLUGINS_BASE_CFLAGS$])
+m4trace:configure.ac:847: -1- m4_pattern_allow([^GST_CFLAGS$])
+m4trace:configure.ac:848: -1- m4_pattern_allow([^GST_CXXFLAGS$])
+m4trace:configure.ac:851: -1- m4_pattern_allow([^GST_LIBS$])
+m4trace:configure.ac:859: -1- m4_pattern_allow([^GST_ALL_LDFLAGS$])
+m4trace:configure.ac:866: -1- m4_pattern_allow([^GST_LIB_LDFLAGS$])
+m4trace:configure.ac:871: -1- m4_pattern_allow([^GST_PLUGIN_LDFLAGS$])
+m4trace:configure.ac:1023: -1- m4_pattern_allow([^LIB@&t@OBJS$])
+m4trace:configure.ac:1023: -1- m4_pattern_allow([^LTLIBOBJS$])
+m4trace:configure.ac:1023: -1- AM_CONDITIONAL([am__EXEEXT], [test -n "$EXEEXT"])
+m4trace:configure.ac:1023: -1- m4_pattern_allow([^am__EXEEXT_TRUE$])
+m4trace:configure.ac:1023: -1- m4_pattern_allow([^am__EXEEXT_FALSE$])
+m4trace:configure.ac:1023: -1- _AM_SUBST_NOTMAKE([am__EXEEXT_TRUE])
+m4trace:configure.ac:1023: -1- _AM_SUBST_NOTMAKE([am__EXEEXT_FALSE])
+m4trace:configure.ac:1023: -1- _AC_AM_CONFIG_HEADER_HOOK(["$ac_file"])
+m4trace:configure.ac:1023: -1- _AM_OUTPUT_DEPENDENCY_COMMANDS
+m4trace:configure.ac:1023: -1- _LT_PROG_LTMAIN
+m4trace:configure.ac:1025: -1- AG_GST_OUTPUT_PLUGINS
+m4trace:configure.ac:1026: -1- ORC_OUTPUT

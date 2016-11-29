@@ -165,7 +165,9 @@ LTLIBRARIES = $(plugin_LTLIBRARIES)
 am__DEPENDENCIES_1 =
 am_libgstximagesink_la_OBJECTS = libgstximagesink_la-ximagesink.lo \
 	libgstximagesink_la-ximage.lo \
-	libgstximagesink_la-ximagepool.lo
+	libgstximagesink_la-ximagepool.lo \
+	libgstximagesink_la-gstvpumeta.lo \
+	libgstximagesink_la-gstkmsutils.lo
 libgstximagesink_la_OBJECTS = $(am_libgstximagesink_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -275,6 +277,8 @@ DEFS = @DEFS@
 DEPDIR = @DEPDIR@
 DEPRECATED_CFLAGS = @DEPRECATED_CFLAGS@
 DLLTOOL = @DLLTOOL@
+DRM_CFLAGS = @DRM_CFLAGS@
+DRM_LIBS = @DRM_LIBS@
 DSYMUTIL = @DSYMUTIL@
 DUMPBIN = @DUMPBIN@
 ECHO_C = @ECHO_C@
@@ -445,6 +449,10 @@ QT_CFLAGS = @QT_CFLAGS@
 QT_LIBS = @QT_LIBS@
 QT_MOC = @QT_MOC@
 RANLIB = @RANLIB@
+ROCKCHIP_MPP_CFLAGS = @ROCKCHIP_MPP_CFLAGS@
+ROCKCHIP_MPP_LIBS = @ROCKCHIP_MPP_LIBS@
+ROCKCHIP_VPU_CFLAGS = @ROCKCHIP_VPU_CFLAGS@
+ROCKCHIP_VPU_LIBS = @ROCKCHIP_VPU_LIBS@
 SED = @SED@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
@@ -540,12 +548,15 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 plugin_LTLIBRARIES = libgstximagesink.la
-libgstximagesink_la_SOURCES = ximagesink.c ximage.c ximagepool.c
-libgstximagesink_la_CFLAGS = $(GST_PLUGINS_BASE_CFLAGS) $(GST_BASE_CFLAGS) $(GST_CFLAGS) $(X_CFLAGS)
+libgstximagesink_la_SOURCES = ximagesink.c ximage.c ximagepool.c gstvpumeta.c gstkmsutils.c
+libgstximagesink_la_CFLAGS = $(GST_PLUGINS_BASE_CFLAGS) $(GST_BASE_CFLAGS) $(GST_CFLAGS) $(X_CFLAGS) $(ROCKCHIP_MPP_CFLAGS) $(ROCKCHIP_VPU_CFLAGS) $(DRM_CFLAGS)
 libgstximagesink_la_LIBADD = \
 	$(top_builddir)/gst-libs/gst/video/libgstvideo-$(GST_API_VERSION).la \
 	$(GST_BASE_LIBS) \
-	$(X_LIBS) $(XSHM_LIBS)
+	$(X_LIBS) $(XSHM_LIBS) \
+	$(ROCKCHIP_MPP_LIBS) \
+	$(ROCKCHIP_VPU_LIBS) \
+	$(DRM_LIBS) 
 
 libgstximagesink_la_LDFLAGS = $(GST_PLUGIN_LDFLAGS)
 libgstximagesink_la_DEPENDENCIES = $(top_builddir)/gst-libs/gst/video/libgstvideo-$(GST_API_VERSION).la
@@ -629,6 +640,8 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgstximagesink_la-gstkmsutils.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgstximagesink_la-gstvpumeta.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgstximagesink_la-ximage.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgstximagesink_la-ximagepool.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgstximagesink_la-ximagesink.Plo@am__quote@
@@ -677,6 +690,20 @@ libgstximagesink_la-ximagepool.lo: ximagepool.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ximagepool.c' object='libgstximagesink_la-ximagepool.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(libgstximagesink_la_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgstximagesink_la_CFLAGS) $(CFLAGS) -c -o libgstximagesink_la-ximagepool.lo `test -f 'ximagepool.c' || echo '$(srcdir)/'`ximagepool.c
+
+libgstximagesink_la-gstvpumeta.lo: gstvpumeta.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(libgstximagesink_la_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgstximagesink_la_CFLAGS) $(CFLAGS) -MT libgstximagesink_la-gstvpumeta.lo -MD -MP -MF $(DEPDIR)/libgstximagesink_la-gstvpumeta.Tpo -c -o libgstximagesink_la-gstvpumeta.lo `test -f 'gstvpumeta.c' || echo '$(srcdir)/'`gstvpumeta.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libgstximagesink_la-gstvpumeta.Tpo $(DEPDIR)/libgstximagesink_la-gstvpumeta.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gstvpumeta.c' object='libgstximagesink_la-gstvpumeta.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(libgstximagesink_la_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgstximagesink_la_CFLAGS) $(CFLAGS) -c -o libgstximagesink_la-gstvpumeta.lo `test -f 'gstvpumeta.c' || echo '$(srcdir)/'`gstvpumeta.c
+
+libgstximagesink_la-gstkmsutils.lo: gstkmsutils.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(libgstximagesink_la_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgstximagesink_la_CFLAGS) $(CFLAGS) -MT libgstximagesink_la-gstkmsutils.lo -MD -MP -MF $(DEPDIR)/libgstximagesink_la-gstkmsutils.Tpo -c -o libgstximagesink_la-gstkmsutils.lo `test -f 'gstkmsutils.c' || echo '$(srcdir)/'`gstkmsutils.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libgstximagesink_la-gstkmsutils.Tpo $(DEPDIR)/libgstximagesink_la-gstkmsutils.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gstkmsutils.c' object='libgstximagesink_la-gstkmsutils.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(libgstximagesink_la_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgstximagesink_la_CFLAGS) $(CFLAGS) -c -o libgstximagesink_la-gstkmsutils.lo `test -f 'gstkmsutils.c' || echo '$(srcdir)/'`gstkmsutils.c
 
 mostlyclean-libtool:
 	-rm -f *.lo

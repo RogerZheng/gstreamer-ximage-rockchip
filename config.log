@@ -39,33 +39,33 @@ PATH: /bin
 ## Core tests. ##
 ## ----------- ##
 
-configure:3325: checking build system type
-configure:3339: result: armv7l-unknown-linux-gnueabihf
-configure:3359: checking host system type
-configure:3372: result: armv7l-unknown-linux-gnueabihf
-configure:3392: checking target system type
-configure:3405: result: armv7l-unknown-linux-gnueabihf
-configure:3451: checking for a BSD-compatible install
-configure:3519: result: /usr/bin/install -c
-configure:3530: checking whether build environment is sane
-configure:3585: result: yes
-configure:3736: checking for a thread-safe mkdir -p
-configure:3775: result: /bin/mkdir -p
-configure:3782: checking for gawk
-configure:3812: result: no
-configure:3782: checking for mawk
-configure:3798: found /usr/bin/mawk
-configure:3809: result: mawk
-configure:3820: checking whether make sets $(MAKE)
-configure:3842: result: yes
-configure:3871: checking whether make supports nested variables
-configure:3888: result: yes
-configure:3977: checking whether UID '0' is supported by ustar format
-configure:3980: result: yes
-configure:3987: checking whether GID '0' is supported by ustar format
-configure:3990: result: yes
-configure:3998: checking how to create a ustar tar archive
-configure:4009: tar --version
+configure:3347: checking build system type
+configure:3361: result: armv7l-unknown-linux-gnueabihf
+configure:3381: checking host system type
+configure:3394: result: armv7l-unknown-linux-gnueabihf
+configure:3414: checking target system type
+configure:3427: result: armv7l-unknown-linux-gnueabihf
+configure:3473: checking for a BSD-compatible install
+configure:3541: result: /usr/bin/install -c
+configure:3552: checking whether build environment is sane
+configure:3607: result: yes
+configure:3758: checking for a thread-safe mkdir -p
+configure:3797: result: /bin/mkdir -p
+configure:3804: checking for gawk
+configure:3834: result: no
+configure:3804: checking for mawk
+configure:3820: found /usr/bin/mawk
+configure:3831: result: mawk
+configure:3842: checking whether make sets $(MAKE)
+configure:3864: result: yes
+configure:3893: checking whether make supports nested variables
+configure:3910: result: yes
+configure:3999: checking whether UID '0' is supported by ustar format
+configure:4002: result: yes
+configure:4009: checking whether GID '0' is supported by ustar format
+configure:4012: result: yes
+configure:4020: checking how to create a ustar tar archive
+configure:4031: tar --version
 tar (GNU tar) 1.29
 Copyright (C) 2015 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
@@ -73,37 +73,37 @@ This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 
 Written by John Gilmore and Jay Fenlason.
-configure:4012: $? = 0
-configure:4052: tardir=conftest.dir && eval tar --format=ustar -chf - "$tardir" >conftest.tar
-configure:4055: $? = 0
-configure:4059: tar -xf - <conftest.tar
-configure:4062: $? = 0
-configure:4064: cat conftest.dir/file
+configure:4034: $? = 0
+configure:4074: tardir=conftest.dir && eval tar --format=ustar -chf - "$tardir" >conftest.tar
+configure:4077: $? = 0
+configure:4081: tar -xf - <conftest.tar
+configure:4084: $? = 0
+configure:4086: cat conftest.dir/file
 GrepMe
-configure:4067: $? = 0
-configure:4080: result: gnutar
-configure:4142: checking nano version
-configure:4148: result: 0 (release)
-configure:4174: checking whether to enable maintainer-specific portions of Makefiles
-configure:4183: result: yes
-configure:4210: checking whether make supports nested variables
-configure:4227: result: yes
-configure:4293: checking how to print strings
-configure:4320: result: printf
-configure:4353: checking for style of include used by make
-configure:4381: result: GNU
-configure:4452: checking for gcc
-configure:4468: found /usr/bin/gcc
-configure:4479: result: gcc
-configure:4708: checking for C compiler version
-configure:4717: gcc --version >&5
+configure:4089: $? = 0
+configure:4102: result: gnutar
+configure:4164: checking nano version
+configure:4170: result: 0 (release)
+configure:4196: checking whether to enable maintainer-specific portions of Makefiles
+configure:4205: result: yes
+configure:4232: checking whether make supports nested variables
+configure:4249: result: yes
+configure:4315: checking how to print strings
+configure:4342: result: printf
+configure:4375: checking for style of include used by make
+configure:4403: result: GNU
+configure:4474: checking for gcc
+configure:4490: found /usr/bin/gcc
+configure:4501: result: gcc
+configure:4730: checking for C compiler version
+configure:4739: gcc --version >&5
 gcc (Debian 6.2.0-13) 6.2.0 20161109
 Copyright (C) 2016 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-configure:4728: $? = 0
-configure:4717: gcc -v >&5
+configure:4750: $? = 0
+configure:4739: gcc -v >&5
 Using built-in specs.
 COLLECT_GCC=gcc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/arm-linux-gnueabihf/6/lto-wrapper
@@ -111,145 +111,145 @@ Target: arm-linux-gnueabihf
 Configured with: ../src/configure -v --with-pkgversion='Debian 6.2.0-13' --with-bugurl=file:///usr/share/doc/gcc-6/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-6 --program-prefix=arm-linux-gnueabihf- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-libitm --disable-libquadmath --enable-plugin --enable-default-pie --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-6-armhf/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-6-armhf --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-6-armhf --with-arch-directory=arm --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-sjlj-exceptions --with-arch=armv7-a --with-fpu=vfpv3-d16 --with-float=hard --with-mode=thumb --enable-checking=release --build=arm-linux-gnueabihf --host=arm-linux-gnueabihf --target=arm-linux-gnueabihf
 Thread model: posix
 gcc version 6.2.0 20161109 (Debian 6.2.0-13) 
-configure:4728: $? = 0
-configure:4717: gcc -V >&5
+configure:4750: $? = 0
+configure:4739: gcc -V >&5
 gcc: error: unrecognized command line option '-V'
 gcc: fatal error: no input files
 compilation terminated.
-configure:4728: $? = 1
-configure:4717: gcc -qversion >&5
+configure:4750: $? = 1
+configure:4739: gcc -qversion >&5
 gcc: error: unrecognized command line option '-qversion'; did you mean '--version'?
 gcc: fatal error: no input files
 compilation terminated.
-configure:4728: $? = 1
-configure:4748: checking whether the C compiler works
-configure:4770: gcc    conftest.c  >&5
-configure:4774: $? = 0
-configure:4822: result: yes
-configure:4825: checking for C compiler default output file name
-configure:4827: result: a.out
-configure:4833: checking for suffix of executables
-configure:4840: gcc -o conftest    conftest.c  >&5
-configure:4844: $? = 0
-configure:4866: result: 
-configure:4888: checking whether we are cross compiling
-configure:4896: gcc -o conftest    conftest.c  >&5
-configure:4900: $? = 0
-configure:4907: ./conftest
-configure:4911: $? = 0
-configure:4926: result: no
-configure:4931: checking for suffix of object files
-configure:4953: gcc -c   conftest.c >&5
-configure:4957: $? = 0
-configure:4978: result: o
-configure:4982: checking whether we are using the GNU C compiler
-configure:5001: gcc -c   conftest.c >&5
-configure:5001: $? = 0
-configure:5010: result: yes
-configure:5019: checking whether gcc accepts -g
-configure:5039: gcc -c -g  conftest.c >&5
-configure:5039: $? = 0
-configure:5080: result: yes
-configure:5097: checking for gcc option to accept ISO C89
-configure:5160: gcc  -c -g -O2  conftest.c >&5
-configure:5160: $? = 0
-configure:5173: result: none needed
-configure:5198: checking whether gcc understands -c and -o together
-configure:5220: gcc -c conftest.c -o conftest2.o
-configure:5223: $? = 0
-configure:5220: gcc -c conftest.c -o conftest2.o
-configure:5223: $? = 0
-configure:5235: result: yes
-configure:5254: checking dependency style of gcc
-configure:5365: result: gcc3
-configure:5380: checking for a sed that does not truncate output
-configure:5444: result: /bin/sed
-configure:5462: checking for grep that handles long lines and -e
-configure:5520: result: /bin/grep
-configure:5525: checking for egrep
-configure:5587: result: /bin/grep -E
-configure:5592: checking for fgrep
-configure:5654: result: /bin/grep -F
-configure:5689: checking for ld used by gcc
-configure:5756: result: /usr/bin/ld
-configure:5763: checking if the linker (/usr/bin/ld) is GNU ld
-configure:5778: result: yes
-configure:5790: checking for BSD- or MS-compatible name lister (nm)
-configure:5844: result: /usr/bin/nm -B
-configure:5974: checking the name lister (/usr/bin/nm -B) interface
-configure:5981: gcc -c -g -O2  conftest.c >&5
-configure:5984: /usr/bin/nm -B "conftest.o"
-configure:5987: output
+configure:4750: $? = 1
+configure:4770: checking whether the C compiler works
+configure:4792: gcc    conftest.c  >&5
+configure:4796: $? = 0
+configure:4844: result: yes
+configure:4847: checking for C compiler default output file name
+configure:4849: result: a.out
+configure:4855: checking for suffix of executables
+configure:4862: gcc -o conftest    conftest.c  >&5
+configure:4866: $? = 0
+configure:4888: result: 
+configure:4910: checking whether we are cross compiling
+configure:4918: gcc -o conftest    conftest.c  >&5
+configure:4922: $? = 0
+configure:4929: ./conftest
+configure:4933: $? = 0
+configure:4948: result: no
+configure:4953: checking for suffix of object files
+configure:4975: gcc -c   conftest.c >&5
+configure:4979: $? = 0
+configure:5000: result: o
+configure:5004: checking whether we are using the GNU C compiler
+configure:5023: gcc -c   conftest.c >&5
+configure:5023: $? = 0
+configure:5032: result: yes
+configure:5041: checking whether gcc accepts -g
+configure:5061: gcc -c -g  conftest.c >&5
+configure:5061: $? = 0
+configure:5102: result: yes
+configure:5119: checking for gcc option to accept ISO C89
+configure:5182: gcc  -c -g -O2  conftest.c >&5
+configure:5182: $? = 0
+configure:5195: result: none needed
+configure:5220: checking whether gcc understands -c and -o together
+configure:5242: gcc -c conftest.c -o conftest2.o
+configure:5245: $? = 0
+configure:5242: gcc -c conftest.c -o conftest2.o
+configure:5245: $? = 0
+configure:5257: result: yes
+configure:5276: checking dependency style of gcc
+configure:5387: result: gcc3
+configure:5402: checking for a sed that does not truncate output
+configure:5466: result: /bin/sed
+configure:5484: checking for grep that handles long lines and -e
+configure:5542: result: /bin/grep
+configure:5547: checking for egrep
+configure:5609: result: /bin/grep -E
+configure:5614: checking for fgrep
+configure:5676: result: /bin/grep -F
+configure:5711: checking for ld used by gcc
+configure:5778: result: /usr/bin/ld
+configure:5785: checking if the linker (/usr/bin/ld) is GNU ld
+configure:5800: result: yes
+configure:5812: checking for BSD- or MS-compatible name lister (nm)
+configure:5866: result: /usr/bin/nm -B
+configure:5996: checking the name lister (/usr/bin/nm -B) interface
+configure:6003: gcc -c -g -O2  conftest.c >&5
+configure:6006: /usr/bin/nm -B "conftest.o"
+configure:6009: output
 00000000 B some_variable
-configure:5994: result: BSD nm
-configure:5997: checking whether ln -s works
-configure:6001: result: yes
-configure:6009: checking the maximum length of command line arguments
-configure:6140: result: 1572864
-configure:6188: checking how to convert armv7l-unknown-linux-gnueabihf file names to armv7l-unknown-linux-gnueabihf format
-configure:6228: result: func_convert_file_noop
-configure:6235: checking how to convert armv7l-unknown-linux-gnueabihf file names to toolchain format
-configure:6255: result: func_convert_file_noop
-configure:6262: checking for /usr/bin/ld option to reload object files
-configure:6269: result: -r
-configure:6343: checking for objdump
-configure:6359: found /usr/bin/objdump
-configure:6370: result: objdump
-configure:6399: checking how to recognize dependent libraries
-configure:6599: result: pass_all
-configure:6684: checking for dlltool
-configure:6714: result: no
-configure:6741: checking how to associate runtime and link libraries
-configure:6768: result: printf %s\n
-configure:6829: checking for ar
-configure:6845: found /usr/bin/ar
-configure:6856: result: ar
-configure:6893: checking for archiver @FILE support
-configure:6910: gcc -c -g -O2  conftest.c >&5
-configure:6910: $? = 0
-configure:6913: ar cru libconftest.a @conftest.lst >&5
+configure:6016: result: BSD nm
+configure:6019: checking whether ln -s works
+configure:6023: result: yes
+configure:6031: checking the maximum length of command line arguments
+configure:6162: result: 1572864
+configure:6210: checking how to convert armv7l-unknown-linux-gnueabihf file names to armv7l-unknown-linux-gnueabihf format
+configure:6250: result: func_convert_file_noop
+configure:6257: checking how to convert armv7l-unknown-linux-gnueabihf file names to toolchain format
+configure:6277: result: func_convert_file_noop
+configure:6284: checking for /usr/bin/ld option to reload object files
+configure:6291: result: -r
+configure:6365: checking for objdump
+configure:6381: found /usr/bin/objdump
+configure:6392: result: objdump
+configure:6421: checking how to recognize dependent libraries
+configure:6621: result: pass_all
+configure:6706: checking for dlltool
+configure:6736: result: no
+configure:6763: checking how to associate runtime and link libraries
+configure:6790: result: printf %s\n
+configure:6851: checking for ar
+configure:6867: found /usr/bin/ar
+configure:6878: result: ar
+configure:6915: checking for archiver @FILE support
+configure:6932: gcc -c -g -O2  conftest.c >&5
+configure:6932: $? = 0
+configure:6935: ar cru libconftest.a @conftest.lst >&5
 ar: `u' modifier ignored since `D' is the default (see `U')
-configure:6916: $? = 0
-configure:6921: ar cru libconftest.a @conftest.lst >&5
+configure:6938: $? = 0
+configure:6943: ar cru libconftest.a @conftest.lst >&5
 ar: `u' modifier ignored since `D' is the default (see `U')
 ar: conftest.o: No such file or directory
-configure:6924: $? = 1
-configure:6936: result: @
-configure:6994: checking for strip
-configure:7010: found /usr/bin/strip
-configure:7021: result: strip
-configure:7093: checking for ranlib
-configure:7109: found /usr/bin/ranlib
-configure:7120: result: ranlib
-configure:7222: checking command to parse /usr/bin/nm -B output from gcc object
-configure:7375: gcc -c -g -O2  conftest.c >&5
-configure:7378: $? = 0
-configure:7382: /usr/bin/nm -B conftest.o \| sed -n -e 's/^.*[ ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[ ][ ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p' | sed '/ __gnu_lto/d' \> conftest.nm
-configure:7385: $? = 0
-configure:7451: gcc -o conftest -g -O2   conftest.c conftstm.o >&5
-configure:7454: $? = 0
-configure:7492: result: ok
-configure:7539: checking for sysroot
-configure:7569: result: no
-configure:7576: checking for a working dd
-configure:7614: result: /bin/dd
-configure:7618: checking how to truncate binary pipes
-configure:7633: result: /bin/dd bs=4096 count=1
-configure:7962: checking for mt
-configure:7978: found /bin/mt
-configure:7989: result: mt
-configure:8012: checking if mt is a manifest tool
-configure:8018: mt '-?'
-configure:8026: result: no
-configure:8703: checking how to run the C preprocessor
-configure:8734: gcc -E  conftest.c
-configure:8734: $? = 0
-configure:8748: gcc -E  conftest.c
+configure:6946: $? = 1
+configure:6958: result: @
+configure:7016: checking for strip
+configure:7032: found /usr/bin/strip
+configure:7043: result: strip
+configure:7115: checking for ranlib
+configure:7131: found /usr/bin/ranlib
+configure:7142: result: ranlib
+configure:7244: checking command to parse /usr/bin/nm -B output from gcc object
+configure:7397: gcc -c -g -O2  conftest.c >&5
+configure:7400: $? = 0
+configure:7404: /usr/bin/nm -B conftest.o \| sed -n -e 's/^.*[ ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[ ][ ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p' | sed '/ __gnu_lto/d' \> conftest.nm
+configure:7407: $? = 0
+configure:7473: gcc -o conftest -g -O2   conftest.c conftstm.o >&5
+configure:7476: $? = 0
+configure:7514: result: ok
+configure:7561: checking for sysroot
+configure:7591: result: no
+configure:7598: checking for a working dd
+configure:7636: result: /bin/dd
+configure:7640: checking how to truncate binary pipes
+configure:7655: result: /bin/dd bs=4096 count=1
+configure:7984: checking for mt
+configure:8000: found /bin/mt
+configure:8011: result: mt
+configure:8034: checking if mt is a manifest tool
+configure:8040: mt '-?'
+configure:8048: result: no
+configure:8725: checking how to run the C preprocessor
+configure:8756: gcc -E  conftest.c
+configure:8756: $? = 0
+configure:8770: gcc -E  conftest.c
 conftest.c:12:28: fatal error: ac_nonexistent.h: No such file or directory
  #include <ac_nonexistent.h>
                             ^
 compilation terminated.
-configure:8748: $? = 1
+configure:8770: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -263,15 +263,15 @@ configure: failed program was:
 | #define GST_API_VERSION "1.0"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:8773: result: gcc -E
-configure:8793: gcc -E  conftest.c
-configure:8793: $? = 0
-configure:8807: gcc -E  conftest.c
+configure:8795: result: gcc -E
+configure:8815: gcc -E  conftest.c
+configure:8815: $? = 0
+configure:8829: gcc -E  conftest.c
 conftest.c:12:28: fatal error: ac_nonexistent.h: No such file or directory
  #include <ac_nonexistent.h>
                             ^
 compilation terminated.
-configure:8807: $? = 1
+configure:8829: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -285,95 +285,95 @@ configure: failed program was:
 | #define GST_API_VERSION "1.0"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:8836: checking for ANSI C header files
-configure:8856: gcc -c -g -O2  conftest.c >&5
-configure:8856: $? = 0
-configure:8929: gcc -o conftest -g -O2   conftest.c  >&5
-configure:8929: $? = 0
-configure:8929: ./conftest
-configure:8929: $? = 0
-configure:8940: result: yes
-configure:8953: checking for sys/types.h
-configure:8953: gcc -c -g -O2  conftest.c >&5
-configure:8953: $? = 0
-configure:8953: result: yes
-configure:8953: checking for sys/stat.h
-configure:8953: gcc -c -g -O2  conftest.c >&5
-configure:8953: $? = 0
-configure:8953: result: yes
-configure:8953: checking for stdlib.h
-configure:8953: gcc -c -g -O2  conftest.c >&5
-configure:8953: $? = 0
-configure:8953: result: yes
-configure:8953: checking for string.h
-configure:8953: gcc -c -g -O2  conftest.c >&5
-configure:8953: $? = 0
-configure:8953: result: yes
-configure:8953: checking for memory.h
-configure:8953: gcc -c -g -O2  conftest.c >&5
-configure:8953: $? = 0
-configure:8953: result: yes
-configure:8953: checking for strings.h
-configure:8953: gcc -c -g -O2  conftest.c >&5
-configure:8953: $? = 0
-configure:8953: result: yes
-configure:8953: checking for inttypes.h
-configure:8953: gcc -c -g -O2  conftest.c >&5
-configure:8953: $? = 0
-configure:8953: result: yes
-configure:8953: checking for stdint.h
-configure:8953: gcc -c -g -O2  conftest.c >&5
-configure:8953: $? = 0
-configure:8953: result: yes
-configure:8953: checking for unistd.h
-configure:8953: gcc -c -g -O2  conftest.c >&5
-configure:8953: $? = 0
-configure:8953: result: yes
-configure:8967: checking for dlfcn.h
-configure:8967: gcc -c -g -O2  conftest.c >&5
-configure:8967: $? = 0
-configure:8967: result: yes
-configure:9537: checking for objdir
-configure:9552: result: .libs
-configure:9816: checking if gcc supports -fno-rtti -fno-exceptions
-configure:9834: gcc -c -g -O2  -fno-rtti -fno-exceptions conftest.c >&5
+configure:8858: checking for ANSI C header files
+configure:8878: gcc -c -g -O2  conftest.c >&5
+configure:8878: $? = 0
+configure:8951: gcc -o conftest -g -O2   conftest.c  >&5
+configure:8951: $? = 0
+configure:8951: ./conftest
+configure:8951: $? = 0
+configure:8962: result: yes
+configure:8975: checking for sys/types.h
+configure:8975: gcc -c -g -O2  conftest.c >&5
+configure:8975: $? = 0
+configure:8975: result: yes
+configure:8975: checking for sys/stat.h
+configure:8975: gcc -c -g -O2  conftest.c >&5
+configure:8975: $? = 0
+configure:8975: result: yes
+configure:8975: checking for stdlib.h
+configure:8975: gcc -c -g -O2  conftest.c >&5
+configure:8975: $? = 0
+configure:8975: result: yes
+configure:8975: checking for string.h
+configure:8975: gcc -c -g -O2  conftest.c >&5
+configure:8975: $? = 0
+configure:8975: result: yes
+configure:8975: checking for memory.h
+configure:8975: gcc -c -g -O2  conftest.c >&5
+configure:8975: $? = 0
+configure:8975: result: yes
+configure:8975: checking for strings.h
+configure:8975: gcc -c -g -O2  conftest.c >&5
+configure:8975: $? = 0
+configure:8975: result: yes
+configure:8975: checking for inttypes.h
+configure:8975: gcc -c -g -O2  conftest.c >&5
+configure:8975: $? = 0
+configure:8975: result: yes
+configure:8975: checking for stdint.h
+configure:8975: gcc -c -g -O2  conftest.c >&5
+configure:8975: $? = 0
+configure:8975: result: yes
+configure:8975: checking for unistd.h
+configure:8975: gcc -c -g -O2  conftest.c >&5
+configure:8975: $? = 0
+configure:8975: result: yes
+configure:8989: checking for dlfcn.h
+configure:8989: gcc -c -g -O2  conftest.c >&5
+configure:8989: $? = 0
+configure:8989: result: yes
+configure:9559: checking for objdir
+configure:9574: result: .libs
+configure:9838: checking if gcc supports -fno-rtti -fno-exceptions
+configure:9856: gcc -c -g -O2  -fno-rtti -fno-exceptions conftest.c >&5
 cc1: warning: command line option '-fno-rtti' is valid for C++/ObjC++ but not for C
-configure:9838: $? = 0
-configure:9851: result: no
-configure:10209: checking for gcc option to produce PIC
-configure:10216: result: -fPIC -DPIC
-configure:10224: checking if gcc PIC flag -fPIC -DPIC works
-configure:10242: gcc -c -g -O2  -fPIC -DPIC -DPIC conftest.c >&5
-configure:10246: $? = 0
-configure:10259: result: yes
-configure:10288: checking if gcc static flag -static works
-configure:10316: result: yes
-configure:10331: checking if gcc supports -c -o file.o
-configure:10352: gcc -c -g -O2  -o out/conftest2.o conftest.c >&5
-configure:10356: $? = 0
-configure:10378: result: yes
-configure:10386: checking if gcc supports -c -o file.o
-configure:10433: result: yes
-configure:10466: checking whether the gcc linker (/usr/bin/ld) supports shared libraries
-configure:11729: result: yes
-configure:11766: checking whether -lc should be explicitly linked in
-configure:11774: gcc -c -g -O2  conftest.c >&5
-configure:11777: $? = 0
-configure:11792: gcc -shared  -fPIC -DPIC conftest.o  -v -Wl,-soname -Wl,conftest -o conftest 2\>\&1 \| /bin/grep  -lc  \>/dev/null 2\>\&1
-configure:11795: $? = 0
-configure:11809: result: no
-configure:11969: checking dynamic linker characteristics
-configure:12550: gcc -o conftest -g -O2   -Wl,-rpath -Wl,/foo conftest.c  >&5
-configure:12550: $? = 0
-configure:12799: result: GNU/Linux ld.so
-configure:12921: checking how to hardcode library paths into programs
-configure:12946: result: immediate
-configure:13048: checking for shl_load
-configure:13048: gcc -o conftest -g -O2   conftest.c  >&5
-/tmp/ccCg8l5k.o: In function `main':
+configure:9860: $? = 0
+configure:9873: result: no
+configure:10231: checking for gcc option to produce PIC
+configure:10238: result: -fPIC -DPIC
+configure:10246: checking if gcc PIC flag -fPIC -DPIC works
+configure:10264: gcc -c -g -O2  -fPIC -DPIC -DPIC conftest.c >&5
+configure:10268: $? = 0
+configure:10281: result: yes
+configure:10310: checking if gcc static flag -static works
+configure:10338: result: yes
+configure:10353: checking if gcc supports -c -o file.o
+configure:10374: gcc -c -g -O2  -o out/conftest2.o conftest.c >&5
+configure:10378: $? = 0
+configure:10400: result: yes
+configure:10408: checking if gcc supports -c -o file.o
+configure:10455: result: yes
+configure:10488: checking whether the gcc linker (/usr/bin/ld) supports shared libraries
+configure:11751: result: yes
+configure:11788: checking whether -lc should be explicitly linked in
+configure:11796: gcc -c -g -O2  conftest.c >&5
+configure:11799: $? = 0
+configure:11814: gcc -shared  -fPIC -DPIC conftest.o  -v -Wl,-soname -Wl,conftest -o conftest 2\>\&1 \| /bin/grep  -lc  \>/dev/null 2\>\&1
+configure:11817: $? = 0
+configure:11831: result: no
+configure:11991: checking dynamic linker characteristics
+configure:12572: gcc -o conftest -g -O2   -Wl,-rpath -Wl,/foo conftest.c  >&5
+configure:12572: $? = 0
+configure:12821: result: GNU/Linux ld.so
+configure:12943: checking how to hardcode library paths into programs
+configure:12968: result: immediate
+configure:13070: checking for shl_load
+configure:13070: gcc -o conftest -g -O2   conftest.c  >&5
+/tmp/cceJzBV2.o: In function `main':
 /root/gst/gst-plugins-base1.0-1.10.1/conftest.c:58: undefined reference to `shl_load'
 collect2: error: ld returned 1 exit status
-configure:13048: $? = 1
+configure:13070: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -436,12 +436,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:13048: result: no
-configure:13052: checking for shl_load in -ldld
-configure:13077: gcc -o conftest -g -O2   conftest.c -ldld   >&5
+configure:13070: result: no
+configure:13074: checking for shl_load in -ldld
+configure:13099: gcc -o conftest -g -O2   conftest.c -ldld   >&5
 /usr/bin/ld: cannot find -ldld
 collect2: error: ld returned 1 exit status
-configure:13077: $? = 1
+configure:13099: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -481,13 +481,13 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:13086: result: no
-configure:13091: checking for dlopen
-configure:13091: gcc -o conftest -g -O2   conftest.c  >&5
-/tmp/ccErLGZ7.o: In function `main':
+configure:13108: result: no
+configure:13113: checking for dlopen
+configure:13113: gcc -o conftest -g -O2   conftest.c  >&5
+/tmp/ccA6XtDG.o: In function `main':
 /root/gst/gst-plugins-base1.0-1.10.1/conftest.c:58: undefined reference to `dlopen'
 collect2: error: ld returned 1 exit status
-configure:13091: $? = 1
+configure:13113: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -550,57 +550,57 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:13091: result: no
-configure:13095: checking for dlopen in -ldl
-configure:13120: gcc -o conftest -g -O2   conftest.c -ldl   >&5
-configure:13120: $? = 0
-configure:13129: result: yes
-configure:13248: checking whether a program can dlopen itself
-configure:13328: gcc -o conftest -g -O2  -DHAVE_DLFCN_H  -Wl,--export-dynamic conftest.c -ldl  >&5
-configure:13331: $? = 0
-configure:13349: result: yes
-configure:13354: checking whether a statically linked program can dlopen itself
-configure:13434: gcc -o conftest -g -O2  -DHAVE_DLFCN_H  -Wl,--export-dynamic -static conftest.c -ldl  >&5
-/tmp/ccXALc0f.o: In function `main':
-/root/gst/gst-plugins-base1.0-1.10.1/configure:13413: warning: Using 'dlopen' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
-configure:13437: $? = 0
-configure:13455: result: no
-configure:13494: checking whether stripping libraries is possible
-configure:13499: result: yes
-configure:13534: checking if libtool supports shared libraries
-configure:13536: result: yes
-configure:13539: checking whether to build shared libraries
-configure:13564: result: yes
-configure:13567: checking whether to build static libraries
-configure:13571: result: no
-configure:13683: checking whether NLS is requested
-configure:13692: result: yes
-configure:13733: checking for msgfmt
+configure:13113: result: no
+configure:13117: checking for dlopen in -ldl
+configure:13142: gcc -o conftest -g -O2   conftest.c -ldl   >&5
+configure:13142: $? = 0
+configure:13151: result: yes
+configure:13270: checking whether a program can dlopen itself
+configure:13350: gcc -o conftest -g -O2  -DHAVE_DLFCN_H  -Wl,--export-dynamic conftest.c -ldl  >&5
+configure:13353: $? = 0
+configure:13371: result: yes
+configure:13376: checking whether a statically linked program can dlopen itself
+configure:13456: gcc -o conftest -g -O2  -DHAVE_DLFCN_H  -Wl,--export-dynamic -static conftest.c -ldl  >&5
+/tmp/cc4O1sNN.o: In function `main':
+/root/gst/gst-plugins-base1.0-1.10.1/configure:13435: warning: Using 'dlopen' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+configure:13459: $? = 0
+configure:13477: result: no
+configure:13516: checking whether stripping libraries is possible
+configure:13521: result: yes
+configure:13556: checking if libtool supports shared libraries
+configure:13558: result: yes
+configure:13561: checking whether to build shared libraries
+configure:13586: result: yes
+configure:13589: checking whether to build static libraries
+configure:13593: result: no
+configure:13705: checking whether NLS is requested
+configure:13714: result: yes
+configure:13755: checking for msgfmt
 configure: trying /usr/bin/msgfmt...
 0 translated messages.
-configure:13765: result: /usr/bin/msgfmt
-configure:13774: checking for gmsgfmt
-configure:13805: result: /usr/bin/msgfmt
-configure:13856: checking for xgettext
+configure:13787: result: /usr/bin/msgfmt
+configure:13796: checking for gmsgfmt
+configure:13827: result: /usr/bin/msgfmt
+configure:13878: checking for xgettext
 configure: trying /usr/bin/xgettext...
 /usr/bin/xgettext: warning: file '/dev/null' extension '' is unknown; will try C
-configure:13888: result: /usr/bin/xgettext
-configure:13934: checking for msgmerge
+configure:13910: result: /usr/bin/xgettext
+configure:13956: checking for msgmerge
 configure: trying /usr/bin/msgmerge...
-configure:13965: result: /usr/bin/msgmerge
-configure:14022: checking for ld used by GCC
-configure:14086: result: /usr/bin/ld
-configure:14093: checking if the linker (/usr/bin/ld) is GNU ld
-configure:14106: result: yes
-configure:14113: checking for shared library run path origin
-configure:14126: result: done
-configure:14627: checking for CFPreferencesCopyAppValue
-configure:14645: gcc -o conftest -g -O2   conftest.c  -Wl,-framework -Wl,CoreFoundation >&5
+configure:13987: result: /usr/bin/msgmerge
+configure:14044: checking for ld used by GCC
+configure:14108: result: /usr/bin/ld
+configure:14115: checking if the linker (/usr/bin/ld) is GNU ld
+configure:14128: result: yes
+configure:14135: checking for shared library run path origin
+configure:14148: result: done
+configure:14649: checking for CFPreferencesCopyAppValue
+configure:14667: gcc -o conftest -g -O2   conftest.c  -Wl,-framework -Wl,CoreFoundation >&5
 conftest.c:24:42: fatal error: CoreFoundation/CFPreferences.h: No such file or directory
  #include <CoreFoundation/CFPreferences.h>
                                           ^
 compilation terminated.
-configure:14645: $? = 1
+configure:14667: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -633,14 +633,14 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:14654: result: no
-configure:14661: checking for CFLocaleCopyCurrent
-configure:14679: gcc -o conftest -g -O2   conftest.c  -Wl,-framework -Wl,CoreFoundation >&5
+configure:14676: result: no
+configure:14683: checking for CFLocaleCopyCurrent
+configure:14701: gcc -o conftest -g -O2   conftest.c  -Wl,-framework -Wl,CoreFoundation >&5
 conftest.c:24:37: fatal error: CoreFoundation/CFLocale.h: No such file or directory
  #include <CoreFoundation/CFLocale.h>
                                      ^
 compilation terminated.
-configure:14679: $? = 1
+configure:14701: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -673,37 +673,37 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:14688: result: no
-configure:14737: checking for GNU gettext in libc
-configure:14757: gcc -o conftest -g -O2   conftest.c  >&5
-configure:14757: $? = 0
-configure:14766: result: yes
-configure:15512: checking whether to use NLS
-configure:15514: result: yes
-configure:15517: checking where the gettext function comes from
-configure:15528: result: libc
-configure:15766: checking for pkg-config
-configure:15784: found /usr/bin/pkg-config
-configure:15796: result: /usr/bin/pkg-config
-configure:15821: checking pkg-config is at least version 0.9.0
-configure:15824: result: yes
-configure:15850: checking for VALGRIND
-configure:15858: $PKG_CONFIG --exists --print-errors "valgrind >= $VALGRIND_REQ"
-configure:15861: $? = 0
-configure:15876: $PKG_CONFIG --exists --print-errors "valgrind >= $VALGRIND_REQ"
-configure:15879: $? = 0
-configure:15915: result: yes
-configure:15924: Using extra code paths for valgrind
-configure:16120: Using GStreamer Base Plug-ins source release as package name
-configure:16144: Using Unknown package origin as package origin
-configure:16160: Using GST_PKG_CONFIG_PATH = $(top_builddir)/pkgconfig
-configure:16208: Using /usr/lib/arm-linux-gnueabihf/libexec/gst-install-plugins-helper as plugin install helper
-configure:16238: *** checking feature: building of plug-ins with external deps ***
-configure:16299: building external plug-ins
-configure:16342: *** checking feature: building of experimental plug-ins ***
-configure:16419: not building experimental plug-ins
-configure:16666: checking whether byte ordering is bigendian
-configure:16681: gcc -c -g -O2  conftest.c >&5
+configure:14710: result: no
+configure:14759: checking for GNU gettext in libc
+configure:14779: gcc -o conftest -g -O2   conftest.c  >&5
+configure:14779: $? = 0
+configure:14788: result: yes
+configure:15534: checking whether to use NLS
+configure:15536: result: yes
+configure:15539: checking where the gettext function comes from
+configure:15550: result: libc
+configure:15788: checking for pkg-config
+configure:15806: found /usr/bin/pkg-config
+configure:15818: result: /usr/bin/pkg-config
+configure:15843: checking pkg-config is at least version 0.9.0
+configure:15846: result: yes
+configure:15872: checking for VALGRIND
+configure:15880: $PKG_CONFIG --exists --print-errors "valgrind >= $VALGRIND_REQ"
+configure:15883: $? = 0
+configure:15898: $PKG_CONFIG --exists --print-errors "valgrind >= $VALGRIND_REQ"
+configure:15901: $? = 0
+configure:15937: result: yes
+configure:15946: Using extra code paths for valgrind
+configure:16142: Using GStreamer Base Plug-ins source release as package name
+configure:16166: Using Unknown package origin as package origin
+configure:16182: Using GST_PKG_CONFIG_PATH = $(top_builddir)/pkgconfig
+configure:16230: Using /usr/lib/arm-linux-gnueabihf/libexec/gst-install-plugins-helper as plugin install helper
+configure:16260: *** checking feature: building of plug-ins with external deps ***
+configure:16321: building external plug-ins
+configure:16364: *** checking feature: building of experimental plug-ins ***
+configure:16441: not building experimental plug-ins
+configure:16688: checking whether byte ordering is bigendian
+configure:16703: gcc -c -g -O2  conftest.c >&5
 conftest.c:36:9: error: unknown type name 'not'
          not a universal capable compiler
          ^~~
@@ -711,7 +711,7 @@ conftest.c:36:15: error: expected '=', ',', ';', 'asm' or '__attribute__' before
          not a universal capable compiler
                ^~~~~~~~~
 conftest.c:36:15: error: unknown type name 'universal'
-configure:16681: $? = 1
+configure:16703: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -752,9 +752,9 @@ configure: failed program was:
 | 	     #endif
 | 	     typedef int dummy;
 | 
-configure:16726: gcc -c -g -O2  conftest.c >&5
-configure:16726: $? = 0
-configure:16744: gcc -c -g -O2  conftest.c >&5
+configure:16748: gcc -c -g -O2  conftest.c >&5
+configure:16748: $? = 0
+configure:16766: gcc -c -g -O2  conftest.c >&5
 conftest.c: In function 'main':
 conftest.c:42:4: error: unknown type name 'not'
     not big endian
@@ -762,7 +762,7 @@ conftest.c:42:4: error: unknown type name 'not'
 conftest.c:42:12: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'endian'
     not big endian
             ^~~~~~
-configure:16744: $? = 1
+configure:16766: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -811,11 +811,11 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:16872: result: no
-configure:17031: checking for special C compiler options needed for large files
-configure:17076: result: no
-configure:17082: checking for _FILE_OFFSET_BITS value needed for large files
-configure:17107: gcc -c -g -O2  conftest.c >&5
+configure:16894: result: no
+configure:17053: checking for special C compiler options needed for large files
+configure:17098: result: no
+configure:17104: checking for _FILE_OFFSET_BITS value needed for large files
+configure:17129: gcc -c -g -O2  conftest.c >&5
 conftest.c:42:41: warning: result of '-2147483648l << 31' requires 63 bits to represent, but 'long int' only has 32 bits [-Wshift-overflow=]
  #define LARGE_OFF_T ((((off_t) 1 << 31) << 31) - 1 + (((off_t) 1 << 31) << 31))
                                          ^
@@ -843,7 +843,7 @@ conftest.c:44:13: note: in expansion of macro 'LARGE_OFF_T'
 conftest.c:43:7: error: variably modified 'off_t_is_large' at file scope
    int off_t_is_large[(LARGE_OFF_T % 2147483629 == 721
        ^~~~~~~~~~~~~~
-configure:17107: $? = 1
+configure:17129: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -897,20 +897,20 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:17131: gcc -c -g -O2  conftest.c >&5
-configure:17131: $? = 0
-configure:17139: result: 64
-configure:17274: checking for gcc
-configure:17301: result: gcc
-configure:17530: checking for C compiler version
-configure:17539: gcc --version >&5
+configure:17153: gcc -c -g -O2  conftest.c >&5
+configure:17153: $? = 0
+configure:17161: result: 64
+configure:17296: checking for gcc
+configure:17323: result: gcc
+configure:17552: checking for C compiler version
+configure:17561: gcc --version >&5
 gcc (Debian 6.2.0-13) 6.2.0 20161109
 Copyright (C) 2016 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-configure:17550: $? = 0
-configure:17539: gcc -v >&5
+configure:17572: $? = 0
+configure:17561: gcc -v >&5
 Using built-in specs.
 COLLECT_GCC=gcc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/arm-linux-gnueabihf/6/lto-wrapper
@@ -918,45 +918,45 @@ Target: arm-linux-gnueabihf
 Configured with: ../src/configure -v --with-pkgversion='Debian 6.2.0-13' --with-bugurl=file:///usr/share/doc/gcc-6/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-6 --program-prefix=arm-linux-gnueabihf- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-libitm --disable-libquadmath --enable-plugin --enable-default-pie --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-6-armhf/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-6-armhf --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-6-armhf --with-arch-directory=arm --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-sjlj-exceptions --with-arch=armv7-a --with-fpu=vfpv3-d16 --with-float=hard --with-mode=thumb --enable-checking=release --build=arm-linux-gnueabihf --host=arm-linux-gnueabihf --target=arm-linux-gnueabihf
 Thread model: posix
 gcc version 6.2.0 20161109 (Debian 6.2.0-13) 
-configure:17550: $? = 0
-configure:17539: gcc -V >&5
+configure:17572: $? = 0
+configure:17561: gcc -V >&5
 gcc: error: unrecognized command line option '-V'
 gcc: fatal error: no input files
 compilation terminated.
-configure:17550: $? = 1
-configure:17539: gcc -qversion >&5
+configure:17572: $? = 1
+configure:17561: gcc -qversion >&5
 gcc: error: unrecognized command line option '-qversion'; did you mean '--version'?
 gcc: fatal error: no input files
 compilation terminated.
-configure:17550: $? = 1
-configure:17554: checking whether we are using the GNU C compiler
-configure:17582: result: yes
-configure:17591: checking whether gcc accepts -g
-configure:17652: result: yes
-configure:17669: checking for gcc option to accept ISO C89
-configure:17745: result: none needed
-configure:17770: checking whether gcc understands -c and -o together
-configure:17807: result: yes
-configure:17826: checking dependency style of gcc
-configure:17937: result: gcc3
-configure:17956: checking for gcc option to accept ISO C99
-configure:18105: gcc  -c -g -O2  conftest.c >&5
-configure:18105: $? = 0
-configure:18118: result: none needed
-configure:18226: checking for gcc option to accept ISO Standard C
-configure:18237: result: none needed
-configure:18305: checking for g++
-configure:18321: found /usr/bin/g++
-configure:18332: result: g++
-configure:18359: checking for C++ compiler version
-configure:18368: g++ --version >&5
+configure:17572: $? = 1
+configure:17576: checking whether we are using the GNU C compiler
+configure:17604: result: yes
+configure:17613: checking whether gcc accepts -g
+configure:17674: result: yes
+configure:17691: checking for gcc option to accept ISO C89
+configure:17767: result: none needed
+configure:17792: checking whether gcc understands -c and -o together
+configure:17829: result: yes
+configure:17848: checking dependency style of gcc
+configure:17959: result: gcc3
+configure:17978: checking for gcc option to accept ISO C99
+configure:18127: gcc  -c -g -O2  conftest.c >&5
+configure:18127: $? = 0
+configure:18140: result: none needed
+configure:18248: checking for gcc option to accept ISO Standard C
+configure:18259: result: none needed
+configure:18327: checking for g++
+configure:18343: found /usr/bin/g++
+configure:18354: result: g++
+configure:18381: checking for C++ compiler version
+configure:18390: g++ --version >&5
 g++ (Debian 6.2.0-13) 6.2.0 20161109
 Copyright (C) 2016 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-configure:18379: $? = 0
-configure:18368: g++ -v >&5
+configure:18401: $? = 0
+configure:18390: g++ -v >&5
 Using built-in specs.
 COLLECT_GCC=g++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/arm-linux-gnueabihf/6/lto-wrapper
@@ -964,36 +964,36 @@ Target: arm-linux-gnueabihf
 Configured with: ../src/configure -v --with-pkgversion='Debian 6.2.0-13' --with-bugurl=file:///usr/share/doc/gcc-6/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-6 --program-prefix=arm-linux-gnueabihf- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-libitm --disable-libquadmath --enable-plugin --enable-default-pie --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-6-armhf/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-6-armhf --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-6-armhf --with-arch-directory=arm --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-sjlj-exceptions --with-arch=armv7-a --with-fpu=vfpv3-d16 --with-float=hard --with-mode=thumb --enable-checking=release --build=arm-linux-gnueabihf --host=arm-linux-gnueabihf --target=arm-linux-gnueabihf
 Thread model: posix
 gcc version 6.2.0 20161109 (Debian 6.2.0-13) 
-configure:18379: $? = 0
-configure:18368: g++ -V >&5
+configure:18401: $? = 0
+configure:18390: g++ -V >&5
 g++: error: unrecognized command line option '-V'
 g++: fatal error: no input files
 compilation terminated.
-configure:18379: $? = 1
-configure:18368: g++ -qversion >&5
+configure:18401: $? = 1
+configure:18390: g++ -qversion >&5
 g++: error: unrecognized command line option '-qversion'; did you mean '--version'?
 g++: fatal error: no input files
 compilation terminated.
-configure:18379: $? = 1
-configure:18383: checking whether we are using the GNU C++ compiler
-configure:18402: g++ -c   conftest.cpp >&5
-configure:18402: $? = 0
-configure:18411: result: yes
-configure:18420: checking whether g++ accepts -g
-configure:18440: g++ -c -g  conftest.cpp >&5
-configure:18440: $? = 0
-configure:18481: result: yes
-configure:18506: checking dependency style of g++
-configure:18617: result: gcc3
-configure:18650: checking how to run the C++ preprocessor
-configure:18677: g++ -E  conftest.cpp
-configure:18677: $? = 0
-configure:18691: g++ -E  conftest.cpp
+configure:18401: $? = 1
+configure:18405: checking whether we are using the GNU C++ compiler
+configure:18424: g++ -c   conftest.cpp >&5
+configure:18424: $? = 0
+configure:18433: result: yes
+configure:18442: checking whether g++ accepts -g
+configure:18462: g++ -c -g  conftest.cpp >&5
+configure:18462: $? = 0
+configure:18503: result: yes
+configure:18528: checking dependency style of g++
+configure:18639: result: gcc3
+configure:18672: checking how to run the C++ preprocessor
+configure:18699: g++ -E  conftest.cpp
+configure:18699: $? = 0
+configure:18713: g++ -E  conftest.cpp
 conftest.cpp:38:28: fatal error: ac_nonexistent.h: No such file or directory
  #include <ac_nonexistent.h>
                             ^
 compilation terminated.
-configure:18691: $? = 1
+configure:18713: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -1033,15 +1033,15 @@ configure: failed program was:
 | #define _FILE_OFFSET_BITS 64
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:18716: result: g++ -E
-configure:18736: g++ -E  conftest.cpp
-configure:18736: $? = 0
-configure:18750: g++ -E  conftest.cpp
+configure:18738: result: g++ -E
+configure:18758: g++ -E  conftest.cpp
+configure:18758: $? = 0
+configure:18772: g++ -E  conftest.cpp
 conftest.cpp:38:28: fatal error: ac_nonexistent.h: No such file or directory
  #include <ac_nonexistent.h>
                             ^
 compilation terminated.
-configure:18750: $? = 1
+configure:18772: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -1081,101 +1081,101 @@ configure: failed program was:
 | #define _FILE_OFFSET_BITS 64
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:18912: checking for ld used by g++
-configure:18979: result: /usr/bin/ld
-configure:18986: checking if the linker (/usr/bin/ld) is GNU ld
-configure:19001: result: yes
-configure:19056: checking whether the g++ linker (/usr/bin/ld) supports shared libraries
-configure:20129: result: yes
-configure:20165: g++ -c   conftest.cpp >&5
-configure:20168: $? = 0
-configure:20649: checking for g++ option to produce PIC
-configure:20656: result: -fPIC -DPIC
-configure:20664: checking if g++ PIC flag -fPIC -DPIC works
-configure:20682: g++ -c   -fPIC -DPIC -DPIC conftest.cpp >&5
-configure:20686: $? = 0
-configure:20699: result: yes
-configure:20722: checking if g++ static flag -static works
-configure:20750: result: yes
-configure:20762: checking if g++ supports -c -o file.o
-configure:20783: g++ -c   -o out/conftest2.o conftest.cpp >&5
-configure:20787: $? = 0
-configure:20809: result: yes
-configure:20814: checking if g++ supports -c -o file.o
-configure:20861: result: yes
-configure:20891: checking whether the g++ linker (/usr/bin/ld) supports shared libraries
-configure:20934: result: yes
-configure:21075: checking dynamic linker characteristics
-configure:21832: result: GNU/Linux ld.so
-configure:21897: checking how to hardcode library paths into programs
-configure:21922: result: immediate
-configure:21979: g++ -c   conftest.cpp >&5
-configure:21979: $? = 0
-configure:21991: working c++ compiler found: yes
-configure:22004: checking for valgrind
-configure:22022: found /usr/bin/valgrind
-configure:22035: result: /usr/bin/valgrind
-configure:22063: checking for gobject-introspection
-configure:22094: $PKG_CONFIG --exists --print-errors "gobject-introspection-1.0 >= 1.31.1"
+configure:18934: checking for ld used by g++
+configure:19001: result: /usr/bin/ld
+configure:19008: checking if the linker (/usr/bin/ld) is GNU ld
+configure:19023: result: yes
+configure:19078: checking whether the g++ linker (/usr/bin/ld) supports shared libraries
+configure:20151: result: yes
+configure:20187: g++ -c   conftest.cpp >&5
+configure:20190: $? = 0
+configure:20671: checking for g++ option to produce PIC
+configure:20678: result: -fPIC -DPIC
+configure:20686: checking if g++ PIC flag -fPIC -DPIC works
+configure:20704: g++ -c   -fPIC -DPIC -DPIC conftest.cpp >&5
+configure:20708: $? = 0
+configure:20721: result: yes
+configure:20744: checking if g++ static flag -static works
+configure:20772: result: yes
+configure:20784: checking if g++ supports -c -o file.o
+configure:20805: g++ -c   -o out/conftest2.o conftest.cpp >&5
+configure:20809: $? = 0
+configure:20831: result: yes
+configure:20836: checking if g++ supports -c -o file.o
+configure:20883: result: yes
+configure:20913: checking whether the g++ linker (/usr/bin/ld) supports shared libraries
+configure:20956: result: yes
+configure:21097: checking dynamic linker characteristics
+configure:21854: result: GNU/Linux ld.so
+configure:21919: checking how to hardcode library paths into programs
+configure:21944: result: immediate
+configure:22001: g++ -c   conftest.cpp >&5
+configure:22001: $? = 0
+configure:22013: working c++ compiler found: yes
+configure:22026: checking for valgrind
+configure:22044: found /usr/bin/valgrind
+configure:22057: result: /usr/bin/valgrind
+configure:22085: checking for gobject-introspection
+configure:22116: $PKG_CONFIG --exists --print-errors "gobject-introspection-1.0 >= 1.31.1"
 Package gobject-introspection-1.0 was not found in the pkg-config search path.
 Perhaps you should add the directory containing `gobject-introspection-1.0.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'gobject-introspection-1.0' found
-configure:22097: $? = 1
-configure:22108: result: no
-configure:22153: checking for gtkdoc-check
-configure:22186: result: no
-configure:22195: checking for gtkdoc-rebase
-configure:22228: result: no
-configure:22239: checking for gtkdoc-mkpdf
-configure:22272: result: no
-configure:22473: checking whether to build gtk-doc documentation
-configure:22475: result: no
-configure:22543: checking for python
-configure:22561: found /usr/bin/python
-configure:22573: result: /usr/bin/python
-configure:22594: checking for python version
-configure:22601: result: 2.7
-configure:22613: checking for python platform
-configure:22620: result: linux2
-configure:22646: checking for python script directory
-configure:22681: result: ${prefix}/lib/python2.7/site-packages
-configure:22690: checking for python extension module directory
-configure:22725: result: ${exec_prefix}/lib/python2.7/site-packages
-configure:22741: checking whether to build plugin documentation
-configure:22753: result: no (gtk-doc disabled or not available)
-configure:22856: checking for cos in -lm
-configure:22881: gcc -o conftest -g -O2   conftest.c -lm   >&5
+configure:22119: $? = 1
+configure:22130: result: no
+configure:22175: checking for gtkdoc-check
+configure:22208: result: no
+configure:22217: checking for gtkdoc-rebase
+configure:22250: result: no
+configure:22261: checking for gtkdoc-mkpdf
+configure:22294: result: no
+configure:22495: checking whether to build gtk-doc documentation
+configure:22497: result: no
+configure:22565: checking for python
+configure:22583: found /usr/bin/python
+configure:22595: result: /usr/bin/python
+configure:22616: checking for python version
+configure:22623: result: 2.7
+configure:22635: checking for python platform
+configure:22642: result: linux2
+configure:22668: checking for python script directory
+configure:22703: result: ${prefix}/lib/python2.7/site-packages
+configure:22712: checking for python extension module directory
+configure:22747: result: ${exec_prefix}/lib/python2.7/site-packages
+configure:22763: checking whether to build plugin documentation
+configure:22775: result: no (gtk-doc disabled or not available)
+configure:22878: checking for cos in -lm
+configure:22903: gcc -o conftest -g -O2   conftest.c -lm   >&5
 conftest.c:45:6: warning: conflicting types for built-in function 'cos'
  char cos ();
       ^~~
-configure:22881: $? = 0
-configure:22890: result: yes
-configure:23085: checking whether gcc is Clang
-configure:23110: result: no
-configure:23233: checking whether pthreads work with -pthread
-configure:23327: gcc -o conftest -g -O2 -pthread   conftest.c   >&5
-configure:23327: $? = 0
-configure:23336: result: yes
-configure:23355: checking for joinable pthread attribute
-configure:23373: gcc -o conftest -g -O2 -pthread   conftest.c   >&5
-configure:23373: $? = 0
-configure:23381: result: PTHREAD_CREATE_JOINABLE
-configure:23395: checking whether more special flags are required for pthreads
-configure:23408: result: no
-configure:23416: checking for PTHREAD_PRIO_INHERIT
-configure:23432: gcc -o conftest -g -O2 -pthread   conftest.c   >&5
-configure:23432: $? = 0
-configure:23441: result: yes
-configure:23545: checking for ANSI C header files
-configure:23649: result: yes
-configure:23661: checking xmmintrin.h usability
-configure:23661: gcc -c -g -O2  conftest.c >&5
+configure:22903: $? = 0
+configure:22912: result: yes
+configure:23107: checking whether gcc is Clang
+configure:23132: result: no
+configure:23255: checking whether pthreads work with -pthread
+configure:23349: gcc -o conftest -g -O2 -pthread   conftest.c   >&5
+configure:23349: $? = 0
+configure:23358: result: yes
+configure:23377: checking for joinable pthread attribute
+configure:23395: gcc -o conftest -g -O2 -pthread   conftest.c   >&5
+configure:23395: $? = 0
+configure:23403: result: PTHREAD_CREATE_JOINABLE
+configure:23417: checking whether more special flags are required for pthreads
+configure:23430: result: no
+configure:23438: checking for PTHREAD_PRIO_INHERIT
+configure:23454: gcc -o conftest -g -O2 -pthread   conftest.c   >&5
+configure:23454: $? = 0
+configure:23463: result: yes
+configure:23567: checking for ANSI C header files
+configure:23671: result: yes
+configure:23683: checking xmmintrin.h usability
+configure:23683: gcc -c -g -O2  conftest.c >&5
 conftest.c:74:23: fatal error: xmmintrin.h: No such file or directory
  #include <xmmintrin.h>
                        ^
 compilation terminated.
-configure:23661: $? = 1
+configure:23683: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -1251,14 +1251,14 @@ configure: failed program was:
 | # include <unistd.h>
 | #endif
 | #include <xmmintrin.h>
-configure:23661: result: no
-configure:23661: checking xmmintrin.h presence
-configure:23661: gcc -E  conftest.c
+configure:23683: result: no
+configure:23683: checking xmmintrin.h presence
+configure:23683: gcc -E  conftest.c
 conftest.c:41:23: fatal error: xmmintrin.h: No such file or directory
  #include <xmmintrin.h>
                        ^
 compilation terminated.
-configure:23661: $? = 1
+configure:23683: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -1301,16 +1301,16 @@ configure: failed program was:
 | #define STDC_HEADERS 1
 | /* end confdefs.h.  */
 | #include <xmmintrin.h>
-configure:23661: result: no
-configure:23661: checking for xmmintrin.h
-configure:23661: result: no
-configure:23661: checking emmintrin.h usability
-configure:23661: gcc -c -g -O2  conftest.c >&5
+configure:23683: result: no
+configure:23683: checking for xmmintrin.h
+configure:23683: result: no
+configure:23683: checking emmintrin.h usability
+configure:23683: gcc -c -g -O2  conftest.c >&5
 conftest.c:74:23: fatal error: emmintrin.h: No such file or directory
  #include <emmintrin.h>
                        ^
 compilation terminated.
-configure:23661: $? = 1
+configure:23683: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -1386,14 +1386,14 @@ configure: failed program was:
 | # include <unistd.h>
 | #endif
 | #include <emmintrin.h>
-configure:23661: result: no
-configure:23661: checking emmintrin.h presence
-configure:23661: gcc -E  conftest.c
+configure:23683: result: no
+configure:23683: checking emmintrin.h presence
+configure:23683: gcc -E  conftest.c
 conftest.c:41:23: fatal error: emmintrin.h: No such file or directory
  #include <emmintrin.h>
                        ^
 compilation terminated.
-configure:23661: $? = 1
+configure:23683: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -1436,16 +1436,16 @@ configure: failed program was:
 | #define STDC_HEADERS 1
 | /* end confdefs.h.  */
 | #include <emmintrin.h>
-configure:23661: result: no
-configure:23661: checking for emmintrin.h
-configure:23661: result: no
-configure:23661: checking smmintrin.h usability
-configure:23661: gcc -c -g -O2  conftest.c >&5
+configure:23683: result: no
+configure:23683: checking for emmintrin.h
+configure:23683: result: no
+configure:23683: checking smmintrin.h usability
+configure:23683: gcc -c -g -O2  conftest.c >&5
 conftest.c:74:23: fatal error: smmintrin.h: No such file or directory
  #include <smmintrin.h>
                        ^
 compilation terminated.
-configure:23661: $? = 1
+configure:23683: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -1521,14 +1521,14 @@ configure: failed program was:
 | # include <unistd.h>
 | #endif
 | #include <smmintrin.h>
-configure:23661: result: no
-configure:23661: checking smmintrin.h presence
-configure:23661: gcc -E  conftest.c
+configure:23683: result: no
+configure:23683: checking smmintrin.h presence
+configure:23683: gcc -E  conftest.c
 conftest.c:41:23: fatal error: smmintrin.h: No such file or directory
  #include <smmintrin.h>
                        ^
 compilation terminated.
-configure:23661: $? = 1
+configure:23683: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -1571,17 +1571,17 @@ configure: failed program was:
 | #define STDC_HEADERS 1
 | /* end confdefs.h.  */
 | #include <smmintrin.h>
-configure:23661: result: no
-configure:23661: checking for smmintrin.h
-configure:23661: result: no
-configure:23672: checking whether __i386__ is declared
-configure:23672: gcc -c -g -O2  conftest.c >&5
+configure:23683: result: no
+configure:23683: checking for smmintrin.h
+configure:23683: result: no
+configure:23694: checking whether __i386__ is declared
+configure:23694: gcc -c -g -O2  conftest.c >&5
 conftest.c: In function 'main':
 conftest.c:81:10: error: '__i386__' undeclared (first use in this function)
    (void) __i386__;
           ^~~~~~~~
 conftest.c:81:10: note: each undeclared identifier is reported only once for each function it appears in
-configure:23672: $? = 1
+configure:23694: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -1670,15 +1670,15 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:23672: result: no
-configure:23686: checking whether __x86_64__ is declared
-configure:23686: gcc -c -g -O2  conftest.c >&5
+configure:23694: result: no
+configure:23708: checking whether __x86_64__ is declared
+configure:23708: gcc -c -g -O2  conftest.c >&5
 conftest.c: In function 'main':
 conftest.c:82:10: error: '__x86_64__' undeclared (first use in this function)
    (void) __x86_64__;
           ^~~~~~~~~~
 conftest.c:82:10: note: each undeclared identifier is reported only once for each function it appears in
-configure:23686: $? = 1
+configure:23708: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -1768,11 +1768,11 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:23686: result: no
-configure:23706: checking to see if compiler understands -msse
-configure:23723: gcc -c -g -O2 -msse  conftest.c >&5
+configure:23708: result: no
+configure:23728: checking to see if compiler understands -msse
+configure:23745: gcc -c -g -O2 -msse  conftest.c >&5
 gcc: error: unrecognized command line option '-msse'; did you mean '-fdse'?
-configure:23723: $? = 1
+configure:23745: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -1824,11 +1824,11 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:23738: result: no
-configure:23742: checking to see if compiler understands -msse2
-configure:23759: gcc -c -g -O2 -msse2  conftest.c >&5
+configure:23760: result: no
+configure:23764: checking to see if compiler understands -msse2
+configure:23781: gcc -c -g -O2 -msse2  conftest.c >&5
 gcc: error: unrecognized command line option '-msse2'
-configure:23759: $? = 1
+configure:23781: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -1880,11 +1880,11 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:23774: result: no
-configure:23778: checking to see if compiler understands -msse4.1
-configure:23795: gcc -c -g -O2 -msse4.1  conftest.c >&5
+configure:23796: result: no
+configure:23800: checking to see if compiler understands -msse4.1
+configure:23817: gcc -c -g -O2 -msse4.1  conftest.c >&5
 gcc: error: unrecognized command line option '-msse4.1'
-configure:23795: $? = 1
+configure:23817: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -1936,18 +1936,18 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:23810: result: no
-configure:23845: checking for sys/socket.h
-configure:23845: gcc -c -g -O2  conftest.c >&5
-configure:23845: $? = 0
-configure:23845: result: yes
-configure:23869: checking for winsock2.h
-configure:23869: gcc -c -g -O2  conftest.c >&5
+configure:23832: result: no
+configure:23867: checking for sys/socket.h
+configure:23867: gcc -c -g -O2  conftest.c >&5
+configure:23867: $? = 0
+configure:23867: result: yes
+configure:23891: checking for winsock2.h
+configure:23891: gcc -c -g -O2  conftest.c >&5
 conftest.c:81:22: fatal error: winsock2.h: No such file or directory
  #include <winsock2.h>
                       ^
 compilation terminated.
-configure:23869: $? = 1
+configure:23891: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -2030,14 +2030,14 @@ configure: failed program was:
 | #endif
 | 
 | #include <winsock2.h>
-configure:23869: result: no
-configure:23898: checking for process.h
-configure:23898: gcc -c -g -O2  conftest.c >&5
+configure:23891: result: no
+configure:23920: checking for process.h
+configure:23920: gcc -c -g -O2  conftest.c >&5
 conftest.c:81:21: fatal error: process.h: No such file or directory
  #include <process.h>
                      ^
 compilation terminated.
-configure:23898: $? = 1
+configure:23920: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -2120,17 +2120,17 @@ configure: failed program was:
 | #endif
 | 
 | #include <process.h>
-configure:23898: result: no
-configure:23898: checking for sys/types.h
-configure:23898: result: yes
-configure:23898: checking for sys/wait.h
-configure:23898: gcc -c -g -O2  conftest.c >&5
-configure:23898: $? = 0
-configure:23898: result: yes
-configure:23898: checking for sys/stat.h
-configure:23898: result: yes
-configure:23910: checking for ARM NEON support in current arch/CFLAGS
-configure:23930: gcc -o conftest -g -O2   conftest.c  >&5
+configure:23920: result: no
+configure:23920: checking for sys/types.h
+configure:23920: result: yes
+configure:23920: checking for sys/wait.h
+configure:23920: gcc -c -g -O2  conftest.c >&5
+configure:23920: $? = 0
+configure:23920: result: yes
+configure:23920: checking for sys/stat.h
+configure:23920: result: yes
+configure:23932: checking for ARM NEON support in current arch/CFLAGS
+configure:23952: gcc -o conftest -g -O2   conftest.c  >&5
 In file included from conftest.c:52:0:
 conftest.c: In function 'testfunc':
 /usr/lib/gcc/arm-linux-gnueabihf/6/include/arm_neon.h:1222:1: error: inlining failed in call to always_inline 'vmull_s16': target specific option mismatch
@@ -2153,7 +2153,7 @@ In file included from conftest.c:52:0:
 conftest.c:55:14: note: called from here
        return vmull_s16(vld1_s16(a), vld1_s16(b));
               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-configure:23930: $? = 1
+configure:23952: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -2219,406 +2219,424 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:23940: result: no
-configure:23948: checking for stdint types
-configure:23971: gcc -c   conftest.c >&5
-configure:23971: $? = 0
-configure:24015: result: stdint.h (shortcircuit)
-configure:24402: result: make use of stdint.h in _stdint.h (assuming C99 compatible system)
-configure:24413: checking for localtime_r
-configure:24413: gcc -o conftest -g -O2   conftest.c  >&5
-configure:24413: $? = 0
-configure:24413: result: yes
-configure:24413: checking for gmtime_r
-configure:24413: gcc -o conftest -g -O2   conftest.c  >&5
-configure:24413: $? = 0
-configure:24413: result: yes
-configure:24427: checking for log2
-configure:24427: gcc -o conftest -g -O2   conftest.c  -lm >&5
+configure:23962: result: no
+configure:23970: checking for stdint types
+configure:23993: gcc -c   conftest.c >&5
+configure:23993: $? = 0
+configure:24037: result: stdint.h (shortcircuit)
+configure:24424: result: make use of stdint.h in _stdint.h (assuming C99 compatible system)
+configure:24435: checking for localtime_r
+configure:24435: gcc -o conftest -g -O2   conftest.c  >&5
+configure:24435: $? = 0
+configure:24435: result: yes
+configure:24435: checking for gmtime_r
+configure:24435: gcc -o conftest -g -O2   conftest.c  >&5
+configure:24435: $? = 0
+configure:24435: result: yes
+configure:24449: checking for log2
+configure:24449: gcc -o conftest -g -O2   conftest.c  -lm >&5
 conftest.c:75:6: warning: conflicting types for built-in function 'log2'
  char log2 ();
       ^~~~
-configure:24427: $? = 0
-configure:24427: result: yes
-configure:24442: checking for _LARGEFILE_SOURCE value needed for large files
-configure:24461: gcc -o conftest -g -O2   conftest.c  >&5
-configure:24461: $? = 0
-configure:24489: result: no
-configure:24513: checking for lrint
-configure:24534: gcc -o conftest -g -O2   conftest.c  -lm >&5
-configure:24534: $? = 0
-configure:24542: result: yes
-configure:24550: checking for lrintf
-configure:24571: gcc -o conftest -g -O2   conftest.c  -lm >&5
-configure:24571: $? = 0
-configure:24579: result: yes
-configure:24590: checking whether gcc implements __PRETTY_FUNCTION__
-configure:24607: gcc -o conftest -g -O2   conftest.c  >&5
-configure:24607: $? = 0
-configure:24617: result: yes
-configure:24625: checking whether gcc implements __FUNCTION__
-configure:24642: gcc -o conftest -g -O2   conftest.c  >&5
-configure:24642: $? = 0
-configure:24652: result: yes
-configure:24660: checking whether gcc implements __func__
-configure:24677: gcc -o conftest -g -O2   conftest.c  >&5
-configure:24677: $? = 0
-configure:24687: result: yes
-configure:24733: checking for GLIB
-configure:24741: $PKG_CONFIG --exists --print-errors "$which"
-configure:24744: $? = 0
-configure:24759: $PKG_CONFIG --exists --print-errors "$which"
-configure:24762: $? = 0
-configure:24814: result: yes
-configure:24865: checking for glib-genmarshal
-configure:24873: result: glib-genmarshal (from pkg-config path)
-configure:24927: checking for glib-mkenums
-configure:24934: result: glib-mkenums
-configure:24947: checking for GIO
-configure:24955: $PKG_CONFIG --exists --print-errors "gio-2.0 >= $GLIB_REQ"
-configure:24958: $? = 0
-configure:24973: $PKG_CONFIG --exists --print-errors "gio-2.0 >= $GLIB_REQ"
-configure:24976: $? = 0
-configure:25031: result: yes
-configure:25082: checking for ORC
-configure:25090: $PKG_CONFIG --exists --print-errors "orc-0.4 >= $ORC_REQ"
+configure:24449: $? = 0
+configure:24449: result: yes
+configure:24464: checking for _LARGEFILE_SOURCE value needed for large files
+configure:24483: gcc -o conftest -g -O2   conftest.c  >&5
+configure:24483: $? = 0
+configure:24511: result: no
+configure:24535: checking for lrint
+configure:24556: gcc -o conftest -g -O2   conftest.c  -lm >&5
+configure:24556: $? = 0
+configure:24564: result: yes
+configure:24572: checking for lrintf
+configure:24593: gcc -o conftest -g -O2   conftest.c  -lm >&5
+configure:24593: $? = 0
+configure:24601: result: yes
+configure:24612: checking whether gcc implements __PRETTY_FUNCTION__
+configure:24629: gcc -o conftest -g -O2   conftest.c  >&5
+configure:24629: $? = 0
+configure:24639: result: yes
+configure:24647: checking whether gcc implements __FUNCTION__
+configure:24664: gcc -o conftest -g -O2   conftest.c  >&5
+configure:24664: $? = 0
+configure:24674: result: yes
+configure:24682: checking whether gcc implements __func__
+configure:24699: gcc -o conftest -g -O2   conftest.c  >&5
+configure:24699: $? = 0
+configure:24709: result: yes
+configure:24755: checking for GLIB
+configure:24763: $PKG_CONFIG --exists --print-errors "$which"
+configure:24766: $? = 0
+configure:24781: $PKG_CONFIG --exists --print-errors "$which"
+configure:24784: $? = 0
+configure:24836: result: yes
+configure:24887: checking for glib-genmarshal
+configure:24895: result: glib-genmarshal (from pkg-config path)
+configure:24949: checking for glib-mkenums
+configure:24956: result: glib-mkenums
+configure:24969: checking for GIO
+configure:24977: $PKG_CONFIG --exists --print-errors "gio-2.0 >= $GLIB_REQ"
+configure:24980: $? = 0
+configure:24995: $PKG_CONFIG --exists --print-errors "gio-2.0 >= $GLIB_REQ"
+configure:24998: $? = 0
+configure:25053: result: yes
+configure:25104: checking for ORC
+configure:25112: $PKG_CONFIG --exists --print-errors "orc-0.4 >= $ORC_REQ"
 Package orc-0.4 was not found in the pkg-config search path.
 Perhaps you should add the directory containing `orc-0.4.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'orc-0.4' found
-configure:25093: $? = 1
-configure:25108: $PKG_CONFIG --exists --print-errors "orc-0.4 >= $ORC_REQ"
+configure:25115: $? = 1
+configure:25130: $PKG_CONFIG --exists --print-errors "orc-0.4 >= $ORC_REQ"
 Package orc-0.4 was not found in the pkg-config search path.
 Perhaps you should add the directory containing `orc-0.4.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'orc-0.4' found
-configure:25111: $? = 1
+configure:25133: $? = 1
 No package 'orc-0.4' found
-configure:25139: result: no
-configure:25228: checking for GST
-configure:25236: $PKG_CONFIG --exists --print-errors "$module >= $minver"
-configure:25239: $? = 0
-configure:25254: $PKG_CONFIG --exists --print-errors "$module >= $minver"
-configure:25257: $? = 0
-configure:25313: result: yes
-configure:25327: using GStreamer tools in /usr/bin
-configure:25337: using GStreamer plug-ins in /usr/lib/arm-linux-gnueabihf/gstreamer-1.0
-configure:25349: checking for GST_NET
-configure:25357: $PKG_CONFIG --exists --print-errors "$module >= $minver"
-configure:25360: $? = 0
-configure:25375: $PKG_CONFIG --exists --print-errors "$module >= $minver"
-configure:25378: $? = 0
-configure:25434: result: yes
-configure:25451: checking for GST_BASE
-configure:25459: $PKG_CONFIG --exists --print-errors "$module >= $minver"
-configure:25462: $? = 0
-configure:25477: $PKG_CONFIG --exists --print-errors "$module >= $minver"
-configure:25480: $? = 0
-configure:25536: result: yes
-configure:25553: checking for GST_CONTROLLER
-configure:25561: $PKG_CONFIG --exists --print-errors "$module >= $minver"
-configure:25564: $? = 0
-configure:25579: $PKG_CONFIG --exists --print-errors "$module >= $minver"
-configure:25582: $? = 0
-configure:25638: result: yes
-configure:25655: checking for GST_CHECK
-configure:25663: $PKG_CONFIG --exists --print-errors "$module >= $minver"
-configure:25666: $? = 0
-configure:25681: $PKG_CONFIG --exists --print-errors "$module >= $minver"
-configure:25684: $? = 0
-configure:25740: result: yes
-configure:25769: checking for GTK
-configure:25777: $PKG_CONFIG --exists --print-errors "gtk+-3.0 >= $GTK_REQ"
+configure:25161: result: no
+configure:25250: checking for GST
+configure:25258: $PKG_CONFIG --exists --print-errors "$module >= $minver"
+configure:25261: $? = 0
+configure:25276: $PKG_CONFIG --exists --print-errors "$module >= $minver"
+configure:25279: $? = 0
+configure:25335: result: yes
+configure:25349: using GStreamer tools in /usr/bin
+configure:25359: using GStreamer plug-ins in /usr/lib/arm-linux-gnueabihf/gstreamer-1.0
+configure:25371: checking for GST_NET
+configure:25379: $PKG_CONFIG --exists --print-errors "$module >= $minver"
+configure:25382: $? = 0
+configure:25397: $PKG_CONFIG --exists --print-errors "$module >= $minver"
+configure:25400: $? = 0
+configure:25456: result: yes
+configure:25473: checking for GST_BASE
+configure:25481: $PKG_CONFIG --exists --print-errors "$module >= $minver"
+configure:25484: $? = 0
+configure:25499: $PKG_CONFIG --exists --print-errors "$module >= $minver"
+configure:25502: $? = 0
+configure:25558: result: yes
+configure:25575: checking for GST_CONTROLLER
+configure:25583: $PKG_CONFIG --exists --print-errors "$module >= $minver"
+configure:25586: $? = 0
+configure:25601: $PKG_CONFIG --exists --print-errors "$module >= $minver"
+configure:25604: $? = 0
+configure:25660: result: yes
+configure:25677: checking for GST_CHECK
+configure:25685: $PKG_CONFIG --exists --print-errors "$module >= $minver"
+configure:25688: $? = 0
+configure:25703: $PKG_CONFIG --exists --print-errors "$module >= $minver"
+configure:25706: $? = 0
+configure:25762: result: yes
+configure:25791: checking for GTK
+configure:25799: $PKG_CONFIG --exists --print-errors "gtk+-3.0 >= $GTK_REQ"
 Package gtk+-3.0 was not found in the pkg-config search path.
 Perhaps you should add the directory containing `gtk+-3.0.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'gtk+-3.0' found
-configure:25780: $? = 1
-configure:25795: $PKG_CONFIG --exists --print-errors "gtk+-3.0 >= $GTK_REQ"
+configure:25802: $? = 1
+configure:25817: $PKG_CONFIG --exists --print-errors "gtk+-3.0 >= $GTK_REQ"
 Package gtk+-3.0 was not found in the pkg-config search path.
 Perhaps you should add the directory containing `gtk+-3.0.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'gtk+-3.0' found
-configure:25798: $? = 1
+configure:25820: $? = 1
 No package 'gtk+-3.0' found
-configure:25826: result: no
-configure:25840: checking for GTK_X11
-configure:25848: $PKG_CONFIG --exists --print-errors "gtk+-x11-3.0 >= $GTK_REQ"
+configure:25848: result: no
+configure:25862: checking for GTK_X11
+configure:25870: $PKG_CONFIG --exists --print-errors "gtk+-x11-3.0 >= $GTK_REQ"
 Package gtk+-x11-3.0 was not found in the pkg-config search path.
 Perhaps you should add the directory containing `gtk+-x11-3.0.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'gtk+-x11-3.0' found
-configure:25851: $? = 1
-configure:25866: $PKG_CONFIG --exists --print-errors "gtk+-x11-3.0 >= $GTK_REQ"
+configure:25873: $? = 1
+configure:25888: $PKG_CONFIG --exists --print-errors "gtk+-x11-3.0 >= $GTK_REQ"
 Package gtk+-x11-3.0 was not found in the pkg-config search path.
 Perhaps you should add the directory containing `gtk+-x11-3.0.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'gtk+-x11-3.0' found
-configure:25869: $? = 1
+configure:25891: $? = 1
 No package 'gtk+-x11-3.0' found
-configure:25897: result: no
-configure:25911: checking for GTK_QUARTZ
-configure:25919: $PKG_CONFIG --exists --print-errors "gtk+-quartz-3.0 >= $GTK_REQ"
+configure:25919: result: no
+configure:25933: checking for GTK_QUARTZ
+configure:25941: $PKG_CONFIG --exists --print-errors "gtk+-quartz-3.0 >= $GTK_REQ"
 Package gtk+-quartz-3.0 was not found in the pkg-config search path.
 Perhaps you should add the directory containing `gtk+-quartz-3.0.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'gtk+-quartz-3.0' found
-configure:25922: $? = 1
-configure:25937: $PKG_CONFIG --exists --print-errors "gtk+-quartz-3.0 >= $GTK_REQ"
+configure:25944: $? = 1
+configure:25959: $PKG_CONFIG --exists --print-errors "gtk+-quartz-3.0 >= $GTK_REQ"
 Package gtk+-quartz-3.0 was not found in the pkg-config search path.
 Perhaps you should add the directory containing `gtk+-quartz-3.0.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'gtk+-quartz-3.0' found
-configure:25940: $? = 1
+configure:25962: $? = 1
 No package 'gtk+-quartz-3.0' found
-configure:25968: result: no
-configure:26012: checking for QT
-configure:26020: $PKG_CONFIG --exists --print-errors "Qt5Gui Qt5Widgets"
-configure:26023: $? = 0
-configure:26038: $PKG_CONFIG --exists --print-errors "Qt5Gui Qt5Widgets"
-configure:26041: $? = 0
-configure:26081: result: yes
-configure:26131: checking for moc
-configure:26147: found /usr/bin/moc
-configure:26158: result: moc
-configure:26180: checking for Qt5 moc
-configure:26393: result: moc
-configure:26432: gcc -c -g -O2  conftest.c >&5
-configure:26432: $? = 0
-configure:26456: checking for -Bsymbolic-functions linker flag
-configure:26471: gcc -o conftest -g -O2  -Wl,-Bsymbolic-functions conftest.c  >&5
-configure:26471: $? = 0
-configure:26472: result: yes
-configure:26530: Using /usr/lib/arm-linux-gnueabihf/lib/gstreamer-1.0 as the plugin install location
-configure:26567: Setting GST_PACKAGE_RELEASE_DATETIME to 2016-11-17
-configure:26619: checking whether to build static plugins or not
-configure:26635: result: no
-configure:26664: checking whether the GStreamer debugging system is enabled
-configure:26683: gcc -c -pthread -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/arm-linux-gnueabihf/glib-2.0/include -g -O2  conftest.c >&5
-configure:26683: $? = 0
-configure:26697: result: yes
-configure:26717: checking to see if compiler understands -Wall
-configure:26734: gcc -c -g -O2 -Wall  conftest.c >&5
-configure:26734: $? = 0
-configure:26749: result: yes
-configure:26754: checking to see if compiler understands -Wdeclaration-after-statement
-configure:26771: gcc -c -g -O2 -Wdeclaration-after-statement  conftest.c >&5
-configure:26771: $? = 0
-configure:26786: result: yes
-configure:26791: checking to see if compiler understands -Wvla
-configure:26808: gcc -c -g -O2 -Wvla  conftest.c >&5
-configure:26808: $? = 0
-configure:26823: result: yes
-configure:26828: checking to see if compiler understands -Wpointer-arith
-configure:26845: gcc -c -g -O2 -Wpointer-arith  conftest.c >&5
-configure:26845: $? = 0
-configure:26860: result: yes
-configure:26919: checking to see if compiler understands -Wmissing-declarations
-configure:26936: gcc -c -g -O2 -Wmissing-declarations  conftest.c >&5
-configure:26936: $? = 0
-configure:26951: result: yes
-configure:26919: checking to see if compiler understands -Wmissing-prototypes
-configure:26936: gcc -c -g -O2 -Wmissing-prototypes  conftest.c >&5
-configure:26936: $? = 0
-configure:26951: result: yes
-configure:26919: checking to see if compiler understands -Wredundant-decls
-configure:26936: gcc -c -g -O2 -Wredundant-decls  conftest.c >&5
-configure:26936: $? = 0
-configure:26951: result: yes
-configure:26919: checking to see if compiler understands -Wundef
-configure:26936: gcc -c -g -O2 -Wundef  conftest.c >&5
-configure:26936: $? = 0
-configure:26951: result: yes
-configure:26919: checking to see if compiler understands -Wwrite-strings
-configure:26936: gcc -c -g -O2 -Wwrite-strings  conftest.c >&5
-configure:26936: $? = 0
-configure:26951: result: yes
-configure:26919: checking to see if compiler understands -Wformat-nonliteral
-configure:26936: gcc -c -g -O2 -Wformat-nonliteral  conftest.c >&5
+configure:25990: result: no
+configure:26034: checking for QT
+configure:26042: $PKG_CONFIG --exists --print-errors "Qt5Gui Qt5Widgets"
+configure:26045: $? = 0
+configure:26060: $PKG_CONFIG --exists --print-errors "Qt5Gui Qt5Widgets"
+configure:26063: $? = 0
+configure:26103: result: yes
+configure:26153: checking for moc
+configure:26169: found /usr/bin/moc
+configure:26180: result: moc
+configure:26202: checking for Qt5 moc
+configure:26415: result: moc
+configure:26454: gcc -c -g -O2  conftest.c >&5
+configure:26454: $? = 0
+configure:26478: checking for -Bsymbolic-functions linker flag
+configure:26493: gcc -o conftest -g -O2  -Wl,-Bsymbolic-functions conftest.c  >&5
+configure:26493: $? = 0
+configure:26494: result: yes
+configure:26552: Using /usr/lib/arm-linux-gnueabihf/lib/gstreamer-1.0 as the plugin install location
+configure:26589: Setting GST_PACKAGE_RELEASE_DATETIME to 2016-11-17
+configure:26641: checking whether to build static plugins or not
+configure:26657: result: no
+configure:26686: checking whether the GStreamer debugging system is enabled
+configure:26705: gcc -c -pthread -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/arm-linux-gnueabihf/glib-2.0/include -g -O2  conftest.c >&5
+configure:26705: $? = 0
+configure:26719: result: yes
+configure:26739: checking to see if compiler understands -Wall
+configure:26756: gcc -c -g -O2 -Wall  conftest.c >&5
+configure:26756: $? = 0
+configure:26771: result: yes
+configure:26776: checking to see if compiler understands -Wdeclaration-after-statement
+configure:26793: gcc -c -g -O2 -Wdeclaration-after-statement  conftest.c >&5
+configure:26793: $? = 0
+configure:26808: result: yes
+configure:26813: checking to see if compiler understands -Wvla
+configure:26830: gcc -c -g -O2 -Wvla  conftest.c >&5
+configure:26830: $? = 0
+configure:26845: result: yes
+configure:26850: checking to see if compiler understands -Wpointer-arith
+configure:26867: gcc -c -g -O2 -Wpointer-arith  conftest.c >&5
+configure:26867: $? = 0
+configure:26882: result: yes
+configure:26941: checking to see if compiler understands -Wmissing-declarations
+configure:26958: gcc -c -g -O2 -Wmissing-declarations  conftest.c >&5
+configure:26958: $? = 0
+configure:26973: result: yes
+configure:26941: checking to see if compiler understands -Wmissing-prototypes
+configure:26958: gcc -c -g -O2 -Wmissing-prototypes  conftest.c >&5
+configure:26958: $? = 0
+configure:26973: result: yes
+configure:26941: checking to see if compiler understands -Wredundant-decls
+configure:26958: gcc -c -g -O2 -Wredundant-decls  conftest.c >&5
+configure:26958: $? = 0
+configure:26973: result: yes
+configure:26941: checking to see if compiler understands -Wundef
+configure:26958: gcc -c -g -O2 -Wundef  conftest.c >&5
+configure:26958: $? = 0
+configure:26973: result: yes
+configure:26941: checking to see if compiler understands -Wwrite-strings
+configure:26958: gcc -c -g -O2 -Wwrite-strings  conftest.c >&5
+configure:26958: $? = 0
+configure:26973: result: yes
+configure:26941: checking to see if compiler understands -Wformat-nonliteral
+configure:26958: gcc -c -g -O2 -Wformat-nonliteral  conftest.c >&5
 cc1: warning: -Wformat-nonliteral ignored without -Wformat [-Wformat-nonliteral]
-configure:26936: $? = 0
-configure:26951: result: yes
-configure:26919: checking to see if compiler understands -Wformat-security
-configure:26936: gcc -c -g -O2 -Wformat-security  conftest.c >&5
+configure:26958: $? = 0
+configure:26973: result: yes
+configure:26941: checking to see if compiler understands -Wformat-security
+configure:26958: gcc -c -g -O2 -Wformat-security  conftest.c >&5
 cc1: warning: -Wformat-security ignored without -Wformat [-Wformat-security]
-configure:26936: $? = 0
-configure:26951: result: yes
-configure:26919: checking to see if compiler understands -Winit-self
-configure:26936: gcc -c -g -O2 -Winit-self  conftest.c >&5
-configure:26936: $? = 0
-configure:26951: result: yes
-configure:26919: checking to see if compiler understands -Wmissing-include-dirs
-configure:26936: gcc -c -g -O2 -Wmissing-include-dirs  conftest.c >&5
-configure:26936: $? = 0
-configure:26951: result: yes
-configure:26919: checking to see if compiler understands -Waddress
-configure:26936: gcc -c -g -O2 -Waddress  conftest.c >&5
-configure:26936: $? = 0
-configure:26951: result: yes
-configure:26919: checking to see if compiler understands -Waggregate-return
-configure:26936: gcc -c -g -O2 -Waggregate-return  conftest.c >&5
-configure:26936: $? = 0
-configure:26951: result: yes
-configure:26919: checking to see if compiler understands -Wno-multichar
-configure:26936: gcc -c -g -O2 -Wno-multichar  conftest.c >&5
-configure:26936: $? = 0
-configure:26951: result: yes
-configure:26919: checking to see if compiler understands -Wnested-externs
-configure:26936: gcc -c -g -O2 -Wnested-externs  conftest.c >&5
-configure:26936: $? = 0
-configure:26951: result: yes
-configure:26963: set WARNING_CFLAGS to  -Wall -Wdeclaration-after-statement -Wvla -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wformat-nonliteral -Wformat-security -Winit-self -Wmissing-include-dirs -Waddress -Waggregate-return -Wno-multichar -Wnested-externs
-configure:26965: set ERROR_CFLAGS to 
-configure:26972: checking to see if c++ compiler understands 
-configure:26996: g++ -c    conftest.cpp >&5
-configure:26996: $? = 0
-configure:27019: result: yes
-configure:27032: checking to see if c++ compiler understands -Wall
-configure:27056: g++ -c   -Wall conftest.cpp >&5
-configure:27056: $? = 0
-configure:27079: result: yes
-configure:27277: checking to see if c++ compiler understands -Wmissing-declarations
-configure:27301: g++ -c   -Wmissing-declarations conftest.cpp >&5
-configure:27301: $? = 0
-configure:27324: result: yes
-configure:27277: checking to see if c++ compiler understands -Wredundant-decls
-configure:27301: g++ -c   -Wredundant-decls conftest.cpp >&5
-configure:27301: $? = 0
-configure:27324: result: yes
-configure:27277: checking to see if c++ compiler understands -Wundef
-configure:27301: g++ -c   -Wundef conftest.cpp >&5
-configure:27301: $? = 0
-configure:27324: result: yes
-configure:27277: checking to see if c++ compiler understands -Wwrite-strings
-configure:27301: g++ -c   -Wwrite-strings conftest.cpp >&5
-configure:27301: $? = 0
-configure:27324: result: yes
-configure:27277: checking to see if c++ compiler understands -Wformat-nonliteral
-configure:27301: g++ -c   -Wformat-nonliteral conftest.cpp >&5
+configure:26958: $? = 0
+configure:26973: result: yes
+configure:26941: checking to see if compiler understands -Winit-self
+configure:26958: gcc -c -g -O2 -Winit-self  conftest.c >&5
+configure:26958: $? = 0
+configure:26973: result: yes
+configure:26941: checking to see if compiler understands -Wmissing-include-dirs
+configure:26958: gcc -c -g -O2 -Wmissing-include-dirs  conftest.c >&5
+configure:26958: $? = 0
+configure:26973: result: yes
+configure:26941: checking to see if compiler understands -Waddress
+configure:26958: gcc -c -g -O2 -Waddress  conftest.c >&5
+configure:26958: $? = 0
+configure:26973: result: yes
+configure:26941: checking to see if compiler understands -Waggregate-return
+configure:26958: gcc -c -g -O2 -Waggregate-return  conftest.c >&5
+configure:26958: $? = 0
+configure:26973: result: yes
+configure:26941: checking to see if compiler understands -Wno-multichar
+configure:26958: gcc -c -g -O2 -Wno-multichar  conftest.c >&5
+configure:26958: $? = 0
+configure:26973: result: yes
+configure:26941: checking to see if compiler understands -Wnested-externs
+configure:26958: gcc -c -g -O2 -Wnested-externs  conftest.c >&5
+configure:26958: $? = 0
+configure:26973: result: yes
+configure:26985: set WARNING_CFLAGS to  -Wall -Wdeclaration-after-statement -Wvla -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wformat-nonliteral -Wformat-security -Winit-self -Wmissing-include-dirs -Waddress -Waggregate-return -Wno-multichar -Wnested-externs
+configure:26987: set ERROR_CFLAGS to 
+configure:26994: checking to see if c++ compiler understands 
+configure:27018: g++ -c    conftest.cpp >&5
+configure:27018: $? = 0
+configure:27041: result: yes
+configure:27054: checking to see if c++ compiler understands -Wall
+configure:27078: g++ -c   -Wall conftest.cpp >&5
+configure:27078: $? = 0
+configure:27101: result: yes
+configure:27299: checking to see if c++ compiler understands -Wmissing-declarations
+configure:27323: g++ -c   -Wmissing-declarations conftest.cpp >&5
+configure:27323: $? = 0
+configure:27346: result: yes
+configure:27299: checking to see if c++ compiler understands -Wredundant-decls
+configure:27323: g++ -c   -Wredundant-decls conftest.cpp >&5
+configure:27323: $? = 0
+configure:27346: result: yes
+configure:27299: checking to see if c++ compiler understands -Wundef
+configure:27323: g++ -c   -Wundef conftest.cpp >&5
+configure:27323: $? = 0
+configure:27346: result: yes
+configure:27299: checking to see if c++ compiler understands -Wwrite-strings
+configure:27323: g++ -c   -Wwrite-strings conftest.cpp >&5
+configure:27323: $? = 0
+configure:27346: result: yes
+configure:27299: checking to see if c++ compiler understands -Wformat-nonliteral
+configure:27323: g++ -c   -Wformat-nonliteral conftest.cpp >&5
 cc1plus: warning: -Wformat-nonliteral ignored without -Wformat [-Wformat-nonliteral]
-configure:27301: $? = 0
-configure:27324: result: yes
-configure:27277: checking to see if c++ compiler understands -Wformat-security
-configure:27301: g++ -c   -Wformat-security conftest.cpp >&5
+configure:27323: $? = 0
+configure:27346: result: yes
+configure:27299: checking to see if c++ compiler understands -Wformat-security
+configure:27323: g++ -c   -Wformat-security conftest.cpp >&5
 cc1plus: warning: -Wformat-security ignored without -Wformat [-Wformat-security]
-configure:27301: $? = 0
-configure:27324: result: yes
-configure:27277: checking to see if c++ compiler understands -Winit-self
-configure:27301: g++ -c   -Winit-self conftest.cpp >&5
-configure:27301: $? = 0
-configure:27324: result: yes
-configure:27277: checking to see if c++ compiler understands -Wmissing-include-dirs
-configure:27301: g++ -c   -Wmissing-include-dirs conftest.cpp >&5
-configure:27301: $? = 0
-configure:27324: result: yes
-configure:27277: checking to see if c++ compiler understands -Waddress
-configure:27301: g++ -c   -Waddress conftest.cpp >&5
-configure:27301: $? = 0
-configure:27324: result: yes
-configure:27277: checking to see if c++ compiler understands -Waggregate-return
-configure:27301: g++ -c   -Waggregate-return conftest.cpp >&5
-configure:27301: $? = 0
-configure:27324: result: yes
-configure:27277: checking to see if c++ compiler understands -Wno-multichar
-configure:27301: g++ -c   -Wno-multichar conftest.cpp >&5
-configure:27301: $? = 0
-configure:27324: result: yes
-configure:27336: set WARNING_CXXFLAGS to  -Wall -Wmissing-declarations -Wredundant-decls -Wundef -Wwrite-strings -Wformat-nonliteral -Wformat-security -Winit-self -Wmissing-include-dirs -Waddress -Waggregate-return -Wno-multichar
-configure:27338: set ERROR_CXXFLAGS to 
-configure:27387: Using autoaudiosink as default audio sink
-configure:27412: Using alsasrc as default audio source
-configure:27437: Using autovideosink as default video sink
-configure:27462: Using v4l2src as default video source
-configure:27487: Using goom as default visualizer
-configure:27509: checking which audio resample format to use for integer
-configure:27518: result: auto
-configure:27540: checking for mmap
-configure:27540: gcc -o conftest -g -O2   conftest.c  >&5
-configure:27540: $? = 0
-configure:27540: result: yes
-configure:28293: checking whether to use iso-codes if they are available
-configure:28296: result: yes
-configure:28299: checking whether iso-codes are available on this system
-configure:28302: result: yes
-configure:28304: checking whether iso-codes has iso-639 domain
-configure:28307: result: yes
-configure:28309: checking for iso-codes prefix
-configure:28313: result: yes
-configure:28315: checking ISO_CODES_PREFIX
-configure:28317: result: /usr
-configure:28320: checking ISO_639_DOMAIN
-configure:28322: result: iso_639
-configure:28373: *** checking feature: zlib support for ID3 parsing in libgsttag ***
-configure:28421: checking for ZLIB
-configure:28429: $PKG_CONFIG --exists --print-errors " zlib "
-configure:28432: $? = 0
-configure:28447: $PKG_CONFIG --exists --print-errors " zlib "
-configure:28450: $? = 0
-configure:28622: result: yes
-configure:28669: Checking libraries for plugins in sys/
-configure:28674: *** checking feature: X libraries and plugins ***
-configure:28678: *** for plug-ins: ximagesink ***
-configure:28726: checking for X
-configure:28734: $PKG_CONFIG --exists --print-errors "$which"
-configure:28737: $? = 0
-configure:28752: $PKG_CONFIG --exists --print-errors "$which"
-configure:28755: $? = 0
-configure:28807: result: yes
-configure:28826: *** These plugins will be built: ximagesink
-configure:28857: *** checking feature: X11 XVideo extensions ***
-configure:28861: *** for plug-ins: xvimagesink ***
-configure:28909: checking for XVIDEO
-configure:28917: $PKG_CONFIG --exists --print-errors "$which"
-configure:28920: $? = 0
-configure:28935: $PKG_CONFIG --exists --print-errors "$which"
-configure:28938: $? = 0
-configure:28990: result: yes
-configure:29009: *** These plugins will be built: xvimagesink
-configure:29040: *** checking feature: X Shared Memory extension ***
-configure:29044: *** for plug-ins:   ***
-configure:29089: checking for XSHM
-configure:29097: $PKG_CONFIG --exists --print-errors "xext"
-configure:29100: $? = 0
-configure:29115: $PKG_CONFIG --exists --print-errors "xext"
-configure:29118: $? = 0
-configure:29158: result: yes
-configure:29161: checking for XShmAttach in -lXext
-configure:29186: gcc -o conftest -g -O2   conftest.c -lXext  -lX11   >&5
-configure:29186: $? = 0
-configure:29195: result: yes
-configure:29222: *** These plugins will be built:  
-configure:29259: Checking libraries for plugins in ext/
-configure:29264: *** checking feature: ALSA ***
-configure:29268: *** for plug-ins: alsa ***
-configure:29312: checking for ALSA
-configure:29320: $PKG_CONFIG --exists --print-errors "alsa >= 0.9.1"
-configure:29323: $? = 0
-configure:29338: $PKG_CONFIG --exists --print-errors "alsa >= 0.9.1"
-configure:29341: $? = 0
-configure:29785: result: yes
-configure:29804: *** These plugins will be built: alsa
-configure:29835: *** checking feature: CDParanoia ***
-configure:29839: *** for plug-ins: cdparanoia ***
-configure:29883: checking for CDPARANOIA
-configure:29891: $PKG_CONFIG --exists --print-errors "cdparanoia-3 >= 10.2"
+configure:27323: $? = 0
+configure:27346: result: yes
+configure:27299: checking to see if c++ compiler understands -Winit-self
+configure:27323: g++ -c   -Winit-self conftest.cpp >&5
+configure:27323: $? = 0
+configure:27346: result: yes
+configure:27299: checking to see if c++ compiler understands -Wmissing-include-dirs
+configure:27323: g++ -c   -Wmissing-include-dirs conftest.cpp >&5
+configure:27323: $? = 0
+configure:27346: result: yes
+configure:27299: checking to see if c++ compiler understands -Waddress
+configure:27323: g++ -c   -Waddress conftest.cpp >&5
+configure:27323: $? = 0
+configure:27346: result: yes
+configure:27299: checking to see if c++ compiler understands -Waggregate-return
+configure:27323: g++ -c   -Waggregate-return conftest.cpp >&5
+configure:27323: $? = 0
+configure:27346: result: yes
+configure:27299: checking to see if c++ compiler understands -Wno-multichar
+configure:27323: g++ -c   -Wno-multichar conftest.cpp >&5
+configure:27323: $? = 0
+configure:27346: result: yes
+configure:27358: set WARNING_CXXFLAGS to  -Wall -Wmissing-declarations -Wredundant-decls -Wundef -Wwrite-strings -Wformat-nonliteral -Wformat-security -Winit-self -Wmissing-include-dirs -Waddress -Waggregate-return -Wno-multichar
+configure:27360: set ERROR_CXXFLAGS to 
+configure:27409: Using autoaudiosink as default audio sink
+configure:27434: Using alsasrc as default audio source
+configure:27459: Using autovideosink as default video sink
+configure:27484: Using v4l2src as default video source
+configure:27509: Using goom as default visualizer
+configure:27531: checking which audio resample format to use for integer
+configure:27540: result: auto
+configure:27562: checking for mmap
+configure:27562: gcc -o conftest -g -O2   conftest.c  >&5
+configure:27562: $? = 0
+configure:27562: result: yes
+configure:28315: checking whether to use iso-codes if they are available
+configure:28318: result: yes
+configure:28321: checking whether iso-codes are available on this system
+configure:28324: result: yes
+configure:28326: checking whether iso-codes has iso-639 domain
+configure:28329: result: yes
+configure:28331: checking for iso-codes prefix
+configure:28335: result: yes
+configure:28337: checking ISO_CODES_PREFIX
+configure:28339: result: /usr
+configure:28342: checking ISO_639_DOMAIN
+configure:28344: result: iso_639
+configure:28395: *** checking feature: zlib support for ID3 parsing in libgsttag ***
+configure:28443: checking for ZLIB
+configure:28451: $PKG_CONFIG --exists --print-errors " zlib "
+configure:28454: $? = 0
+configure:28469: $PKG_CONFIG --exists --print-errors " zlib "
+configure:28472: $? = 0
+configure:28644: result: yes
+configure:28691: Checking libraries for plugins in sys/
+configure:28696: *** checking feature: X libraries and plugins ***
+configure:28700: *** for plug-ins: ximagesink ***
+configure:28748: checking for X
+configure:28756: $PKG_CONFIG --exists --print-errors "$which"
+configure:28759: $? = 0
+configure:28774: $PKG_CONFIG --exists --print-errors "$which"
+configure:28777: $? = 0
+configure:28829: result: yes
+configure:28848: *** These plugins will be built: ximagesink
+configure:28879: *** checking feature: X11 XVideo extensions ***
+configure:28883: *** for plug-ins: xvimagesink ***
+configure:28931: checking for XVIDEO
+configure:28939: $PKG_CONFIG --exists --print-errors "$which"
+configure:28942: $? = 0
+configure:28957: $PKG_CONFIG --exists --print-errors "$which"
+configure:28960: $? = 0
+configure:29012: result: yes
+configure:29031: *** These plugins will be built: xvimagesink
+configure:29062: *** checking feature: X Shared Memory extension ***
+configure:29066: *** for plug-ins:   ***
+configure:29111: checking for XSHM
+configure:29119: $PKG_CONFIG --exists --print-errors "xext"
+configure:29122: $? = 0
+configure:29137: $PKG_CONFIG --exists --print-errors "xext"
+configure:29140: $? = 0
+configure:29180: result: yes
+configure:29183: checking for XShmAttach in -lXext
+configure:29208: gcc -o conftest -g -O2   conftest.c -lXext  -lX11   >&5
+configure:29208: $? = 0
+configure:29217: result: yes
+configure:29244: *** These plugins will be built:  
+configure:29280: checking for ROCKCHIP_MPP
+configure:29288: $PKG_CONFIG --exists --print-errors "rockchip_mpp"
+configure:29291: $? = 0
+configure:29306: $PKG_CONFIG --exists --print-errors "rockchip_mpp"
+configure:29309: $? = 0
+configure:29364: result: yes
+configure:29370: checking for ROCKCHIP_VPU
+configure:29378: $PKG_CONFIG --exists --print-errors "rockchip_vpu"
+configure:29381: $? = 0
+configure:29396: $PKG_CONFIG --exists --print-errors "rockchip_vpu"
+configure:29399: $? = 0
+configure:29454: result: yes
+configure:29460: checking for DRM
+configure:29468: $PKG_CONFIG --exists --print-errors "libdrm"
+configure:29471: $? = 0
+configure:29486: $PKG_CONFIG --exists --print-errors "libdrm"
+configure:29489: $? = 0
+configure:29525: result: yes
+configure:29536: Checking libraries for plugins in ext/
+configure:29541: *** checking feature: ALSA ***
+configure:29545: *** for plug-ins: alsa ***
+configure:29589: checking for ALSA
+configure:29597: $PKG_CONFIG --exists --print-errors "alsa >= 0.9.1"
+configure:29600: $? = 0
+configure:29615: $PKG_CONFIG --exists --print-errors "alsa >= 0.9.1"
+configure:29618: $? = 0
+configure:30062: result: yes
+configure:30081: *** These plugins will be built: alsa
+configure:30112: *** checking feature: CDParanoia ***
+configure:30116: *** for plug-ins: cdparanoia ***
+configure:30160: checking for CDPARANOIA
+configure:30168: $PKG_CONFIG --exists --print-errors "cdparanoia-3 >= 10.2"
 Package cdparanoia-3 was not found in the pkg-config search path.
 Perhaps you should add the directory containing `cdparanoia-3.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'cdparanoia-3' found
-configure:29894: $? = 1
-configure:29909: $PKG_CONFIG --exists --print-errors "cdparanoia-3 >= 10.2"
+configure:30171: $? = 1
+configure:30186: $PKG_CONFIG --exists --print-errors "cdparanoia-3 >= 10.2"
 Package cdparanoia-3 was not found in the pkg-config search path.
 Perhaps you should add the directory containing `cdparanoia-3.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'cdparanoia-3' found
-configure:29912: $? = 1
+configure:30189: $? = 1
 No package 'cdparanoia-3' found
-configure:29940: result: no
-configure:29944: checking for cdda_open in -lcdda_interface
-configure:29969: gcc -o conftest -g -O2   conftest.c -lcdda_interface -lm  >&5
+configure:30217: result: no
+configure:30221: checking for cdda_open in -lcdda_interface
+configure:30246: gcc -o conftest -g -O2   conftest.c -lcdda_interface -lm  >&5
 /usr/bin/ld: cannot find -lcdda_interface
 collect2: error: ld returned 1 exit status
-configure:29969: $? = 1
+configure:30246: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -2719,33 +2737,33 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:29978: result: no
-configure:30011: checking for cdda_open in -lcdda_interface
-configure:30045: result: no
-configure:30356: *** These plugins will not be built: cdparanoia
-configure:30374: *** checking feature: integer vorbis plug-in ***
-configure:30378: *** for plug-ins: ivorbisdec ***
-configure:30426: checking for IVORBIS
-configure:30434: $PKG_CONFIG --exists --print-errors "$which"
+configure:30255: result: no
+configure:30288: checking for cdda_open in -lcdda_interface
+configure:30322: result: no
+configure:30633: *** These plugins will not be built: cdparanoia
+configure:30651: *** checking feature: integer vorbis plug-in ***
+configure:30655: *** for plug-ins: ivorbisdec ***
+configure:30703: checking for IVORBIS
+configure:30711: $PKG_CONFIG --exists --print-errors "$which"
 Package vorbisidec was not found in the pkg-config search path.
 Perhaps you should add the directory containing `vorbisidec.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'vorbisidec' found
-configure:30437: $? = 1
-configure:30452: $PKG_CONFIG --exists --print-errors "$which"
+configure:30714: $? = 1
+configure:30729: $PKG_CONFIG --exists --print-errors "$which"
 Package vorbisidec was not found in the pkg-config search path.
 Perhaps you should add the directory containing `vorbisidec.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'vorbisidec' found
-configure:30455: $? = 1
+configure:30732: $? = 1
 No package 'vorbisidec' found
-configure:30483: result: no
-configure:30490: No package 'vorbisidec' found
-configure:30519: checking for vorbis_block_init in -lvorbisidec
-configure:30544: gcc -o conftest -g -O2   conftest.c -lvorbisidec   >&5
+configure:30760: result: no
+configure:30767: No package 'vorbisidec' found
+configure:30796: checking for vorbis_block_init in -lvorbisidec
+configure:30821: gcc -o conftest -g -O2   conftest.c -lvorbisidec   >&5
 /usr/bin/ld: cannot find -lvorbisidec
 collect2: error: ld returned 1 exit status
-configure:30544: $? = 1
+configure:30821: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "GStreamer Base Plug-ins"
@@ -2846,69 +2864,69 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:30553: result: no
-configure:30639: *** These plugins will not be built: ivorbisdec
-configure:30657: *** checking feature: libvisual visualization library ***
-configure:30661: *** for plug-ins: libvisual ***
-configure:30709: checking for LIBVISUAL
-configure:30717: $PKG_CONFIG --exists --print-errors "$which"
+configure:30830: result: no
+configure:30916: *** These plugins will not be built: ivorbisdec
+configure:30934: *** checking feature: libvisual visualization library ***
+configure:30938: *** for plug-ins: libvisual ***
+configure:30986: checking for LIBVISUAL
+configure:30994: $PKG_CONFIG --exists --print-errors "$which"
 Package libvisual-0.4 was not found in the pkg-config search path.
 Perhaps you should add the directory containing `libvisual-0.4.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'libvisual-0.4' found
-configure:30720: $? = 1
-configure:30735: $PKG_CONFIG --exists --print-errors "$which"
+configure:30997: $? = 1
+configure:31012: $PKG_CONFIG --exists --print-errors "$which"
 Package libvisual-0.4 was not found in the pkg-config search path.
 Perhaps you should add the directory containing `libvisual-0.4.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'libvisual-0.4' found
-configure:30738: $? = 1
+configure:31015: $? = 1
 No package 'libvisual-0.4' found
-configure:30766: result: no
-configure:30773: No package 'libvisual-0.4' found
-configure:30801: libvisual pluginsdir: 
-configure:30834: *** These plugins will not be built: libvisual
-configure:30852: *** checking feature: Xiph Ogg library ***
-configure:30856: *** for plug-ins: ogg ***
-configure:30904: checking for OGG
-configure:30912: $PKG_CONFIG --exists --print-errors "$which"
+configure:31043: result: no
+configure:31050: No package 'libvisual-0.4' found
+configure:31078: libvisual pluginsdir: 
+configure:31111: *** These plugins will not be built: libvisual
+configure:31129: *** checking feature: Xiph Ogg library ***
+configure:31133: *** for plug-ins: ogg ***
+configure:31181: checking for OGG
+configure:31189: $PKG_CONFIG --exists --print-errors "$which"
 Package ogg was not found in the pkg-config search path.
 Perhaps you should add the directory containing `ogg.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'ogg' found
-configure:30915: $? = 1
-configure:30930: $PKG_CONFIG --exists --print-errors "$which"
+configure:31192: $? = 1
+configure:31207: $PKG_CONFIG --exists --print-errors "$which"
 Package ogg was not found in the pkg-config search path.
 Perhaps you should add the directory containing `ogg.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'ogg' found
-configure:30933: $? = 1
+configure:31210: $? = 1
 No package 'ogg' found
-configure:30961: result: no
-configure:30968: No package 'ogg' found
-configure:31017: *** These plugins will not be built: ogg
-configure:31035: *** checking feature: opus ***
-configure:31039: *** for plug-ins: opus ***
-configure:31083: checking for OPUS
-configure:31091: $PKG_CONFIG --exists --print-errors "opus >= 0.9.4"
+configure:31238: result: no
+configure:31245: No package 'ogg' found
+configure:31294: *** These plugins will not be built: ogg
+configure:31312: *** checking feature: opus ***
+configure:31316: *** for plug-ins: opus ***
+configure:31360: checking for OPUS
+configure:31368: $PKG_CONFIG --exists --print-errors "opus >= 0.9.4"
 Package opus was not found in the pkg-config search path.
 Perhaps you should add the directory containing `opus.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'opus' found
-configure:31094: $? = 1
-configure:31109: $PKG_CONFIG --exists --print-errors "opus >= 0.9.4"
+configure:31371: $? = 1
+configure:31386: $PKG_CONFIG --exists --print-errors "opus >= 0.9.4"
 Package opus was not found in the pkg-config search path.
 Perhaps you should add the directory containing `opus.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'opus' found
-configure:31112: $? = 1
+configure:31389: $? = 1
 No package 'opus' found
-configure:31140: result: no
-configure:31187: *** These plugins will not be built: opus
-configure:31205: *** checking feature: Pango font rendering ***
-configure:31209: *** for plug-ins: pango ***
-configure:31257: checking for PANGO
-configure:31265: $PKG_CONFIG --exists --print-errors "$which"
+configure:31417: result: no
+configure:31464: *** These plugins will not be built: opus
+configure:31482: *** checking feature: Pango font rendering ***
+configure:31486: *** for plug-ins: pango ***
+configure:31534: checking for PANGO
+configure:31542: $PKG_CONFIG --exists --print-errors "$which"
 Package pango was not found in the pkg-config search path.
 Perhaps you should add the directory containing `pango.pc'
 to the PKG_CONFIG_PATH environment variable
@@ -2917,8 +2935,8 @@ Package pangocairo was not found in the pkg-config search path.
 Perhaps you should add the directory containing `pangocairo.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'pangocairo' found
-configure:31268: $? = 1
-configure:31283: $PKG_CONFIG --exists --print-errors "$which"
+configure:31545: $? = 1
+configure:31560: $PKG_CONFIG --exists --print-errors "$which"
 Package pango was not found in the pkg-config search path.
 Perhaps you should add the directory containing `pango.pc'
 to the PKG_CONFIG_PATH environment variable
@@ -2927,17 +2945,17 @@ Package pangocairo was not found in the pkg-config search path.
 Perhaps you should add the directory containing `pangocairo.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'pangocairo' found
-configure:31286: $? = 1
+configure:31563: $? = 1
 No package 'pango' found
 No package 'pangocairo' found
-configure:31314: result: no
-configure:31321: No package 'pango' found
+configure:31591: result: no
+configure:31598: No package 'pango' found
 No package 'pangocairo' found
-configure:31370: *** These plugins will not be built: pango
-configure:31388: *** checking feature: Xiph Theora video codec ***
-configure:31392: *** for plug-ins: theora ***
-configure:31440: checking for THEORA
-configure:31448: $PKG_CONFIG --exists --print-errors "$which"
+configure:31647: *** These plugins will not be built: pango
+configure:31665: *** checking feature: Xiph Theora video codec ***
+configure:31669: *** for plug-ins: theora ***
+configure:31717: checking for THEORA
+configure:31725: $PKG_CONFIG --exists --print-errors "$which"
 Package theoradec was not found in the pkg-config search path.
 Perhaps you should add the directory containing `theoradec.pc'
 to the PKG_CONFIG_PATH environment variable
@@ -2946,8 +2964,8 @@ Package theoraenc was not found in the pkg-config search path.
 Perhaps you should add the directory containing `theoraenc.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'theoraenc' found
-configure:31451: $? = 1
-configure:31466: $PKG_CONFIG --exists --print-errors "$which"
+configure:31728: $? = 1
+configure:31743: $PKG_CONFIG --exists --print-errors "$which"
 Package theoradec was not found in the pkg-config search path.
 Perhaps you should add the directory containing `theoradec.pc'
 to the PKG_CONFIG_PATH environment variable
@@ -2956,17 +2974,17 @@ Package theoraenc was not found in the pkg-config search path.
 Perhaps you should add the directory containing `theoraenc.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'theoraenc' found
-configure:31469: $? = 1
+configure:31746: $? = 1
 No package 'theoradec' found
 No package 'theoraenc' found
-configure:31497: result: no
-configure:31504: No package 'theoradec' found
+configure:31774: result: no
+configure:31781: No package 'theoradec' found
 No package 'theoraenc' found
-configure:31553: *** These plugins will not be built: theora
-configure:31571: *** checking feature: Xiph Vorbis audio codec ***
-configure:31575: *** for plug-ins: vorbis ***
-configure:31623: checking for VORBIS
-configure:31631: $PKG_CONFIG --exists --print-errors "$which"
+configure:31830: *** These plugins will not be built: theora
+configure:31848: *** checking feature: Xiph Vorbis audio codec ***
+configure:31852: *** for plug-ins: vorbis ***
+configure:31900: checking for VORBIS
+configure:31908: $PKG_CONFIG --exists --print-errors "$which"
 Package vorbis was not found in the pkg-config search path.
 Perhaps you should add the directory containing `vorbis.pc'
 to the PKG_CONFIG_PATH environment variable
@@ -2975,8 +2993,8 @@ Package vorbisenc was not found in the pkg-config search path.
 Perhaps you should add the directory containing `vorbisenc.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'vorbisenc' found
-configure:31634: $? = 1
-configure:31649: $PKG_CONFIG --exists --print-errors "$which"
+configure:31911: $? = 1
+configure:31926: $PKG_CONFIG --exists --print-errors "$which"
 Package vorbis was not found in the pkg-config search path.
 Perhaps you should add the directory containing `vorbis.pc'
 to the PKG_CONFIG_PATH environment variable
@@ -2985,22 +3003,22 @@ Package vorbisenc was not found in the pkg-config search path.
 Perhaps you should add the directory containing `vorbisenc.pc'
 to the PKG_CONFIG_PATH environment variable
 No package 'vorbisenc' found
-configure:31652: $? = 1
+configure:31929: $? = 1
 No package 'vorbis' found
 No package 'vorbisenc' found
-configure:31680: result: no
-configure:31687: No package 'vorbis' found
+configure:31957: result: no
+configure:31964: No package 'vorbis' found
 No package 'vorbisenc' found
-configure:31736: *** These plugins will not be built: vorbis
-configure:31867: checking for GIO_UNIX_2_0
-configure:31875: $PKG_CONFIG --exists --print-errors "gio-unix-2.0 >= 2.24"
-configure:31878: $? = 0
-configure:31893: $PKG_CONFIG --exists --print-errors "gio-unix-2.0 >= 2.24"
-configure:31896: $? = 0
-configure:31932: result: yes
-configure:32146: checking that generated files are newer than configure
-configure:32152: result: done
-configure:32524: creating ./config.status
+configure:32013: *** These plugins will not be built: vorbis
+configure:32144: checking for GIO_UNIX_2_0
+configure:32152: $PKG_CONFIG --exists --print-errors "gio-unix-2.0 >= 2.24"
+configure:32155: $? = 0
+configure:32170: $PKG_CONFIG --exists --print-errors "gio-unix-2.0 >= 2.24"
+configure:32173: $? = 0
+configure:32209: result: yes
+configure:32423: checking that generated files are newer than configure
+configure:32429: result: done
+configure:32801: creating ./config.status
 
 ## ---------------------- ##
 ## Running config.status. ##
@@ -3017,112 +3035,113 @@ generated by GNU Autoconf 2.69.  Invocation command line was
 
 on linaro-alip
 
-config.status:1672: creating Makefile
-config.status:1672: creating gst-plugins-base.spec
-config.status:1672: creating gst/Makefile
-config.status:1672: creating gst/adder/Makefile
-config.status:1672: creating gst/app/Makefile
-config.status:1672: creating gst/audioconvert/Makefile
-config.status:1672: creating gst/audiorate/Makefile
-config.status:1672: creating gst/audiotestsrc/Makefile
-config.status:1672: creating gst/encoding/Makefile
-config.status:1672: creating gst/videoconvert/Makefile
-config.status:1672: creating gst/gio/Makefile
-config.status:1672: creating gst/playback/Makefile
-config.status:1672: creating gst/audioresample/Makefile
-config.status:1672: creating gst/subparse/Makefile
-config.status:1672: creating gst/tcp/Makefile
-config.status:1672: creating gst/typefind/Makefile
-config.status:1672: creating gst/videotestsrc/Makefile
-config.status:1672: creating gst/videorate/Makefile
-config.status:1672: creating gst/videoscale/Makefile
-config.status:1672: creating gst/volume/Makefile
-config.status:1672: creating sys/Makefile
-config.status:1672: creating sys/ximage/Makefile
-config.status:1672: creating sys/xvimage/Makefile
-config.status:1672: creating ext/Makefile
-config.status:1672: creating ext/alsa/Makefile
-config.status:1672: creating ext/cdparanoia/Makefile
-config.status:1672: creating ext/libvisual/Makefile
-config.status:1672: creating ext/ogg/Makefile
-config.status:1672: creating ext/opus/Makefile
-config.status:1672: creating ext/pango/Makefile
-config.status:1672: creating ext/theora/Makefile
-config.status:1672: creating ext/vorbis/Makefile
-config.status:1672: creating gst-libs/Makefile
-config.status:1672: creating gst-libs/gst/Makefile
-config.status:1672: creating gst-libs/gst/allocators/Makefile
-config.status:1672: creating gst-libs/gst/audio/Makefile
-config.status:1672: creating gst-libs/gst/app/Makefile
-config.status:1672: creating gst-libs/gst/fft/Makefile
-config.status:1672: creating gst-libs/gst/riff/Makefile
-config.status:1672: creating gst-libs/gst/rtp/Makefile
-config.status:1672: creating gst-libs/gst/rtsp/Makefile
-config.status:1672: creating gst-libs/gst/sdp/Makefile
-config.status:1672: creating gst-libs/gst/tag/Makefile
-config.status:1672: creating gst-libs/gst/pbutils/Makefile
-config.status:1672: creating gst-libs/gst/pbutils/gstpluginsbaseversion.h
-config.status:1672: creating gst-libs/gst/video/Makefile
-config.status:1672: creating tools/Makefile
-config.status:1672: creating pkgconfig/Makefile
-config.status:1672: creating pkgconfig/gstreamer-allocators.pc
-config.status:1672: creating pkgconfig/gstreamer-allocators-uninstalled.pc
-config.status:1672: creating pkgconfig/gstreamer-audio.pc
-config.status:1672: creating pkgconfig/gstreamer-audio-uninstalled.pc
-config.status:1672: creating pkgconfig/gstreamer-app.pc
-config.status:1672: creating pkgconfig/gstreamer-app-uninstalled.pc
-config.status:1672: creating pkgconfig/gstreamer-fft.pc
-config.status:1672: creating pkgconfig/gstreamer-fft-uninstalled.pc
-config.status:1672: creating pkgconfig/gstreamer-pbutils.pc
-config.status:1672: creating pkgconfig/gstreamer-pbutils-uninstalled.pc
-config.status:1672: creating pkgconfig/gstreamer-riff.pc
-config.status:1672: creating pkgconfig/gstreamer-riff-uninstalled.pc
-config.status:1672: creating pkgconfig/gstreamer-rtp.pc
-config.status:1672: creating pkgconfig/gstreamer-rtp-uninstalled.pc
-config.status:1672: creating pkgconfig/gstreamer-rtsp.pc
-config.status:1672: creating pkgconfig/gstreamer-rtsp-uninstalled.pc
-config.status:1672: creating pkgconfig/gstreamer-sdp.pc
-config.status:1672: creating pkgconfig/gstreamer-sdp-uninstalled.pc
-config.status:1672: creating pkgconfig/gstreamer-tag.pc
-config.status:1672: creating pkgconfig/gstreamer-tag-uninstalled.pc
-config.status:1672: creating pkgconfig/gstreamer-video.pc
-config.status:1672: creating pkgconfig/gstreamer-video-uninstalled.pc
-config.status:1672: creating pkgconfig/gstreamer-plugins-base.pc
-config.status:1672: creating pkgconfig/gstreamer-plugins-base-uninstalled.pc
-config.status:1672: creating tests/Makefile
-config.status:1672: creating tests/check/Makefile
-config.status:1672: creating tests/examples/Makefile
-config.status:1672: creating tests/examples/app/Makefile
-config.status:1672: creating tests/examples/audio/Makefile
-config.status:1672: creating tests/examples/decodebin_next/Makefile
-config.status:1672: creating tests/examples/dynamic/Makefile
-config.status:1672: creating tests/examples/encoding/Makefile
-config.status:1672: creating tests/examples/fft/Makefile
-config.status:1672: creating tests/examples/gio/Makefile
-config.status:1672: creating tests/examples/overlay/Makefile
-config.status:1672: creating tests/examples/seek/Makefile
-config.status:1672: creating tests/examples/snapshot/Makefile
-config.status:1672: creating tests/examples/playback/Makefile
-config.status:1672: creating tests/examples/playrec/Makefile
-config.status:1672: creating tests/files/Makefile
-config.status:1672: creating tests/icles/Makefile
-config.status:1672: creating tests/icles/playback/Makefile
-config.status:1672: creating docs/Makefile
-config.status:1672: creating docs/design/Makefile
-config.status:1672: creating docs/libs/Makefile
-config.status:1672: creating docs/plugins/Makefile
-config.status:1672: creating docs/version.entities
-config.status:1672: creating po/Makefile.in
-config.status:1672: creating common/Makefile
-config.status:1672: creating common/m4/Makefile
-config.status:1672: creating m4/Makefile
-config.status:1672: creating config.h
-config.status:1901: executing depfiles commands
-config.status:1901: executing libtool commands
-config.status:1901: executing po-directories commands
-config.status:1901: executing _stdint.h commands
-config.status:2827: creating _stdint.h : _GST_PLUGINS_BASE__STDINT_H
-config.status:3259: _stdint.h is unchanged
+config.status:1678: creating Makefile
+config.status:1678: creating gst-plugins-base.spec
+config.status:1678: creating gst/Makefile
+config.status:1678: creating gst/adder/Makefile
+config.status:1678: creating gst/app/Makefile
+config.status:1678: creating gst/audioconvert/Makefile
+config.status:1678: creating gst/audiorate/Makefile
+config.status:1678: creating gst/audiotestsrc/Makefile
+config.status:1678: creating gst/encoding/Makefile
+config.status:1678: creating gst/videoconvert/Makefile
+config.status:1678: creating gst/gio/Makefile
+config.status:1678: creating gst/playback/Makefile
+config.status:1678: creating gst/audioresample/Makefile
+config.status:1678: creating gst/subparse/Makefile
+config.status:1678: creating gst/tcp/Makefile
+config.status:1678: creating gst/typefind/Makefile
+config.status:1678: creating gst/videotestsrc/Makefile
+config.status:1678: creating gst/videorate/Makefile
+config.status:1678: creating gst/videoscale/Makefile
+config.status:1678: creating gst/volume/Makefile
+config.status:1678: creating sys/Makefile
+config.status:1678: creating sys/ximage/Makefile
+config.status:1678: creating sys/xvimage/Makefile
+config.status:1678: creating ext/Makefile
+config.status:1678: creating ext/alsa/Makefile
+config.status:1678: creating ext/cdparanoia/Makefile
+config.status:1678: creating ext/libvisual/Makefile
+config.status:1678: creating ext/ogg/Makefile
+config.status:1678: creating ext/opus/Makefile
+config.status:1678: creating ext/pango/Makefile
+config.status:1678: creating ext/theora/Makefile
+config.status:1678: creating ext/vorbis/Makefile
+config.status:1678: creating gst-libs/Makefile
+config.status:1678: creating gst-libs/gst/Makefile
+config.status:1678: creating gst-libs/gst/allocators/Makefile
+config.status:1678: creating gst-libs/gst/audio/Makefile
+config.status:1678: creating gst-libs/gst/app/Makefile
+config.status:1678: creating gst-libs/gst/fft/Makefile
+config.status:1678: creating gst-libs/gst/riff/Makefile
+config.status:1678: creating gst-libs/gst/rtp/Makefile
+config.status:1678: creating gst-libs/gst/rtsp/Makefile
+config.status:1678: creating gst-libs/gst/sdp/Makefile
+config.status:1678: creating gst-libs/gst/tag/Makefile
+config.status:1678: creating gst-libs/gst/pbutils/Makefile
+config.status:1678: creating gst-libs/gst/pbutils/gstpluginsbaseversion.h
+config.status:1678: creating gst-libs/gst/video/Makefile
+config.status:1678: creating tools/Makefile
+config.status:1678: creating pkgconfig/Makefile
+config.status:1678: creating pkgconfig/gstreamer-allocators.pc
+config.status:1678: creating pkgconfig/gstreamer-allocators-uninstalled.pc
+config.status:1678: creating pkgconfig/gstreamer-audio.pc
+config.status:1678: creating pkgconfig/gstreamer-audio-uninstalled.pc
+config.status:1678: creating pkgconfig/gstreamer-app.pc
+config.status:1678: creating pkgconfig/gstreamer-app-uninstalled.pc
+config.status:1678: creating pkgconfig/gstreamer-fft.pc
+config.status:1678: creating pkgconfig/gstreamer-fft-uninstalled.pc
+config.status:1678: creating pkgconfig/gstreamer-pbutils.pc
+config.status:1678: creating pkgconfig/gstreamer-pbutils-uninstalled.pc
+config.status:1678: creating pkgconfig/gstreamer-riff.pc
+config.status:1678: creating pkgconfig/gstreamer-riff-uninstalled.pc
+config.status:1678: creating pkgconfig/gstreamer-rtp.pc
+config.status:1678: creating pkgconfig/gstreamer-rtp-uninstalled.pc
+config.status:1678: creating pkgconfig/gstreamer-rtsp.pc
+config.status:1678: creating pkgconfig/gstreamer-rtsp-uninstalled.pc
+config.status:1678: creating pkgconfig/gstreamer-sdp.pc
+config.status:1678: creating pkgconfig/gstreamer-sdp-uninstalled.pc
+config.status:1678: creating pkgconfig/gstreamer-tag.pc
+config.status:1678: creating pkgconfig/gstreamer-tag-uninstalled.pc
+config.status:1678: creating pkgconfig/gstreamer-video.pc
+config.status:1678: creating pkgconfig/gstreamer-video-uninstalled.pc
+config.status:1678: creating pkgconfig/gstreamer-plugins-base.pc
+config.status:1678: creating pkgconfig/gstreamer-plugins-base-uninstalled.pc
+config.status:1678: creating tests/Makefile
+config.status:1678: creating tests/check/Makefile
+config.status:1678: creating tests/examples/Makefile
+config.status:1678: creating tests/examples/app/Makefile
+config.status:1678: creating tests/examples/audio/Makefile
+config.status:1678: creating tests/examples/decodebin_next/Makefile
+config.status:1678: creating tests/examples/dynamic/Makefile
+config.status:1678: creating tests/examples/encoding/Makefile
+config.status:1678: creating tests/examples/fft/Makefile
+config.status:1678: creating tests/examples/gio/Makefile
+config.status:1678: creating tests/examples/overlay/Makefile
+config.status:1678: creating tests/examples/seek/Makefile
+config.status:1678: creating tests/examples/snapshot/Makefile
+config.status:1678: creating tests/examples/playback/Makefile
+config.status:1678: creating tests/examples/playrec/Makefile
+config.status:1678: creating tests/files/Makefile
+config.status:1678: creating tests/icles/Makefile
+config.status:1678: creating tests/icles/playback/Makefile
+config.status:1678: creating docs/Makefile
+config.status:1678: creating docs/design/Makefile
+config.status:1678: creating docs/libs/Makefile
+config.status:1678: creating docs/plugins/Makefile
+config.status:1678: creating docs/version.entities
+config.status:1678: creating po/Makefile.in
+config.status:1678: creating common/Makefile
+config.status:1678: creating common/m4/Makefile
+config.status:1678: creating m4/Makefile
+config.status:1678: creating config.h
+config.status:1859: config.h is unchanged
+config.status:1907: executing depfiles commands
+config.status:1907: executing libtool commands
+config.status:1907: executing po-directories commands
+config.status:1907: executing _stdint.h commands
+config.status:2833: creating _stdint.h : _GST_PLUGINS_BASE__STDINT_H
+config.status:3265: _stdint.h is unchanged
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -3159,6 +3178,10 @@ ac_cv_env_CXXFLAGS_set=
 ac_cv_env_CXXFLAGS_value=
 ac_cv_env_CXX_set=
 ac_cv_env_CXX_value=
+ac_cv_env_DRM_CFLAGS_set=
+ac_cv_env_DRM_CFLAGS_value=
+ac_cv_env_DRM_LIBS_set=
+ac_cv_env_DRM_LIBS_value=
 ac_cv_env_GIO_CFLAGS_set=
 ac_cv_env_GIO_CFLAGS_value=
 ac_cv_env_GIO_LIBS_set=
@@ -3245,6 +3268,14 @@ ac_cv_env_QT_CFLAGS_set=
 ac_cv_env_QT_CFLAGS_value=
 ac_cv_env_QT_LIBS_set=
 ac_cv_env_QT_LIBS_value=
+ac_cv_env_ROCKCHIP_MPP_CFLAGS_set=
+ac_cv_env_ROCKCHIP_MPP_CFLAGS_value=
+ac_cv_env_ROCKCHIP_MPP_LIBS_set=
+ac_cv_env_ROCKCHIP_MPP_LIBS_value=
+ac_cv_env_ROCKCHIP_VPU_CFLAGS_set=
+ac_cv_env_ROCKCHIP_VPU_CFLAGS_value=
+ac_cv_env_ROCKCHIP_VPU_LIBS_set=
+ac_cv_env_ROCKCHIP_VPU_LIBS_value=
 ac_cv_env_THEORA_CFLAGS_set=
 ac_cv_env_THEORA_CFLAGS_value=
 ac_cv_env_THEORA_LIBS_set=
@@ -3423,6 +3454,8 @@ lt_cv_to_tool_file_cmd=func_convert_file_noop
 lt_cv_truncate_bin='/bin/dd bs=4096 count=1'
 pkg_cv_ALSA_CFLAGS=-I/usr/include/alsa
 pkg_cv_ALSA_LIBS=-lasound
+pkg_cv_DRM_CFLAGS=-I/usr/include/libdrm
+pkg_cv_DRM_LIBS=-ldrm
 pkg_cv_GIO_CFLAGS='-pthread -I/usr/include/glib-2.0 -I/usr/lib/arm-linux-gnueabihf/glib-2.0/include'
 pkg_cv_GIO_LIBS='-lgio-2.0 -lgobject-2.0 -lglib-2.0'
 pkg_cv_GIO_UNIX_2_0_CFLAGS='-pthread -I/usr/include/gio-unix-2.0/ -I/usr/include/glib-2.0 -I/usr/lib/arm-linux-gnueabihf/glib-2.0/include'
@@ -3441,6 +3474,10 @@ pkg_cv_GST_NET_CFLAGS='-pthread -I/usr/include/gstreamer-1.0 -I/usr/include/glib
 pkg_cv_GST_NET_LIBS='-lgstnet-1.0 -lgstreamer-1.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0'
 pkg_cv_QT_CFLAGS='-I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -I/usr/include/arm-linux-gnueabihf/qt5'
 pkg_cv_QT_LIBS='-lQt5Widgets -lQt5Gui -lQt5Core'
+pkg_cv_ROCKCHIP_MPP_CFLAGS=
+pkg_cv_ROCKCHIP_MPP_LIBS=-lrockchip_mpp
+pkg_cv_ROCKCHIP_VPU_CFLAGS=
+pkg_cv_ROCKCHIP_VPU_LIBS=-lrockchip_vpu
 pkg_cv_VALGRIND_CFLAGS=-I/usr/include/valgrind
 pkg_cv_VALGRIND_LIBS='-L/usr/lib/valgrind -lcoregrind-arm-linux -lvex-arm-linux -lgcc'
 pkg_cv_XSHM_CFLAGS=
@@ -3505,6 +3542,8 @@ DEFS='-DHAVE_CONFIG_H'
 DEPDIR='.deps'
 DEPRECATED_CFLAGS=''
 DLLTOOL='false'
+DRM_CFLAGS='-I/usr/include/libdrm'
+DRM_LIBS='-ldrm'
 DSYMUTIL=''
 DUMPBIN=''
 ECHO_C=''
@@ -3750,6 +3789,10 @@ QT_CFLAGS='-I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-l
 QT_LIBS='-lQt5Widgets -lQt5Gui -lQt5Core'
 QT_MOC='moc'
 RANLIB='ranlib'
+ROCKCHIP_MPP_CFLAGS=''
+ROCKCHIP_MPP_LIBS='-lrockchip_mpp'
+ROCKCHIP_VPU_CFLAGS=''
+ROCKCHIP_VPU_LIBS='-lrockchip_vpu'
 SED='/bin/sed'
 SET_MAKE=''
 SHELL='/bin/bash'

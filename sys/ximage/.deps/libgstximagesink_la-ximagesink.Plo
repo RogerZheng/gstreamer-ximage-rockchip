@@ -250,7 +250,25 @@ libgstximagesink_la-ximagesink.lo: ximagesink.c \
  /usr/include/arm-linux-gnueabihf/bits/mathcalls.h \
  /usr/include/arm-linux-gnueabihf/bits/mathinline.h ximagepool.h \
  /usr/include/X11/XKBlib.h /usr/include/X11/extensions/XKBstr.h \
- /usr/include/X11/extensions/XKB.h
+ /usr/include/X11/extensions/XKB.h gstvpumeta.h \
+ /usr/include/rockchip/vpu_api.h /usr/include/rockchip/rk_type.h \
+ /usr/include/rockchip/mpp_err.h /usr/include/libdrm/drm.h \
+ /usr/include/linux/types.h /usr/include/arm-linux-gnueabihf/asm/types.h \
+ /usr/include/asm-generic/int-ll64.h \
+ /usr/include/arm-linux-gnueabihf/asm/bitsperlong.h \
+ /usr/include/asm-generic/bitsperlong.h /usr/include/linux/posix_types.h \
+ /usr/include/linux/stddef.h \
+ /usr/include/arm-linux-gnueabihf/asm/posix_types.h \
+ /usr/include/asm-generic/posix_types.h \
+ /usr/include/arm-linux-gnueabihf/asm/ioctl.h \
+ /usr/include/asm-generic/ioctl.h /usr/include/libdrm/drm_mode.h \
+ /usr/include/libdrm/drm.h /usr/include/xf86drm.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/6/include/stdint.h \
+ /usr/include/stdint.h /usr/include/arm-linux-gnueabihf/bits/wchar.h \
+ /usr/include/xf86drmMode.h /usr/include/libdrm/drm_fourcc.h \
+ /usr/include/fcntl.h /usr/include/arm-linux-gnueabihf/bits/fcntl.h \
+ /usr/include/arm-linux-gnueabihf/bits/fcntl-linux.h \
+ /usr/include/arm-linux-gnueabihf/bits/stat.h
 
 /usr/include/stdc-predef.h:
 
@@ -831,3 +849,59 @@ ximagepool.h:
 /usr/include/X11/extensions/XKBstr.h:
 
 /usr/include/X11/extensions/XKB.h:
+
+gstvpumeta.h:
+
+/usr/include/rockchip/vpu_api.h:
+
+/usr/include/rockchip/rk_type.h:
+
+/usr/include/rockchip/mpp_err.h:
+
+/usr/include/libdrm/drm.h:
+
+/usr/include/linux/types.h:
+
+/usr/include/arm-linux-gnueabihf/asm/types.h:
+
+/usr/include/asm-generic/int-ll64.h:
+
+/usr/include/arm-linux-gnueabihf/asm/bitsperlong.h:
+
+/usr/include/asm-generic/bitsperlong.h:
+
+/usr/include/linux/posix_types.h:
+
+/usr/include/linux/stddef.h:
+
+/usr/include/arm-linux-gnueabihf/asm/posix_types.h:
+
+/usr/include/asm-generic/posix_types.h:
+
+/usr/include/arm-linux-gnueabihf/asm/ioctl.h:
+
+/usr/include/asm-generic/ioctl.h:
+
+/usr/include/libdrm/drm_mode.h:
+
+/usr/include/libdrm/drm.h:
+
+/usr/include/xf86drm.h:
+
+/usr/lib/gcc/arm-linux-gnueabihf/6/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/arm-linux-gnueabihf/bits/wchar.h:
+
+/usr/include/xf86drmMode.h:
+
+/usr/include/libdrm/drm_fourcc.h:
+
+/usr/include/fcntl.h:
+
+/usr/include/arm-linux-gnueabihf/bits/fcntl.h:
+
+/usr/include/arm-linux-gnueabihf/bits/fcntl-linux.h:
+
+/usr/include/arm-linux-gnueabihf/bits/stat.h:

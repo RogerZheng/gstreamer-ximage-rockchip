@@ -688,6 +688,12 @@ USE_ALSA_FALSE
 USE_ALSA_TRUE
 ALSA_LIBS
 ALSA_CFLAGS
+DRM_LIBS
+DRM_CFLAGS
+ROCKCHIP_VPU_LIBS
+ROCKCHIP_VPU_CFLAGS
+ROCKCHIP_MPP_LIBS
+ROCKCHIP_MPP_CFLAGS
 USE_XSHM_FALSE
 USE_XSHM_TRUE
 HAVE_XSHM
@@ -1228,6 +1234,12 @@ XVIDEO_CFLAGS
 XVIDEO_LIBS
 XSHM_CFLAGS
 XSHM_LIBS
+ROCKCHIP_MPP_CFLAGS
+ROCKCHIP_MPP_LIBS
+ROCKCHIP_VPU_CFLAGS
+ROCKCHIP_VPU_LIBS
+DRM_CFLAGS
+DRM_LIBS
 ALSA_CFLAGS
 ALSA_LIBS
 CDPARANOIA_CFLAGS
@@ -2068,6 +2080,16 @@ Some influential environment variables:
   XVIDEO_LIBS linker flags for XVIDEO, overriding pkg-config
   XSHM_CFLAGS C compiler flags for XSHM, overriding pkg-config
   XSHM_LIBS   linker flags for XSHM, overriding pkg-config
+  ROCKCHIP_MPP_CFLAGS 
+              C compiler flags for ROCKCHIP_MPP, overriding pkg-config
+  ROCKCHIP_MPP_LIBS 
+              linker flags for ROCKCHIP_MPP, overriding pkg-config
+  ROCKCHIP_VPU_CFLAGS 
+              C compiler flags for ROCKCHIP_VPU, overriding pkg-config
+  ROCKCHIP_VPU_LIBS 
+              linker flags for ROCKCHIP_VPU, overriding pkg-config
+  DRM_CFLAGS  C compiler flags for DRM, overriding pkg-config
+  DRM_LIBS    linker flags for DRM, overriding pkg-config
   ALSA_CFLAGS C compiler flags for ALSA, overriding pkg-config
   ALSA_LIBS   linker flags for ALSA, overriding pkg-config
   CDPARANOIA_CFLAGS 
@@ -29248,6 +29270,261 @@ fi
 else
   USE_XSHM_TRUE='#'
   USE_XSHM_FALSE=
+fi
+
+
+
+
+
+pkg_failed=no
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ROCKCHIP_MPP" >&5
+$as_echo_n "checking for ROCKCHIP_MPP... " >&6; }
+
+if test -n "$PKG_CONFIG"; then
+    if test -n "$ROCKCHIP_MPP_CFLAGS"; then
+        pkg_cv_ROCKCHIP_MPP_CFLAGS="$ROCKCHIP_MPP_CFLAGS"
+    else
+        if test -n "$PKG_CONFIG" && \
+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"rockchip_mpp\""; } >&5
+  ($PKG_CONFIG --exists --print-errors "rockchip_mpp") 2>&5
+  ac_status=$?
+  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+  test $ac_status = 0; }; then
+  pkg_cv_ROCKCHIP_MPP_CFLAGS=`$PKG_CONFIG --cflags "rockchip_mpp" 2>/dev/null`
+else
+  pkg_failed=yes
+fi
+    fi
+else
+	pkg_failed=untried
+fi
+if test -n "$PKG_CONFIG"; then
+    if test -n "$ROCKCHIP_MPP_LIBS"; then
+        pkg_cv_ROCKCHIP_MPP_LIBS="$ROCKCHIP_MPP_LIBS"
+    else
+        if test -n "$PKG_CONFIG" && \
+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"rockchip_mpp\""; } >&5
+  ($PKG_CONFIG --exists --print-errors "rockchip_mpp") 2>&5
+  ac_status=$?
+  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+  test $ac_status = 0; }; then
+  pkg_cv_ROCKCHIP_MPP_LIBS=`$PKG_CONFIG --libs "rockchip_mpp" 2>/dev/null`
+else
+  pkg_failed=yes
+fi
+    fi
+else
+	pkg_failed=untried
+fi
+
+
+
+if test $pkg_failed = yes; then
+        
+if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+        _pkg_short_errors_supported=yes
+else
+        _pkg_short_errors_supported=no
+fi
+        if test $_pkg_short_errors_supported = yes; then
+	        ROCKCHIP_MPP_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "rockchip_mpp"`
+        else
+	        ROCKCHIP_MPP_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "rockchip_mpp"`
+        fi
+	# Put the nasty error message in config.log where it belongs
+	echo "$ROCKCHIP_MPP_PKG_ERRORS" >&5
+
+	as_fn_error $? "Package requirements (rockchip_mpp) were not met:
+
+$ROCKCHIP_MPP_PKG_ERRORS
+
+Consider adjusting the PKG_CONFIG_PATH environment variable if you
+installed software in a non-standard prefix.
+
+Alternatively, you may set the environment variables ROCKCHIP_MPP_CFLAGS
+and ROCKCHIP_MPP_LIBS to avoid the need to call pkg-config.
+See the pkg-config man page for more details.
+" "$LINENO" 5
+elif test $pkg_failed = untried; then
+	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+as_fn_error $? "The pkg-config script could not be found or is too old.  Make sure it
+is in your PATH or set the PKG_CONFIG environment variable to the full
+path to pkg-config.
+
+Alternatively, you may set the environment variables ROCKCHIP_MPP_CFLAGS
+and ROCKCHIP_MPP_LIBS to avoid the need to call pkg-config.
+See the pkg-config man page for more details.
+
+To get pkg-config, see <http://pkg-config.freedesktop.org/>.
+See \`config.log' for more details" "$LINENO" 5; }
+else
+	ROCKCHIP_MPP_CFLAGS=$pkg_cv_ROCKCHIP_MPP_CFLAGS
+	ROCKCHIP_MPP_LIBS=$pkg_cv_ROCKCHIP_MPP_LIBS
+        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+$as_echo "yes" >&6; }
+	:
+fi
+
+pkg_failed=no
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ROCKCHIP_VPU" >&5
+$as_echo_n "checking for ROCKCHIP_VPU... " >&6; }
+
+if test -n "$PKG_CONFIG"; then
+    if test -n "$ROCKCHIP_VPU_CFLAGS"; then
+        pkg_cv_ROCKCHIP_VPU_CFLAGS="$ROCKCHIP_VPU_CFLAGS"
+    else
+        if test -n "$PKG_CONFIG" && \
+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"rockchip_vpu\""; } >&5
+  ($PKG_CONFIG --exists --print-errors "rockchip_vpu") 2>&5
+  ac_status=$?
+  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+  test $ac_status = 0; }; then
+  pkg_cv_ROCKCHIP_VPU_CFLAGS=`$PKG_CONFIG --cflags "rockchip_vpu" 2>/dev/null`
+else
+  pkg_failed=yes
+fi
+    fi
+else
+	pkg_failed=untried
+fi
+if test -n "$PKG_CONFIG"; then
+    if test -n "$ROCKCHIP_VPU_LIBS"; then
+        pkg_cv_ROCKCHIP_VPU_LIBS="$ROCKCHIP_VPU_LIBS"
+    else
+        if test -n "$PKG_CONFIG" && \
+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"rockchip_vpu\""; } >&5
+  ($PKG_CONFIG --exists --print-errors "rockchip_vpu") 2>&5
+  ac_status=$?
+  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+  test $ac_status = 0; }; then
+  pkg_cv_ROCKCHIP_VPU_LIBS=`$PKG_CONFIG --libs "rockchip_vpu" 2>/dev/null`
+else
+  pkg_failed=yes
+fi
+    fi
+else
+	pkg_failed=untried
+fi
+
+
+
+if test $pkg_failed = yes; then
+        
+if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+        _pkg_short_errors_supported=yes
+else
+        _pkg_short_errors_supported=no
+fi
+        if test $_pkg_short_errors_supported = yes; then
+	        ROCKCHIP_VPU_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "rockchip_vpu"`
+        else
+	        ROCKCHIP_VPU_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "rockchip_vpu"`
+        fi
+	# Put the nasty error message in config.log where it belongs
+	echo "$ROCKCHIP_VPU_PKG_ERRORS" >&5
+
+	as_fn_error $? "Package requirements (rockchip_vpu) were not met:
+
+$ROCKCHIP_VPU_PKG_ERRORS
+
+Consider adjusting the PKG_CONFIG_PATH environment variable if you
+installed software in a non-standard prefix.
+
+Alternatively, you may set the environment variables ROCKCHIP_VPU_CFLAGS
+and ROCKCHIP_VPU_LIBS to avoid the need to call pkg-config.
+See the pkg-config man page for more details.
+" "$LINENO" 5
+elif test $pkg_failed = untried; then
+	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+as_fn_error $? "The pkg-config script could not be found or is too old.  Make sure it
+is in your PATH or set the PKG_CONFIG environment variable to the full
+path to pkg-config.
+
+Alternatively, you may set the environment variables ROCKCHIP_VPU_CFLAGS
+and ROCKCHIP_VPU_LIBS to avoid the need to call pkg-config.
+See the pkg-config man page for more details.
+
+To get pkg-config, see <http://pkg-config.freedesktop.org/>.
+See \`config.log' for more details" "$LINENO" 5; }
+else
+	ROCKCHIP_VPU_CFLAGS=$pkg_cv_ROCKCHIP_VPU_CFLAGS
+	ROCKCHIP_VPU_LIBS=$pkg_cv_ROCKCHIP_VPU_LIBS
+        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+$as_echo "yes" >&6; }
+	:
+fi
+
+pkg_failed=no
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for DRM" >&5
+$as_echo_n "checking for DRM... " >&6; }
+
+if test -n "$PKG_CONFIG"; then
+    if test -n "$DRM_CFLAGS"; then
+        pkg_cv_DRM_CFLAGS="$DRM_CFLAGS"
+    else
+        if test -n "$PKG_CONFIG" && \
+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libdrm\""; } >&5
+  ($PKG_CONFIG --exists --print-errors "libdrm") 2>&5
+  ac_status=$?
+  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+  test $ac_status = 0; }; then
+  pkg_cv_DRM_CFLAGS=`$PKG_CONFIG --cflags "libdrm" 2>/dev/null`
+else
+  pkg_failed=yes
+fi
+    fi
+else
+	pkg_failed=untried
+fi
+if test -n "$PKG_CONFIG"; then
+    if test -n "$DRM_LIBS"; then
+        pkg_cv_DRM_LIBS="$DRM_LIBS"
+    else
+        if test -n "$PKG_CONFIG" && \
+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libdrm\""; } >&5
+  ($PKG_CONFIG --exists --print-errors "libdrm") 2>&5
+  ac_status=$?
+  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+  test $ac_status = 0; }; then
+  pkg_cv_DRM_LIBS=`$PKG_CONFIG --libs "libdrm" 2>/dev/null`
+else
+  pkg_failed=yes
+fi
+    fi
+else
+	pkg_failed=untried
+fi
+
+
+
+if test $pkg_failed = yes; then
+        
+if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+        _pkg_short_errors_supported=yes
+else
+        _pkg_short_errors_supported=no
+fi
+        if test $_pkg_short_errors_supported = yes; then
+	        DRM_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "libdrm"`
+        else
+	        DRM_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "libdrm"`
+        fi
+	# Put the nasty error message in config.log where it belongs
+	echo "$DRM_PKG_ERRORS" >&5
+
+	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+$as_echo "no" >&6; }
+                HAVE_KMS=no
+elif test $pkg_failed = untried; then
+	HAVE_KMS=no
+else
+	DRM_CFLAGS=$pkg_cv_DRM_CFLAGS
+	DRM_LIBS=$pkg_cv_DRM_LIBS
+        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+$as_echo "yes" >&6; }
+	HAVE_KMS=yes
 fi
 
 

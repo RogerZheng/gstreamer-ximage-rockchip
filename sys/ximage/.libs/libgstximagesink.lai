@@ -17,7 +17,7 @@ old_library=''
 inherited_linker_flags=' -pthread'
 
 # Libraries that this one depends upon.
-dependency_libs=' /usr/lib/arm-linux-gnueabihf/lib/libgstvideo-1.0.la -lm -lgstbase-1.0 -lgstreamer-1.0 -lgobject-2.0 -lglib-2.0 -lX11 -lXext'
+dependency_libs=' /usr/lib/arm-linux-gnueabihf/lib/libgstvideo-1.0.la -lm -lgstbase-1.0 -lgstreamer-1.0 -lgobject-2.0 -lglib-2.0 -lX11 -lXext -lrockchip_mpp -lrockchip_vpu -ldrm'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''

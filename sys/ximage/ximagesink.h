@@ -110,6 +110,7 @@ struct _GstXContext
 
   GstCaps *caps;
   GstCaps *last_caps;
+
 };
 
 /*
@@ -165,6 +166,20 @@ struct _GstXImageSink
   /* Our element stuff */
   GstVideoSink videosink;
 
+  gint fd;
+  gint ctrl_fd;
+  gint conn_id;
+  gint crtc_id;
+  gint plane_id;
+  guint pipe;
+
+  guint16 hdisplay, vdisplay;
+  guint32 buffer_id;
+
+  /* capabilities */
+  gboolean has_prime_import;
+  gboolean has_async_page_flip;
+
   char *display_name;
 
   GstXContext *xcontext;
@@ -197,6 +212,18 @@ struct _GstXImageSink
 
   /* stream metadata */
   gchar *media_title;
+
+  GstCaps *allowed_caps;
+  GstAllocator *allocator;
+  GstBuffer *last_buffer;
+
+  gchar *devname;
+
+  guint32 mm_width, mm_height;
+
+  GstPoll *poll;
+  GstPollFD pollfd;
+
 };
 
 struct _GstXImageSinkClass
